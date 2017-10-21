@@ -213,4 +213,9 @@ class SiteController extends BaseController
             'model' => $model,
         ]);
     }
+
+    public function actionSearch()
+    {
+        return $this->renderPartial('search');
+    }
 }
