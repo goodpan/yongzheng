@@ -15,7 +15,17 @@ use backend\controllers\BaseController;
  * @package backend\modules\system\controllers
  */
 class SiteController extends BaseController{
+    /** 后台首页控制台
+     * @return string
+     */
     public function actionIndex(){
-        echo 'bakend system site index';
+        return $this->redirect('/manager/operation/managers');
+    }
+
+    /** 网站设置
+     * @return string
+     */
+    public function actionSetting(){
+        return $this->render('setting');
     }
 }

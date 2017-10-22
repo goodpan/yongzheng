@@ -1,0 +1,64 @@
+
+
+/*头部*/
+
+.header {
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+
+/*清除浮动*/
+
+.clearfix:after {
+    display: block;
+    content: "\20";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.pull-right{
+    float: right;
+}
+
+/*yii分页*/
+.pagination{
+    font-size: 0;
+}
+.pagination li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0;
+    font-size: 0;
+}
+.pagination li a,.pagination li span{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 -1px 5px 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+}
+.pagination li.disabled span{
+    border: 1px solid #e2e2e2;
+    color: #d2d2d2!important;
+    cursor: not-allowed!important;
+    font-size: 12px;
+}
+.pagination li.active a{
+    background-color: #009688;
+    color: #fff;
+    border:1px solid #009688;
+}

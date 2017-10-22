@@ -11,7 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'collection'=>['class'=>'backend\modules\collection\Collection'],//采集模块
+        'info'=>['class'=>'backend\modules\info\Info'],//信息模块
+        'marketing'=>['class'=>'backend\modules\marketing\Marketing'],//营销模块
+        'manager'=>['class'=>'backend\modules\manager\Manager'],//管理员模块
+        'system'=>['class'=>'backend\modules\system\System'],//系统模块
+        'console'=>['class'=>'backend\modules\console\Console'],//系统模块
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -23,7 +30,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'yongzheng_backend',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -46,12 +53,5 @@ return [
         ],
         */
     ],
-    'params' => $params,
-    'modules'=>[
-        'collection'=>['class'=>'backend\modules\collection\Collection'],//采集模块
-        'info'=>['class'=>'backend\modules\info\Info'],//信息模块
-        'marketing'=>['class'=>'backend\modules\marketing\Marketing'],//营销模块
-        'member'=>['class'=>'backend\modules\Member\Member'],//会员模块
-        'system'=>['class'=>'backend\modules\system\System'],//系统模块
-    ]
+    'params' => $params
 ];
