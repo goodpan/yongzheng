@@ -56,7 +56,7 @@ use yii\widgets\LinkPager;
         <div id="pad-wrapper" class="users-list">
             <div class="row-fluid">
                 
-                <button class="layui-btn"><i class="layui-icon">&#xe654;</i>
+                <button class="layui-btn" data-method="add"><i class="layui-icon">&#xe654;</i>
                         添加新管理员</button>
             </div>
             <!-- Users table -->
@@ -121,7 +121,7 @@ use yii\widgets\LinkPager;
                             </td>
                             <td class="align-right">
                                 <?php if ($manager->admin_id != 1): ?>
-                                    <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="del" href="<?php echo yii\helpers\Url::to(['manage/del', 'adminid' => $manager->admin_id]) ?>">删除</a>
+                                    <span class="layui-btn layui-btn-primary layui-btn-mini" data-method="del">删除</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -143,9 +143,34 @@ use yii\widgets\LinkPager;
     </div>
 </div>
 
+
+
 <?php $this->beginBlock('jsblock')?>
 <script>
-    
+    layui.use('layer', function() { //独立版的layer无需执行这一句
+        var active = {
+            del: function(){
+                layer.confirm('是否确认删除?', {icon: 3, title:'提示'}, function(index){
+                    //do something
+                    console.log(index)
+                    layer.close(index);
+                });
+            },
+            add:function () {
+                layer.open({
+                    type: 1,
+                    content: '传入任意的文本或html' //这里content是一个普通的String
+                });
+            }
+        };
+        var $ = layui.jquery, layer = layui.layer;
+        $('.layui-btn').on('click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+
+    })
+
 </script>
 
 <?php $this->endBlock('jsblock') ?>

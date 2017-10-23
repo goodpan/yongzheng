@@ -104,10 +104,13 @@ class OperationController extends BaseController{
         return $this->render('reg', ['model' => $model]);
     }
 
+    /** 删除
+     * @return bool
+     */
     public function actionDel()
     {
-        $adminid = (int)Yii::$app->request->get("admin_id");
-        if (empty($adminid) || $adminid == 1) {
+        $admin_id = (int)Yii::$app->request->get("admin_id");
+        if (empty($admin_id) || $admin_id == 1) {
             $this->redirect(['manage/managers']);
             return false;
         }

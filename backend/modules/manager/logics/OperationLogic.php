@@ -20,11 +20,10 @@ class OperationLogic extends BaseLogic{
     
     public function getManagersByPager(){
         $admin = new Admin;
-        $model = Admin::find();
-        $count = $model->count();
+        $count = $admin->getCount();
         $pageSize = Yii::$app->params['pageSize']['manage'];//获取配置文件中的pageSize参数
         $pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
-        $managers = $admin->getManagersByPager($pager);
+        $managers = $admin->getManagersByPager($pager->offset,$pager->limit);
         return [
             'managers'=>$managers,
             'pager'=>$pager,

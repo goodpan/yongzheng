@@ -5,7 +5,7 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=yongzhengdb',
             'username' => 'root',
-            'password' => '123456',
+            'password' => 'root',
             'charset' => 'utf8',
             'tablePrefix'=>'yz_'
         ],
