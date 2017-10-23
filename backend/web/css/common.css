@@ -1,5 +1,3 @@
-
-
 /*头部*/
 
 .header {
@@ -24,21 +22,26 @@
     *zoom: 1
 }
 
-.pull-right{
+.pull-right {
     float: right;
 }
 
+
 /*yii分页*/
-.pagination{
+
+.pagination {
     font-size: 0;
 }
-.pagination li{
+
+.pagination li {
     display: inline-block;
     vertical-align: middle;
     margin: 10px 0;
     font-size: 0;
 }
-.pagination li a,.pagination li span{
+
+.pagination li a,
+.pagination li span {
     display: inline-block;
     vertical-align: middle;
     padding: 0 15px;
@@ -51,14 +54,40 @@
     border: 1px solid #e2e2e2;
     text-align: center;
 }
-.pagination li.disabled span{
+
+.pagination li.disabled span {
     border: 1px solid #e2e2e2;
     color: #d2d2d2!important;
     cursor: not-allowed!important;
     font-size: 12px;
 }
-.pagination li.active a{
+
+.pagination li.active a {
     background-color: #009688;
     color: #fff;
-    border:1px solid #009688;
+    border: 1px solid #009688;
+}
+
+
+/*表格头部*/
+
+.tb-header {
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/*面包屑*/
+
+.breadcrumb {
+    margin: 10px 0;
+}
+
+.breadcrumb .layui-breadcrumb {
+    visibility: visible;
+    font-size: 12px;
+}
+
+.breadcrumb .separator {
+    color: #999;
 }

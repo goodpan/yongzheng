@@ -148,6 +148,9 @@ class Admin extends ActiveRecord
         return false;
     }
 
-
+    public function getManagersByPager($pager){
+        $managers = self::find()->offset($pager->offset)->limit($pager->limit)->all();
+        return $managers;
+    }
 
 }

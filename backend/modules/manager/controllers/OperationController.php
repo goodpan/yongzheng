@@ -8,8 +8,8 @@
 
 namespace backend\modules\manager\controllers;
 use backend\models\Admin;
-use yii\data\Pagination;
 use backend\controllers\BaseController;
+use backend\modules\manager\logics\OperationLogic;
 use Yii;
 
 /** 会员管理控制器
@@ -17,6 +17,7 @@ use Yii;
  * @package backend\modules\member\controllers
  */
 class OperationController extends BaseController{
+    
     public function actionIndex(){
         echo 'backend member Operation index';
     }
@@ -58,27 +59,33 @@ class OperationController extends BaseController{
 
     public function actionManagers()
     {
+        $operLogic = new OperationLogic();
+        $res = $operLogic->getManagersByPager();
+        return $this->render("managers",$res);
+    }
+
+    public function actionGetmanagers(){
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $model = Admin::find();
         $count = $model->count();
         $pageSize = Yii::$app->params['pageSize']['manage'];//获取配置文件中的pageSize参数
         $pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
         $managers = $model->offset($pager->offset)->limit($pager->limit)->all();
-        return $this->render("managers", ['managers' => $managers, 'pager' => $pager]);
+        if($managers){
+            $res = [
+                'code'=>1,
+                'msg'=>'成功',
+                'data'=>$managers
+            ];
+        }else{
+            $res = [
+                'code'=>0,
+                'msg'=>'查询失败',
+                'data'=>[]
+            ];
+        }
+        return $res;
     }
-
-//    public function actionManagers()
-//    {
-//        $model = Admin::find();
-//        $count = $model->count();
-//        $pageSize = Yii::$app->params['pageSize']['manage'];//获取配置文件中的pageSize参数
-//        $managers = $model->offset($pageSize)->limit($pageSize)->all();
-//        $res = [];
-//        $res['code'] = 0;
-//        $res['msg'] = '操作成功';
-//        $res['count'] = 1000;
-//        $res['data'] = $managers;
-//        return json_encode($res);
-//    }
 
     public function actionReg()
     {

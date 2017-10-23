@@ -25,13 +25,13 @@ class PublicController extends BaseController{
         $model = PublicLogic::getAdminModel();
         //已经登录
         if(PublicLogic::isLogin()){
-            $this->redirect(['/system/site/index']);
+            $this->redirect(['/console/overview/index']);
             Yii::$app->end();
         }
         if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
             if ($model->login($post)) {
-                $this->redirect(['/system/site/index']);
+                $this->redirect(['/console/overview/index']);
                 Yii::$app->end();
             }
         }

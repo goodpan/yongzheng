@@ -44,7 +44,7 @@ $this->title = '雍正网后台管理中心';
                     <td>MYSQL版本：</td>
                     <td><?php Yii::$app->db->open(); echo \Yii::$app->db->pdo->getAttribute(\PDO::ATTR_SERVER_VERSION);?></td>
                     <td>Apache版本:</td>
-                    <td><?= apache_get_version() ?></td>
+                    <td></td>
                     <td>GD版本:</td>
                     <td><?=gd_info()["GD Version"]?></td>
                 </tr>

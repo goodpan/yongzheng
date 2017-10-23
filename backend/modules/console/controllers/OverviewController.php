@@ -9,6 +9,9 @@
 namespace backend\modules\console\controllers;
 use backend\controllers\BaseController;
 
+/** 后台概览控制器
+ * 
+ */
 class OverviewController extends BaseController{
     public function actionIndex(){
         return $this->render('index');

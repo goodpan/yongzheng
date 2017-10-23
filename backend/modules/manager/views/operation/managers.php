@@ -47,20 +47,18 @@ use yii\widgets\LinkPager;
 
 
 <div class="content">
-
+    <div class="breadcrumb">
+        <span class="layui-breadcrumb" lay-separator="-">
+            <a href="">首页</a><span class="separator">></span>
+            <a href="">管理员列表</a>
+        </span></div>
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
-            <div class="row-fluid header">
-                <h3>管理员列表</h3>
-                <div class="span10 pull-right">
-
-                    <a href="<?php echo yii\helpers\Url::to(['manage/reg']); ?>" class="btn-flat success pull-right">
-                        <span>&#43;</span>
-                        添加新管理员
-                    </a>
-                </div>
+            <div class="row-fluid">
+                
+                <button class="layui-btn"><i class="layui-icon">&#xe654;</i>
+                        添加新管理员</button>
             </div>
-
             <!-- Users table -->
             <div class="row-fluid table">
                 <table class="layui-table">
@@ -143,59 +141,11 @@ use yii\widgets\LinkPager;
             <!-- end users table -->
         </div>
     </div>
-
-
-    <table class="layui-table" lay-data="{height:332, url:'/manager/opreation/managers', page:true, id:'idTest'}" lay-filter="managers">
-        <thead>
-        <tr>
-            <th lay-data="{checkbox:true, fixed: true}"></th>
-            <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
-            <th lay-data="{field:'username', width:80}">用户名</th>
-            <th lay-data="{field:'sex', width:80, sort: true}">性别</th>
-            <th lay-data="{field:'city', width:80}">城市</th>
-            <th lay-data="{field:'sign', width:177}">签名</th>
-            <th lay-data="{field:'experience', width:80, sort: true}">积分</th>
-
-            <th lay-data="{field:'classify', width:80}">职业</th>
-            <th lay-data="{field:'wealth', width:135, sort: true}">财富</th>
-            <th lay-data="{field:'score', width:80, sort: true, fixed: 'right'}">评分</th>
-            <th lay-data="{fixed: 'right', width:160, align:'center', toolbar: '#barDemo'}"></th>
-        </tr>
-        </thead>
-    </table>
-    <script type="text/html" id="barDemo">
-        <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>
-        <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-        <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
-    </script>
-
-
 </div>
 
 <?php $this->beginBlock('jsblock')?>
 <script>
-    layui.use('table', function(){
-        var table = layui.table;
-        //监听表格复选框选择
-        table.on('checkbox(managers)', function(obj){
-            console.log(obj)
-        });
-        //监听工具条
-        table.on('tool(managers)', function(obj){
-            var data = obj.data;
-            if(obj.event === 'detail'){
-                layer.msg('ID：'+ data.id + ' 的查看操作');
-            } else if(obj.event === 'del'){
-                layer.confirm('真的删除行么', function(index){
-                    obj.del();
-                    layer.close(index);
-                });
-            } else if(obj.event === 'edit'){
-                layer.alert('编辑行：<br>'+ JSON.stringify(data))
-            }
-        });
-
-    });
+    
 </script>
 
 <?php $this->endBlock('jsblock') ?>
