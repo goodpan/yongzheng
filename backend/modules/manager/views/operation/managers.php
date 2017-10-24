@@ -6,11 +6,12 @@
  * Time: 20:38
  */
 use yii\widgets\LinkPager;
+$this->title = "管理员列表";
 ?>
 <?php $this->beginBlock('sitebar')?>
 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
 <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-    <li class="layui-nav-item layui-nav-itemed">
+    <li class="layui-nav-item">
         <a class="" href="javascript:;">设置</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:;">网站设置</a></dd>
@@ -19,10 +20,10 @@ use yii\widgets\LinkPager;
             <dd><a href="javascript:;">清除缓存</a></dd>
         </dl>
     </li>
-    <li class="layui-nav-item">
+    <li class="layui-nav-item <?=$this->context->id == 'operation'?'layui-nav-itemed':''?>">
         <a href="javascript:;">管理员设置</a>
         <dl class="layui-nav-child">
-            <dd><a href="/manager/operation/managers">管理员列表</a></dd>
+            <dd class="<?=$this->context->action->id == 'managers'?'layui-this':''?>"><a href="/manager/operation/managers">管理员列表</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item">
@@ -43,19 +44,15 @@ use yii\widgets\LinkPager;
     </li>
 </ul>
 <?php $this->endBlock('sitebar')?>
-<div id="demo7"></div>
-
-
 <div class="content">
     <div class="breadcrumb">
         <span class="layui-breadcrumb" lay-separator="-">
-            <a href="">首页</a><span class="separator">></span>
+            <a href="">首页</a>
             <a href="">管理员列表</a>
         </span></div>
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
             <div class="row-fluid">
-                
                 <button class="layui-btn" data-method="add"><i class="layui-icon">&#xe654;</i>
                         添加新管理员</button>
             </div>
@@ -121,7 +118,8 @@ use yii\widgets\LinkPager;
                             </td>
                             <td class="align-right">
                                 <?php if ($manager->admin_id != 1): ?>
-                                    <span class="layui-btn layui-btn-primary layui-btn-mini" data-method="del">删除</span>
+                                    <!-- <span class="layui-btn layui-btn-primary layui-btn-mini" data-method="del">删除</span> -->
+                                    <button class="layui-btn layui-btn-small layui-btn-mini"  data-method="del" data-adminid="<?=$manager->admin_id?>"><i class="layui-icon"></i> 删除</button>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -134,7 +132,6 @@ use yii\widgets\LinkPager;
                 }
                 ?>
             </div>
-            <div id="test1"></div>
             <div class="pagination pull-right">
                 <?php echo yii\widgets\LinkPager::widget(['pagination' => $pager, 'prevPageLabel' => '上一页', 'nextPageLabel' => '下一页']); ?>
             </div>
@@ -143,34 +140,53 @@ use yii\widgets\LinkPager;
     </div>
 </div>
 
-
-
 <?php $this->beginBlock('jsblock')?>
 <script>
-    layui.use('layer', function() { //独立版的layer无需执行这一句
+    layui.use(['element','layer','form'], function() { //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer,form = layui.form;
         var active = {
             del: function(){
+                var adminid = $(this).data('adminid');
                 layer.confirm('是否确认删除?', {icon: 3, title:'提示'}, function(index){
                     //do something
-                    console.log(index)
-                    layer.close(index);
+                    $.get('/manager/operation/del',{admin_id:adminid},function(res){
+                        layer.msg(res.msg);
+                        layer.close(index);
+                        location.reload();
+                    })
                 });
             },
             add:function () {
                 layer.open({
-                    type: 1,
-                    content: '传入任意的文本或html' //这里content是一个普通的String
+                    id:'mangager',
+                    type: 2,
+                    content: ['/manager/operation/reg', 'no'], 
+                    area: ['600px', '400px'],
+                    title:'添加新管理员',
+                    // btn:['确认'],
+                    success: function(layero, index){
+                        var body = layer.getChildFrame('body', index);
+                        var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                        var admin_user = body.find('input[name="admin_user"]').val();
+                        var admin_email = body.find('input[name="admin_email"]').val();
+                    },
+                    yes: function(index, layero){
+                        var body = layer.getChildFrame('body', index);
+                        var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                        var form = body.find('form');
+                        var admin_user = body.find('input[name="admin_user"]').val();
+                        var admin_email = body.find('input[name="admin_email"]').val();
+                        console.log(form);
+                        console.log(admin_email);
+                    }
                 });
             }
         };
-        var $ = layui.jquery, layer = layui.layer;
+        
         $('.layui-btn').on('click', function(){
             var othis = $(this), method = othis.data('method');
             active[method] ? active[method].call(this, othis) : '';
         });
-
     })
-
 </script>
-
 <?php $this->endBlock('jsblock') ?>

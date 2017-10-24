@@ -26,7 +26,6 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">雍正网后台管理系统</div>
@@ -34,7 +33,7 @@ AppAsset::register($this);
         <ul class="layui-nav layui-layout-left">
 
             <li class="layui-nav-item <?=$this->context->module->id == 'console'?'layui-this':''?>"><a href="/console/overview/index">控制台</a></li>
-            <li class="layui-nav-item <?=$this->context->module->id == 'system'?'layui-this':''?>"><a href="/system/site/index">系统</a></li>
+            <li class="layui-nav-item <?=$this->context->module->id == 'system'||$this->context->module->id == 'manager'?'layui-this':''?>"><a href="/system/site/index">系统</a></li>
             <li class="layui-nav-item"><a href="">证件库</a></li>
             <li class="layui-nav-item"><a href="">用户</a></li>
             <li class="layui-nav-item">
@@ -81,6 +80,10 @@ AppAsset::register($this);
 <?php if(isset($this->blocks['jsblock']))
     echo $this->blocks['jsblock'];
 ?>
+
+<script>
+
+</script>
 </body>
 
 </html>

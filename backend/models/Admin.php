@@ -130,7 +130,7 @@ class Admin extends BaseModel
     {
         $this->scenario = 'adminadd';
         if ($this->load($data) && $this->validate()) {
-            $this->adminpass = md5($this->adminpass);
+            $this->admin_pass = md5($this->admin_pass);
             if ($this->save(false)) {
                 return true;
             }

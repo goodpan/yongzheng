@@ -66,30 +66,29 @@ class OperationController extends BaseController{
 
     public function actionGetmanagers(){
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $model = Admin::find();
-        $count = $model->count();
-        $pageSize = Yii::$app->params['pageSize']['manage'];//获取配置文件中的pageSize参数
-        $pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
-        $managers = $model->offset($pager->offset)->limit($pager->limit)->all();
-        if($managers){
+        $operLogic = new OperationLogic();
+        $managerData = $operLogic->getManagersByPager();
+        if($managerData){
             $res = [
                 'code'=>1,
                 'msg'=>'成功',
-                'data'=>$managers
+                'data'=>$res['managers']
             ];
         }else{
             $res = [
                 'code'=>0,
-                'msg'=>'查询失败',
+                'msg'=>'失败',
                 'data'=>[]
             ];
         }
         return $res;
     }
 
+    /** 添加新管理员
+     * 
+     */
     public function actionReg()
     {
-        $this->layout = 'layout1';
         $model = new Admin;
         if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
@@ -99,9 +98,9 @@ class OperationController extends BaseController{
                 Yii::$app->session->setFlash('info', '添加失败');
             }
         }
-        $model->adminpass = '';
+        $model->admin_pass = '';
         $model->repass = '';
-        return $this->render('reg', ['model' => $model]);
+        return $this->renderPartial('reg', ['model' => $model]);
     }
 
     /** 删除
@@ -109,15 +108,28 @@ class OperationController extends BaseController{
      */
     public function actionDel()
     {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $admin_id = (int)Yii::$app->request->get("admin_id");
         if (empty($admin_id) || $admin_id == 1) {
-            $this->redirect(['manage/managers']);
-            return false;
+            return [
+                'code'=>'-1',
+                'msg'=>'参数错误',
+                'data'=>[]
+            ];
         }
         $model = new Admin;
         if ($model->deleteAll('admin_id = :id', [':id' => $admin_id])) {
-            Yii::$app->session->setFlash('info', '删除成功');
-            $this->redirect(['manage/managers']);
+            return [
+                'code'=>'1',
+                'msg'=>'删除成功',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'code'=>'-2',
+                'msg'=>'删除失败',
+                'data'=>[]
+            ];
         }
     }
 
@@ -145,7 +157,7 @@ class OperationController extends BaseController{
                 Yii::$app->session->setFlash('info', '修改成功');
             }
         }
-        $model->adminpass = '';
+        $model->admin_pass = '';
         $model->repass = '';
         return $this->render('changepass', ['model' => $model]);
     }

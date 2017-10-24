@@ -14,12 +14,13 @@ use yii\data\Pagination;
 use Yii;
 
 class OperationLogic extends BaseLogic{
-    public function getManagers(){
-        $model = new Admin();
+    public $admin;
+    public function __construct($config = [])
+    {
+        $this->admin = new Admin();
     }
-    
     public function getManagersByPager(){
-        $admin = new Admin;
+        $admin = $this->admin;
         $count = $admin->getCount();
         $pageSize = Yii::$app->params['pageSize']['manage'];//获取配置文件中的pageSize参数
         $pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);

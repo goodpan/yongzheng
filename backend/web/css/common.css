@@ -91,3 +91,18 @@
 .breadcrumb .separator {
     color: #999;
 }
+
+
+/*form表单*/
+
+.custom-form {
+    padding: 20px 20px 20px 0;
+}
+
+.help-block-error {
+    color: #ff0000;
+}
+
+.layui-form-label em {
+    color: #ff0000;
+}
