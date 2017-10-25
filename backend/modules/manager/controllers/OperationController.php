@@ -133,24 +133,31 @@ class OperationController extends BaseController{
         }
     }
 
-    public function actionChangeemail()
-    {
-        $this->layout = 'layout1';
-        $model = Admin::find()->where('admin_user = :user', [':user' => Yii::$app->session['admin']['admin_user']])->one();
+    public function actionBaseinfo(){
+        $admin = new Admin();
+        $model = $admin->getModelByUser();
+        if(!$model){
+            return $this->render('baseinfo');
+        }
         if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
             if ($model->changeemail($post)) {
                 Yii::$app->session->setFlash('info', '修改成功');
+            }else{
+                Yii::$app->session->setFlash('info', '修改失败，邮箱已经存在或者系统错误');
             }
         }
-        $model->adminpass = "";
-        return $this->render('changeemail', ['model' => $model]);
+        $model->admin_pass = "";
+        return $this->render('baseinfo', ['model' => $model]);
     }
 
+    /** 修改管理员密码
+     * 
+     */
     public function actionChangepass()
     {
-        $this->layout = "layout1";
-        $model = Admin::find()->where('admin_user = :user', [':user' => Yii::$app->session['admin']['admin_user']])->one();
+        $admin = new Admin();
+        $model = $admin->getModelByUser();
         if (Yii::$app->request->isPost) {
             $post = Yii::$app->request->post();
             if ($model->changepass($post)) {

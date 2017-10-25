@@ -7,7 +7,7 @@
  */
 
 namespace backend\modules\manager\controllers;
-use backend\controllers\BaseController;
+use yii\web\Controller;
 use backend\modules\manager\logics\PublicLogic;
 use Yii;
 
@@ -15,7 +15,7 @@ use Yii;
  * Class PublicController
  * @package backend\modules\member\controllers
  */
-class PublicController extends BaseController{
+class PublicController extends Controller{
     /** 登录
      * 判断是否已经登录，ok则跳到后台首页
      * post提交情况下做登录处理，在model中对提交数据进行验证，验证成功存入session，更新登录信息

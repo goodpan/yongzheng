@@ -126,6 +126,9 @@ class Admin extends BaseModel
         return false;
     }
 
+    /** 添加新管理员
+     * 
+     */
     public function reg($data)
     {
         $this->scenario = 'adminadd';
@@ -139,11 +142,14 @@ class Admin extends BaseModel
         return false;
     }
 
+    /** 修改邮箱
+     *  先验证密码是否正确
+     */
     public function changeEmail($data)
     {
         $this->scenario = "changeemail";
         if ($this->load($data) && $this->validate()) {
-            return (bool)$this->updateAll(['admin_email' => $this->adminemail], 'admin_user = :user', [':user' => $this->adminuser]);
+            return (bool)$this->updateAll(['admin_email' => $this->admin_email], 'admin_user = :user', [':user' => $this->admin_user]);
         }
         return false;
     }
@@ -158,6 +164,8 @@ class Admin extends BaseModel
         return $managers;
     }
 
-
+    public function getModelByUser(){
+        return self::find()->where('admin_user = :user', [':user' => \Yii::$app->session['admin']['admin_user']])->one();
+    }
 
 }

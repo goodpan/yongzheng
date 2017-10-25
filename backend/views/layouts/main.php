@@ -52,8 +52,8 @@ AppAsset::register($this);
                     admin
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="<?=Url::to('/manager/operation/baseinfo')?>">基本资料</a></dd>
+                    <dd><a href="<?=Url::to('/manager/operation/changepass')?>">修改密码</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="<?=Url::to(['/manager/public/logout'])?>">退出</a></li>
@@ -66,7 +66,7 @@ AppAsset::register($this);
     </div>
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;"><?=$content?></div>
+        <div style="width:100%;height:100%;padding: 15px;"><?=$content?></div>
     </div>
 
  </div>
@@ -82,7 +82,9 @@ AppAsset::register($this);
 ?>
 
 <script>
+layui.use(['element'], function() {
 
+})
 </script>
 </body>
 
