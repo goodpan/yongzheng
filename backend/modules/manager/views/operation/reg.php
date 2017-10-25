@@ -61,6 +61,19 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">所属角色<em>*</em></label>
+            <div class="layui-input-block">
+            <select name="">
+                <option value=""></option>
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">广州</option>
+                <option value="3">深圳</option>
+                <option value="4">杭州</option>
+            </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block pull-right">
                 <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>

@@ -18,4 +18,22 @@ class RcbaController extends BaseController{
     public function actionIndex(){
         echo 'backend system rcba index';
     }
+
+    /**
+     * 角色列表
+     */
+    public function actionRoles(){
+        return $this->render('roles');
+    }
+
+    /**
+     * 添加、编辑角色
+     */
+    public function actionRole_info(){
+        return $this->render('role_info');
+    }
+
+    public function actionRole_delete(){
+
+    }
 }

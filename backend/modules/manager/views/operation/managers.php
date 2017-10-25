@@ -17,7 +17,6 @@ $this->title = "管理员列表";
             <dd><a href="javascript:;">网站设置</a></dd>
             <dd><a href="javascript:;">友情链接</a></dd>
             <dd><a href="javascript:;">短信设置</a></dd>
-            <dd><a href="javascript:;">清除缓存</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item <?=$this->context->id == 'operation'?'layui-nav-itemed':''?>">
@@ -29,17 +28,15 @@ $this->title = "管理员列表";
     <li class="layui-nav-item">
         <a href="javascript:;">权限管理</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="">超链接</a></dd>
+            <dd><a href="javascript:;">角色管理</a></dd>
+            <dd><a href="javascript:;">权限列表</a></dd>
         </dl>
     </li>
     <li class="layui-nav-item">
         <a href="javascript:;">数据</a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="">超链接</a></dd>
+            <dd><a href="javascript:;">清除缓存</a></dd>
+            <dd><a href="javascript:;">数据备份</a></dd>
         </dl>
     </li>
 </ul>

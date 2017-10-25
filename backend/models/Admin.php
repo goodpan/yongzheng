@@ -131,9 +131,11 @@ class Admin extends BaseModel
      */
     public function reg($data)
     {
+         //登录成功更新用户表中相关信息
         $this->scenario = 'adminadd';
         if ($this->load($data) && $this->validate()) {
             $this->admin_pass = md5($this->admin_pass);
+            $this->create_time = time();//创建时间
             if ($this->save(false)) {
                 return true;
             }
