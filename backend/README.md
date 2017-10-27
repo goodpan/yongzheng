@@ -5,7 +5,7 @@
 * css   'css/common.css','css/layui.css',
 * js    'layui.js'或者'layui.all.js'
 > 初始化
-`` bash
+``` bash
 <script>
 //一般直接写在一个js文件中
 layui.use(['layer', 'form'], function(){
@@ -14,21 +14,21 @@ layui.use(['layer', 'form'], function(){
 });
 </script> 
 
-`` 
+```
 ### 弹框
 * 确认框
-`` bash
+``` bash
 layer.confirm('真的删除行么', function(index){
   obj.del();
   layer.close(index);
 });
-``
+```
 * 消息框
-`` bash
+``` bash
 layer.msg('Hello World');
-``
+```
 ### 按钮
-`` bash
+``` bash
 <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>
 <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
 <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
@@ -39,10 +39,10 @@ layer.msg('Hello World');
       <a class="layui-btn" data-type="cancel" href="/system/rbac/roles">取消</a>
     </div>
 </div>
-``
+```
 
 ### 表格
-`` bash
+``` bash
   <div class="breadcrumb">
         <span class="layui-breadcrumb" lay-separator="-">
             <a href="">首页</a>
@@ -127,7 +127,7 @@ layui.use('table', function(){
 });
 </script>
 <?php $this->endBlock('jsblock') ?>
-``
+```
 
 
 ## yii2
