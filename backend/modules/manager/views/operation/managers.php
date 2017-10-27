@@ -8,45 +8,16 @@
 use yii\widgets\LinkPager;
 $this->title = "管理员列表";
 ?>
-<?php $this->beginBlock('sitebar')?>
-<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-<ul class="layui-nav layui-nav-tree"  lay-filter="test">
-    <li class="layui-nav-item">
-        <a class="" href="javascript:;">设置</a>
-        <dl class="layui-nav-child">
-            <dd><a href="javascript:;">网站设置</a></dd>
-            <dd><a href="javascript:;">友情链接</a></dd>
-            <dd><a href="javascript:;">短信设置</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item <?=$this->context->id == 'operation'?'layui-nav-itemed':''?>">
-        <a href="javascript:;">管理员设置</a>
-        <dl class="layui-nav-child">
-            <dd class="<?=$this->context->action->id == 'managers'?'layui-this':''?>"><a href="/manager/operation/managers">管理员列表</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item">
-        <a href="javascript:;">权限管理</a>
-        <dl class="layui-nav-child">
-            <dd><a href="javascript:;">角色管理</a></dd>
-            <dd><a href="javascript:;">权限列表</a></dd>
-        </dl>
-    </li>
-    <li class="layui-nav-item">
-        <a href="javascript:;">数据</a>
-        <dl class="layui-nav-child">
-            <dd><a href="javascript:;">清除缓存</a></dd>
-            <dd><a href="javascript:;">数据备份</a></dd>
-        </dl>
-    </li>
-</ul>
-<?php $this->endBlock('sitebar')?>
 <div class="content">
     <div class="breadcrumb">
         <span class="layui-breadcrumb" lay-separator="-">
             <a href="">首页</a>
             <a href="">管理员列表</a>
         </span></div>
+    <blockquote class="layui-elem-quote">
+        <h6>操作提示</h6>
+        <p>网站系统角色, 由总平台设置管理.</p>
+    </blockquote>
     <div class="container-fluid">
         <div id="pad-wrapper" class="users-list">
             <div class="row-fluid">

@@ -15,7 +15,17 @@ use backend\controllers\BaseController;
  * @package backend\modules\system\controllers
  */
 class SmsController extends BaseController{
+    public function init(){
+        $this->layout='@app/views/layouts/system.php';  
+    }
     public function actionIndex(){
         echo 'backend system sms index';
+    }
+
+    /** 短信模板
+     * 
+     */
+    public function actionSmstemplates(){
+        return $this->render('smstemplates');
     }
 }

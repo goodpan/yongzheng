@@ -15,6 +15,9 @@ use backend\controllers\BaseController;
  * @package backend\modules\system\controllers
  */
 class SiteController extends BaseController{
+    public function init(){
+        $this->layout='@app/views/layouts/system.php';  
+    }
     /** 后台首页控制台
      * @return string
      */
@@ -27,5 +30,10 @@ class SiteController extends BaseController{
      */
     public function actionSetting(){
         return $this->render('setting');
+    }
+
+    public function actionLinks(){
+        
+        return $this->render('links');
     }
 }

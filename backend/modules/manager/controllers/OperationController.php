@@ -59,6 +59,7 @@ class OperationController extends BaseController{
 
     public function actionManagers()
     {
+        $this->layout='@app/views/layouts/system.php';
         $operLogic = new OperationLogic();
         $res = $operLogic->getManagersByPager();
         return $this->render("managers",$res);

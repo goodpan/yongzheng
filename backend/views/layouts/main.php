@@ -34,7 +34,7 @@ AppAsset::register($this);
 
             <li class="layui-nav-item <?=$this->context->module->id == 'console'?'layui-this':''?>"><a href="/console/overview/index">控制台</a></li>
             <li class="layui-nav-item <?=$this->context->module->id == 'system'||$this->context->module->id == 'manager'?'layui-this':''?>"><a href="/system/site/index">系统</a></li>
-            <li class="layui-nav-item"><a href="">证件库</a></li>
+            <li class="layui-nav-item <?=$this->context->module->id == 'info'?'layui-this':''?>"><a href="/info/operation/list">证件库</a></li>
             <li class="layui-nav-item"><a href="">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">其它系统</a>
@@ -61,7 +61,9 @@ AppAsset::register($this);
     </div>
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <?=$this->blocks['sitebar']?>
+            <?php if(isset($this->blocks['sitebar']))
+                echo $this->blocks['sitebar'];
+            ?>
         </div>
     </div>
     <div class="layui-body">
@@ -82,9 +84,11 @@ AppAsset::register($this);
 ?>
 
 <script>
+
 layui.use(['element'], function() {
 
 })
+
 </script>
 </body>
 
