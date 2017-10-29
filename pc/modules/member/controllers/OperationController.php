@@ -18,7 +18,14 @@ class OperationController extends BaseController{
     public function actionIndex(){
         echo 'menber index';
     }
+
+    /**
+     * 商家入驻
+     * @return string
+     * @author wenzhen-chen
+     */
     public function actionBusiness(){
-        return $this->renderPartial('business');
+        $this->layout='@app/views/layouts/main.php';
+        return $this->render('business');
     }
 }

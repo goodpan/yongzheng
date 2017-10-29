@@ -6,44 +6,7 @@
  * Time: 15:40
  */
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>商家入驻申请</title>
-    <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/business.css">
-</head>
-<body>
-<div class="header">
-    <div class="header-top clearfix">
-        <ul class="header-top-left">
-            <li>
-                <div class="item">
-                    <a href="#" style="text-align: center">首页</a>
-                </div>
-            </li>
-            <li>
-                <div class="item">
-                    <span>地区></span>
-                </div>
-            </li>
-        </ul>
-        <div class="header-top-right ">
-            <ul>
-                <li class="item">
-                    <a href="#">登陆/个人中心</a>
-                </li>
-                <li class="item">
-                    <a href="#">退出</a>
-                </li>
-                <li class="item">
-                    <a href="#">商家入驻</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<link rel="stylesheet" type="text/css" href="/css/business.css">
 <div class="container">
     <div class="container-main">
         <div class="container-main-top">
@@ -96,7 +59,6 @@
         </div>
     </div>
 </div>
-</body>
 <script>
     $('#articleImgBtn').change(function () {
         run(this, function (data) {
@@ -168,5 +130,3 @@
         ;
     }
 </script>
-</html>
-

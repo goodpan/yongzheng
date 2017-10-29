@@ -138,8 +138,8 @@ a.desc:after {
     float: right;
 }
  .footer{
-    width: 1190;
-    height: 150px;   
+    height: 150px;
+    background: #F1F2F3;
 }
 ul li{
     list-style: none;
