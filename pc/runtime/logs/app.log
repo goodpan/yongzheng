@@ -8863,3 +8863,251 @@ $_SERVER = [
     'argv' => []
     'argc' => 0
 ]
+2017-10-28 07:11:36 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: E:\xmu\yongzheng\pc\modules\info\views\layouts\site_head_top.html' in E:\xmu\yongzheng\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(396): yii\base\View->renderFile('E:\\xmu\\yongzhen...', Array, Object(pc\modules\info\controllers\SiteController))
+#1 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\Controller->renderContent('')
+#2 E:\xmu\yongzheng\pc\modules\info\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#3 [internal function]: pc\modules\info\controllers\SiteController->actionIndex()
+#4 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('index', Array)
+#7 E:\xmu\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xmu\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-10-28 07:11:35 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][info][application] $_COOKIE = [
+    'advanced-frontend' => 'jouioniiuqspa3rqrth3kio5c6'
+    '_csrf-frontend' => '3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"t^Íõ/cO9÷Ög4ºˆI
+ýùß¥«K|5tŒöƒár\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=jouioniiuqspa3rqrth3kio5c6; _csrf-frontend=3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22t%5E%CD%F5%2FcO9%F7%D6g4%BA%88I%11%0A%FD%F9%DF%A5%06%ABK%7C5t%8C%F6%83%E1r%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;%JAVA_HOME%\\bin;%CATALINA_HOME%\\lib;%CATALINA_HOME%\\bin;E:\\MySQL\\mysql-5.6.24-win32\\bin;D:\\svn\\bin;D:\\svntortoise\\bin;E:\\Git\\cmd;C:\\wamp\\bin\\php\\php5.5.12;E:\\tortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at www.yongzheng.dev Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xmu/yongzheng/pc/web/index.php'
+    'REMOTE_PORT' => '54771'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509167495.871
+    'REQUEST_TIME' => 1509167495
+]
+2017-10-28 07:22:40 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: E:\xmu\yongzheng\pc\modules\info\views\layouts\site_head_top.html' in E:\xmu\yongzheng\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(396): yii\base\View->renderFile('E:\\xmu\\yongzhen...', Array, Object(pc\modules\info\controllers\SiteController))
+#1 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\Controller->renderContent('')
+#2 E:\xmu\yongzheng\pc\modules\info\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#3 [internal function]: pc\modules\info\controllers\SiteController->actionIndex()
+#4 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('index', Array)
+#7 E:\xmu\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xmu\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-10-28 07:22:40 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][info][application] $_COOKIE = [
+    'advanced-frontend' => 'jouioniiuqspa3rqrth3kio5c6'
+    '_csrf-frontend' => '3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"t^Íõ/cO9÷Ög4ºˆI
+ýùß¥«K|5tŒöƒár\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=jouioniiuqspa3rqrth3kio5c6; _csrf-frontend=3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22t%5E%CD%F5%2FcO9%F7%D6g4%BA%88I%11%0A%FD%F9%DF%A5%06%ABK%7C5t%8C%F6%83%E1r%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;%JAVA_HOME%\\bin;%CATALINA_HOME%\\lib;%CATALINA_HOME%\\bin;E:\\MySQL\\mysql-5.6.24-win32\\bin;D:\\svn\\bin;D:\\svntortoise\\bin;E:\\Git\\cmd;C:\\wamp\\bin\\php\\php5.5.12;E:\\tortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at www.yongzheng.dev Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xmu/yongzheng/pc/web/index.php'
+    'REMOTE_PORT' => '54856'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509168160.355
+    'REQUEST_TIME' => 1509168160
+]
+2017-10-28 07:31:21 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: E:\xmu\yongzheng\pc\modules\info\views\layouts\../views/layouts/site_head_top.html' in E:\xmu\yongzheng\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(396): yii\base\View->renderFile('E:\\xmu\\yongzhen...', Array, Object(pc\modules\info\controllers\SiteController))
+#1 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\Controller->renderContent('')
+#2 E:\xmu\yongzheng\pc\modules\info\controllers\SiteController.php(77): yii\base\Controller->render('index')
+#3 [internal function]: pc\modules\info\controllers\SiteController->actionIndex()
+#4 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('index', Array)
+#7 E:\xmu\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xmu\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-10-28 07:31:21 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][info][application] $_COOKIE = [
+    'advanced-frontend' => 'jouioniiuqspa3rqrth3kio5c6'
+    '_csrf-frontend' => '3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"t^Íõ/cO9÷Ög4ºˆI
+ýùß¥«K|5tŒöƒár\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=jouioniiuqspa3rqrth3kio5c6; _csrf-frontend=3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22t%5E%CD%F5%2FcO9%F7%D6g4%BA%88I%11%0A%FD%F9%DF%A5%06%ABK%7C5t%8C%F6%83%E1r%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;%JAVA_HOME%\\bin;%CATALINA_HOME%\\lib;%CATALINA_HOME%\\bin;E:\\MySQL\\mysql-5.6.24-win32\\bin;D:\\svn\\bin;D:\\svntortoise\\bin;E:\\Git\\cmd;C:\\wamp\\bin\\php\\php5.5.12;E:\\tortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at www.yongzheng.dev Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xmu/yongzheng/pc/web/index.php'
+    'REMOTE_PORT' => '54909'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509168681.847
+    'REQUEST_TIME' => 1509168681
+]
+2017-10-28 07:34:45 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][error][yii\base\ViewNotFoundException] exception 'yii\base\ViewNotFoundException' with message 'The view file does not exist: E:\xmu\yongzheng\pc\modules\info\views\layouts\../views/layouts/site_head_top.html' in E:\xmu\yongzheng\vendor\yiisoft\yii2\base\View.php:229
+Stack trace:
+#0 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(396): yii\base\View->renderFile('E:\\xmu\\yongzhen...', Array, Object(pc\modules\info\controllers\SiteController))
+#1 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\Controller->renderContent('')
+#2 E:\xmu\yongzheng\pc\modules\info\controllers\SiteController.php(78): yii\base\Controller->render('index')
+#3 [internal function]: pc\modules\info\controllers\SiteController->actionIndex()
+#4 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('index', Array)
+#7 E:\xmu\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('', Array)
+#8 E:\xmu\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xmu\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2017-10-28 07:34:45 [127.0.0.1][-][jouioniiuqspa3rqrth3kio5c6][info][application] $_COOKIE = [
+    'advanced-frontend' => 'jouioniiuqspa3rqrth3kio5c6'
+    '_csrf-frontend' => '3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"t^Íõ/cO9÷Ög4ºˆI
+ýùß¥«K|5tŒöƒár\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-frontend=jouioniiuqspa3rqrth3kio5c6; _csrf-frontend=3a13056a4d00f8d4e41d2edad2f456cfb79019bc775de682f87dbfe0d6ceaf94a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22t%5E%CD%F5%2FcO9%F7%D6g4%BA%88I%11%0A%FD%F9%DF%A5%06%ABK%7C5t%8C%F6%83%E1r%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;%JAVA_HOME%\\bin;%CATALINA_HOME%\\lib;%CATALINA_HOME%\\bin;E:\\MySQL\\mysql-5.6.24-win32\\bin;D:\\svn\\bin;D:\\svntortoise\\bin;E:\\Git\\cmd;C:\\wamp\\bin\\php\\php5.5.12;E:\\tortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\windows'
+    'COMSPEC' => 'C:\\windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.9 (Win32) PHP/5.5.12 Server at www.yongzheng.dev Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.9 (Win32) PHP/5.5.12'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xmu/yongzheng/pc/web/'
+    'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com'
+    'SCRIPT_FILENAME' => 'E:/xmu/yongzheng/pc/web/index.php'
+    'REMOTE_PORT' => '54973'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509168885.13
+    'REQUEST_TIME' => 1509168885
+]
