@@ -32,14 +32,14 @@
         </ul>
         <div class="header-top-right">
             <ul>
-                <li>
-                    <div class="item"><a href="#">登陆/个人中心></a></div>
+                <li class="item">
+                    <a href="#">登陆/个人中心</a>
                 </li>
-                <li>
-                    <div class="item"><a href="#">退出</a></div>
+                <li class="item">
+                    <a href="#">退出</a>
                 </li>
-                <li>
-                    <div class="item"><a href="#">商家入驻</a></div>
+                <li class="item">
+                    <a href="#">商家入驻</a>
                 </li>
             </ul>
         </div>

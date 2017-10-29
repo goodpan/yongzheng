@@ -166,14 +166,14 @@ input {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         color: #666;font-size:.14rem;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
 a{
-        color:# 46639c;
+   color:# 46639c;
 }
 
 .a_critical {
         color: #ababab
 }
 
-.a_critical: hover {
+.a_critical:hover {
         color: #ff7e00
 }
 
@@ -183,8 +183,8 @@ i, em{ font-style: normal; }
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
-      }        
-            /*清除浮动*/   
+      }       
+/*清除浮动*/   
         .clearfix:after{
               display:block;
               content:"\20";
