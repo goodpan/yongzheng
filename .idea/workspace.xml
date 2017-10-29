@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e013ad36-52a2-46c1-86b3-54e66b2f3ba6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/models/BaseModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Admin.php" afterPath="$PROJECT_DIR$/backend/models/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" afterPath="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php" afterPath="$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php" afterPath="$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/backend.sql" afterPath="$PROJECT_DIR$/backend/backend.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/config/main-local.php" afterPath="$PROJECT_DIR$/common/config/main-local.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pc/runtime/debug/index.data" afterPath="$PROJECT_DIR$/pc/runtime/debug/index.data" />
     </list>
     <ignored path="yongzheng.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,85 +33,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="managers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php">
+      <file leaf-file-name="backend.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/backend.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="147" column="13" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-                <element signature="e#1880#1888#1#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="82" column="2" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
-              <folding>
-                <element signature="e#66#94#0#PHP" expanded="true" />
-                <marker date="1508682695000" expanded="true" signature="1707:2152" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
-              <folding>
-                <element signature="e#136#161#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationLogic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="817">
+              <caret line="136" column="51" selection-start-line="63" selection-start-column="0" selection-end-line="136" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/Admin.php">
+      <file leaf-file-name="main-local.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
-              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/BaseModel.php">
+      <file leaf-file-name="paint.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../paint.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/config/params.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1508762967000" expanded="true" signature="14:100" ph="..." />
-                <marker date="1508762967000" expanded="true" signature="73:98" ph="..." />
-              </folding>
+            <state relative-caret-position="1440">
+              <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,7 +83,6 @@
         <option value="$PROJECT_DIR$/pc/models/BaseModel.php" />
         <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/pc/Readme.md" />
-        <option value="$PROJECT_DIR$/backend/backend.sql" />
         <option value="$PROJECT_DIR$/common/models/LoginForm.php" />
         <option value="$PROJECT_DIR$/backend/views/site/login.php" />
         <option value="$PROJECT_DIR$/../../../v0atia/modules/controllers/PublicController.php" />
@@ -183,12 +124,13 @@
         <option value="$PROJECT_DIR$/backend/web/css/common.css" />
         <option value="$PROJECT_DIR$/backend/config/params.php" />
         <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/common/config/main-local.php" />
         <option value="$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php" />
         <option value="$PROJECT_DIR$/backend/models/Admin.php" />
         <option value="$PROJECT_DIR$/backend/models/BaseModel.php" />
         <option value="$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php" />
         <option value="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" />
+        <option value="$PROJECT_DIR$/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/backend/backend.sql" />
       </list>
     </option>
   </component>
@@ -233,6 +175,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -275,7 +218,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,14 +239,9 @@
               <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,12 +332,14 @@
       <workItem from="1506696166439" duration="42000" />
       <workItem from="1506696295376" duration="283000" />
       <workItem from="1506869571941" duration="98333000" />
-      <workItem from="1508762510060" duration="3505000" />
+      <workItem from="1508762510060" duration="4128000" />
+      <workItem from="1509112705246" duration="5263000" />
+      <workItem from="1509183603892" duration="2062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129332000" />
+    <option name="totallyTimeSpent" value="137280000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="971" extended-state="6" />
@@ -444,21 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/web/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../web/recover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/modules/member/views/public/seekpassword.php" />
     <entry file="file://$PROJECT_DIR$/../../../v0atia/modules/views/manage/mailchangepass.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,7 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,7 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,7 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,7 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-187">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,25 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1508762967000" expanded="true" signature="14:100" ph="..." />
-            <marker date="1508762967000" expanded="true" signature="73:98" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,7 +616,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="112" column="13" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="91" column="2" selection-start-line="91" selection-start-column="2" selection-end-line="91" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2490">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -724,67 +685,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="135">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Admin.php">
+    <entry file="file://$PROJECT_DIR$/../../../paint.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+        <state relative-caret-position="1440">
+          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
+    <entry file="file://$PROJECT_DIR$/backend/backend.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="82" column="2" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
-          <folding>
-            <element signature="e#66#94#0#PHP" expanded="true" />
-            <marker date="1508682695000" expanded="true" signature="1707:2152" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modules/manager/logics/OperationLogic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="817">
+          <caret line="136" column="51" selection-start-line="63" selection-start-column="0" selection-end-line="136" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modules/manager/views/operation/managers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="147" column="13" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#1880#1888#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
-          <folding>
-            <element signature="e#136#161#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
