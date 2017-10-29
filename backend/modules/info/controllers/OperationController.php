@@ -14,7 +14,18 @@ use backend\controllers\BaseController;
  * @package backend\modules\info\controllers
  */
 class OperationController extends BaseController{
+    public function init(){
+        $this->layout='@app/views/layouts/info.php';  
+    }
+
     public function actionIndex(){
         echo 'backend info Operation index';
+    }   
+    
+    /** 证件列表
+     * 
+     */
+    public function actionList(){
+        return $this->render('list');
     }
 }

@@ -5,6 +5,7 @@
 
 use backend\assets\AppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -21,18 +22,19 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">雍正网后台管理系统</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">系统</a></li>
-            <li class="layui-nav-item"><a href="">证件库</a></li>
+
+            <li class="layui-nav-item <?=$this->context->module->id == 'console'?'layui-this':''?>"><a href="/console/overview/index">控制台</a></li>
+            <li class="layui-nav-item <?=$this->context->module->id == 'system'||$this->context->module->id == 'manager'?'layui-this':''?>"><a href="/system/site/index">系统</a></li>
+            <li class="layui-nav-item <?=$this->context->module->id == 'info'?'layui-this':''?>"><a href="/info/operation/list">证件库</a></li>
             <li class="layui-nav-item"><a href="">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">其它系统</a>
@@ -50,50 +52,24 @@ AppAsset::register($this);
                     admin
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="<?=Url::to('/manager/operation/baseinfo')?>">基本资料</a></dd>
+                    <dd><a href="<?=Url::to('/manager/operation/changepass')?>">修改密码</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退了</a></li>
+            <li class="layui-nav-item"><a href="<?=Url::to(['/manager/public/logout'])?>">退出</a></li>
         </ul>
     </div>
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">设置</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">网站设置</a></dd>
-                        <dd><a href="javascript:;">友情链接</a></dd>
-                        <dd><a href="javascript:;">短信设置</a></dd>
-                        <dd><a href="javascript:;">清除缓存</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">权限管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">数据</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
-                </li>
-            </ul>
+            <?php if(isset($this->blocks['sitebar']))
+                echo $this->blocks['sitebar'];
+            ?>
         </div>
     </div>
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;"><?=$content?></div>
+        <div style="width:100%;height:100%;padding: 15px;"><?=$content?></div>
     </div>
-
 
  </div>
 
@@ -103,6 +79,19 @@ AppAsset::register($this);
 </div>
 
 <?php $this->endBody() ?>
+<?php if(isset($this->blocks['jsblock']))
+    echo $this->blocks['jsblock'];
+?>
+
+<script>
+
+layui.use(['element'], function() {
+
+})
+
+</script>
 </body>
+
 </html>
+
 <?php $this->endPage() ?>

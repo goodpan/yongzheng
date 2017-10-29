@@ -57,3 +57,7 @@
 * 模块中布局文件默认为yii框架布局（即在pc/views/layouts/main.php),如果需要自定义文件，则在控制中设置属性：
 public $layout = '***/**/main'
 
+
+## 数据库
+### 
+
