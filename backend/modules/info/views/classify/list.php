@@ -27,7 +27,9 @@
         </tr>
     </thead>
 </table>
-
+<?php $this->beginBlock('cssblock')?>
+    <link src="">
+<?php $this->endBlock('cssblock') ?>
 <?php $this->beginBlock('jsblock')?>
 <script type="text/html" id="toolbar">
   <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>

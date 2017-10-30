@@ -8,20 +8,20 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 100%;
 }
 ol, ul {
-        list - style: none;
+        list-style: none;
 }
 li {
-        list - style: none;
+        list-style: none;
 }
 fieldset, img {
         border: 0;
 }
 address, cite, dfn, em,
 var {
-        font - style: normal;
+        font-style: normal;
 }
 code, kbd, pre, samp {
-        font - family: courier new,courier,monospace;
+        font-family: courier new,courier,monospace;
 }
 input, button, textarea, select {
         font-size: 100%;
@@ -33,9 +33,9 @@ textarea {
         resize: none;
 }
 table {
-        border - collapse: collapse;
-        border - spacing: 0;
-        empty - cells: show;
+        border-collapse: collapse;
+        border-spacing: 0;
+        empty-cells: show;
         font - size: inherit;
 }
 abbr[title] {
@@ -153,7 +153,7 @@ a {
 }
 
 .underline {
-        text - decoration: underline;
+        text-decoration: underline;
 }
 
 input[type = text]::-ms -clear,
@@ -166,14 +166,14 @@ input {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         color: #666;font-size:.14rem;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
 a{
-        color:# 46639c;
+   color:# 46639c;
 }
 
 .a_critical {
         color: #ababab
 }
 
-.a_critical: hover {
+.a_critical:hover {
         color: #ff7e00
 }
 
@@ -183,8 +183,8 @@ i, em{ font-style: normal; }
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
-      }        
-            /*清除浮动*/   
+      }       
+/*清除浮动*/   
         .clearfix:after{
               display:block;
               content:"\20";

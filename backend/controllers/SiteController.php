@@ -60,7 +60,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
+        $this->layout = "site_head_top";
         return $this->render('index');
     }
 

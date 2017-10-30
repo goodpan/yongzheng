@@ -22,39 +22,7 @@ $this->title = '添加角色';
   padding-right:30px;
 }
 </style>
-<?php $this->beginBlock('sitebar')?>
-    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-    <ul class="layui-nav layui-nav-tree" lay-filter="test">
-      <li class="layui-nav-item">
-        <a class="" href="javascript:;">设置</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">网站设置</a></dd>
-          <dd><a href="javascript:;">友情链接</a></dd>
-          <dd><a href="javascript:;">短信设置</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item <?=$this->context->id == 'operation'?'layui-nav-itemed':''?>">
-        <a href="javascript:;">管理员设置</a>
-        <dl class="layui-nav-child">
-          <dd class="<?=$this->context->action->id == 'managers'?'layui-this':''?>"><a href="/manager/operation/managers">管理员列表</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item <?=$this->context->id == 'rbac'?'layui-nav-itemed':''?>">
-        <a href="javascript:;">权限管理</a>
-        <dl class="layui-nav-child">
-          <dd class="<?=$this->context->action->id == 'role_add'?'layui-this':''?>"><a href="/system/rbac/roles">角色管理</a></dd>
-          <dd class="<?=$this->context->action->id == 'auths'?'layui-this':''?>"><a href="/system/rbac/auths">权限列表</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item">
-        <a href="javascript:;">数据</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">清除缓存</a></dd>
-          <dd><a href="javascript:;">数据备份</a></dd>
-        </dl>
-      </li>
-    </ul>
-<?php $this->endBlock('sitebar')?>
+
 <div class="breadcrumb">
     <span class="layui-breadcrumb" lay-separator="-">
         <a href="/console/overview/index">首页</a>
@@ -144,7 +112,7 @@ $this->title = '添加角色';
 <div class="layui-form-item">
     <div class="layui-input-block">
       <button class="layui-btn" lay-submit="" lay-filter="demo1">确认提交</button>
-      <a class="layui-btn" data-type="cancel" href="/system/rbac/roles">取消</a>
+      <a class="layui-btn" data-type="cancel" href="javascript:window.history.go(-1)">取消</a>
     </div>
 </div>
 </form>

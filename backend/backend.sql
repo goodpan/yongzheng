@@ -8,12 +8,58 @@ CREATE TABLE IF NOT EXISTS `yz_admin`(
   `login_time` INT UNSIGNED NOT NULL DEFAULT '0' COMMENT '登录时间',
   `login_ip` BIGINT NOT NULL DEFAULT '0' COMMENT '登录ip',
   `create_time` INT UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `is_use` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否启用，0-禁用，1-启用',
+  `is_del` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY(`admin_id`),
   UNIQUE yz_admin_adminuser_adminpass(`admin_user`,`admin_pass`),
   UNIQUE yz_admin_adminuser_adminemail(`admin_user`,`admin_email`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 INSERT INTO `yz_admin`(admin_user,admin_pass,admin_email,create_time) VALUES('admin',md5('yongzheng'),'admin@yongzheng.com',UNIX_TIMESTAMP());
+
+######角色表##########
+DROP TABLE IF EXISTS `yz_role`;
+CREATE TABLE IF NOT EXISTS `yz_role`(
+  `role_id` SMALLINT  UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `role_name` VARCHAR(32) NOT NULL COMMENT '角色名称',
+  `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`role_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色表';
+
+######权限表##########
+DROP TABLE IF EXISTS `yz_auth`;
+CREATE TABLE IF NOT EXISTS `yz_auth` (
+  `auth_id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `auth_name` VARCHAR(32) NOT NULL COMMENT '名称',
+  `auth_m` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '模块',
+  `auth_c` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '控制器',
+  `auth_a` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '操作方法',
+  `auth_path` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '全路径',
+  `auth_pid` SMALLINT UNSIGNED NOT NULL COMMENT '父权限id',
+  `auth_level` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '级别：0-顶级',
+  `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`auth_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限表';
+
+######角色权限表#######
+DROP TABLE IF EXISTS `yz_role_auth`;
+CREATE TABLE IF NOT EXISTS `yz_role_auth`(
+  `role_id` SMALLINT UNSIGNED NOT NULL COMMENT '角色ID',
+  `auth_id` SMALLINT UNSIGNED NOT NULL COMMENT '权限ID',
+  `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+  KEY yz_role_auth_roleid(`role_id`),
+  KEY yz_role_auth_authid(`auth_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限表';
+
+######管理员角色表#######
+DROP TABLE IF EXISTS `yz_admin_role`;
+CREATE TABLE IF NOT EXISTS `yz_admin_role`(
+  `admin_id` INT UNSIGNED NOT NULL COMMENT '管理员ID',
+  `role_id` SMALLINT UNSIGNED NOT NULL COMMENT '角色ID',
+  `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+  KEY yz_admin_role_adminid(`admin_id`),
+  KEY yz_admin_role_roleid(`role_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='管理员角色表';
 
 ######会员表#######
 DROP TABLE IF EXISTS `yz_user`;
@@ -45,3 +91,47 @@ CREATE TABLE IF NOT EXISTS `yz_profile`(
   UNIQUE yz_profile_userid(`user_id`),
   PRIMARY KEY(`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员信息表';
+
+#######证件分类表######
+DROP TABLE IF EXISTS  `yz_category`;
+CREATE TABLE IF NOT EXISTS `yz_category`(
+  `cate_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `cate_name` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '分类名',
+  `parent_id` BIGINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '父id',
+  `create_time` INT UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`cate_id`),
+  kEY yz_category_parentid(`parent_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='证件分类表';
+
+######证件表#########
+DROP TABLE IF EXISTS `yz_credentials`;
+CREATE TABLE IF NOT EXISTS `yz_credentials`(
+    `cred_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+    `cate_id` BIGINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '分类ID',
+    `cred_name` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '证件名',
+    `descr` TEXT COMMENT '描述',
+    `condition` TEXT COMMENT '申请条件',
+    `material` TEXT COMMENT '申请材料',
+    `cost` TEXT COMMENT '费用',
+    `locale` TEXT COMMENT '申办地点',
+    `cover` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '封面图',
+    `is_hot` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否热门',
+    `is_del` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否删除',
+    `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+    PRIMARY KEY (`cred_id`),
+    KEY yz_credentials_cateid(`cate_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='证件表';
+
+######评论表########
+DROP TABLE IF EXISTS `yz_comment`;
+CREATE TABLE `yz_comment` (
+  `com_id` BIGINT unsigned NOT NULL AUTO_INCREMENT,
+  `content` varchar(1000) NOT NULL COMMENT '评论的内容',
+  `star` tinyint(3) unsigned NOT NULL DEFAULT '3' COMMENT '打的分',
+  `add_time` int(10) unsigned NOT NULL COMMENT '评论时间',
+  `user_id` BIGINT UNSIGNED NOT NULL COMMENT '会员ID',
+  `cred_id` BIGINT UNSIGNED NOT NULL COMMENT '证件ID',
+  `used` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '有用的数量',
+  PRIMARY KEY (`com_id`),
+  KEY yz_comment_credid (`cred_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论表';

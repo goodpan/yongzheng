@@ -9,14 +9,17 @@
 namespace backend\modules\system\controllers;
 
 use backend\controllers\BaseController;
+use backend\models\Auth;
+use phpDocumentor\Reflection\Types\Parent_;
 
 /** 权限管理控制器
  * Class RcbcController
  * @package backend\modules\system\controllers
  */
 class RbacController extends BaseController{
+    public $enableCsrfValidation = false;
     public function init(){
-        $this->layout='@app/views/layouts/system.php';  
+        $this->layout='@app/views/layouts/system.php';
     }
     
     public function actionIndex(){
@@ -33,6 +36,33 @@ class RbacController extends BaseController{
      */
     public function actionAuths(){
         return $this->render('auths');
+    }
+    /**
+     * 添加权限
+     */
+    public function actionAuth_add(){
+        $auth = new Auth();
+        $model = $auth->getAuthsNameByAll();
+        if(\Yii::$app->request->isPost){
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $post = \Yii::$app->request->post();
+            if ($auth->add($post)) {
+                return [
+                  'code'=>1,
+                  'msg'=>'添加成功',
+                  'data'=>[]
+                ];
+            } else {
+                $msg = $auth->getErrors();
+                return [
+                    'code'=>0,
+                    'msg'=>$msg,
+                    'data'=>[]
+                ];
+            }
+        }else{
+            return $this->render('auth_add',['auths'=>$model]);
+        }
     }
 
     /**

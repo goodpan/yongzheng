@@ -11,7 +11,7 @@ $this->title = '权限列表';
   <p>网站系统角色, 由总平台设置管理.</p>
   </blockquote>
 <div class="layui-btn-group">
-  <button class="layui-btn" data-type=""><i class="layui-icon">&#xe608;</i>添加权限</button>
+  <a class="layui-btn" data-type="" href="/system/rbac/auth_add"><i class="layui-icon">&#xe608;</i>添加权限</a>
   <button class="layui-btn" data-type=""><i class="layui-icon">&#xe640;</i>删除选中</button>
 </div>
 <table class="layui-table" lay-data="{url:'/system/rbac/roledata', page:true, id:'roles'}" lay-filter="demo">

@@ -73,6 +73,7 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        $this->layout = '@app/views/layouts/main.php';
         return $this->render('index');
     }
 
@@ -214,8 +215,13 @@ class SiteController extends BaseController
         ]);
     }
 
+    /**
+     * @return string
+     * @author wenzhen-chen
+     */
     public function actionSearch()
     {
-        return $this->renderPartial('search');
+        $this->layout='@app/views/layouts/main.php';
+        return $this->render('search');
     }
 }
