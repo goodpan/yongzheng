@@ -1,6 +1,21 @@
 html {
     background-color: #373d41 !important;
+    width:100%;
     height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height: 100%;
+}
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default
 }
 .cube {
     -webkit-backface-visibility: hidden;
@@ -1829,18 +1844,7 @@ select {
 }
 
 /*********banner动画************/
-body{
-    margin:0;
-    padding:0;
-}
-.no-select {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default
-}
+
 
 @-webkit-keyframes banner-slide-20 {
     0% {

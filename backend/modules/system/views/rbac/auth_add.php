@@ -43,10 +43,10 @@ $this->title = '添加权限';
             <div class="layui-input-block">
                 <select name="auth_pid" lay-verify="required">
                     <option value="">请选择上级权限</option>';
-                    <option value="0">顶级权限</option>';
+                    <option value="0">添加顶级权限</option>';
                     <?php foreach ($parentData as $k => $v): ?>						
-                        <option value="<?php echo $v['auth_id']; ?>">
-                            <?php echo str_repeat('&nbsp;', 4*$v['level']).$v['auth_name']; ?>
+                        <option value="<?php echo $v['auth_id']; ?>" data-level="<?php echo $v['level']?>">
+                            <?php echo str_repeat('-', 4*$v['level']).$v['auth_name']; ?>
                         </option>
                     <?php endforeach; ?>	
                 </select>
@@ -99,15 +99,17 @@ $this->title = '添加权限';
 
             //监听提交
             form.on('submit(auth_add)', function(data){
-                $.post('/system/rbac/auth_add',data.field,function (res) {
-                    if(res.code>0){
-                        layer.alert(res.msg);
-                        window.location.reload()
-                    }else{
-                        layer.alert(res.error); 
-                    }
-                })
-                return false;
+                layer.alert(JSON.stringify(data.field));
+                console.log(JSON.stringify(data.field));return;
+//                $.post('/system/rbac/auth_add',data.field,function (res) {
+//                    if(res.code>0){
+//                        layer.alert(res.msg);
+//                        window.location.reload()
+//                    }else{
+//                        layer.alert(res.error);
+//                    }
+//                })
+//                return false;
             });
         });
     </script>
