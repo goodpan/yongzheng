@@ -49,7 +49,7 @@ AppAsset::register($this);
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    admin
+                    <?=\Yii::$app->session['admin']['admin_user']?>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="<?=Url::to('/manager/operation/baseinfo')?>">基本资料</a></dd>
