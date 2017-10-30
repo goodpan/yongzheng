@@ -14,14 +14,17 @@ $this->title = '权限列表';
   <a class="layui-btn" data-type="" href="/system/rbac/auth_add"><i class="layui-icon">&#xe608;</i>添加权限</a>
   <button class="layui-btn" data-type=""><i class="layui-icon">&#xe640;</i>删除选中</button>
 </div>
-<table class="layui-table" lay-data="{url:'/system/rbac/roledata', page:true, id:'roles'}" lay-filter="demo">
+<table class="layui-table" lay-data="{url:'/system/rbac/auth_page', page:true}" lay-filter="demo">
   <thead>
     <tr>
       <th lay-data="{checkbox:true}"></th>
-      <th lay-data="{field:'id', width:100, sort: true}">角色ID</th>
-      <th lay-data="{field:'name', width:180}">角色名</th>
-      <th lay-data="{field:'description', width:360}">角色描述</th>
-      <th lay-data="{field:'create_time', width:360}">创建时间</th>
+      <th lay-data="{field:'auth_id', width:100, sort: true}">权限ID</th>
+      <th lay-data="{field:'auth_name', width:150}">权限名</th>
+      <th lay-data="{field:'auth_m', width:150}">模块名称</th>
+      <th lay-data="{field:'auth_c', width:150}">控制器名称</th>
+      <th lay-data="{field:'auth_a', width:150}">方法名称</th>
+      <th lay-data="{field:'auth_pid', width:100}">上级权限的ID，0：代表顶级权限</th>
+      <th lay-data="{field:'create_time', width:160}">创建时间</th>
       <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#toolbar'}">操作</th>
     </tr>
   </thead>

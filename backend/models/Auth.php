@@ -40,4 +40,57 @@ class Auth extends BaseModel
         }
         return false;
     }
+
+    public function getAuthsByPager($offset,$limit){
+        return self::find()->offset($offset)->limit($limit)->all();
+    }
+    /************************************* 递归相关方法 *************************************/
+    /**
+     * 递归获取权限树
+     * 
+     */
+	public function getTree()
+	{
+        $result = self::find()->asArray()->all();
+		return $this->_reSort($result);
+    }
+    
+    private function _reSort($data, $auth_pid=0, $level=0, $isClear=TRUE)
+	{
+		static $ret = array();
+		if($isClear)
+            $ret = array();
+		foreach ($data as $k => $v)
+		{
+			if($v['auth_pid'] == $auth_pid)
+			{
+				$v['level'] = $level;
+				$ret[] = $v;
+				$this->_reSort($data, $v['auth_id'], $level+1, FALSE);
+			}
+		}
+		return $ret;
+    }
+    
+    public function getChildren($auth_id)
+	{
+		$data = self::find()->asArray()->all();
+		return $this->_children($data, $auth_id);
+    }
+    
+	private function _children($data, $parent_id=0, $isClear=TRUE)
+	{
+		static $ret = array();
+		if($isClear)
+			$ret = array();
+		foreach ($data as $k => $v)
+		{
+			if($v['auth_pid'] == $parent_id)
+			{
+				$ret[] = $v['auth_id'];
+				$this->_children($data, $v['auth_id'], FALSE);
+			}
+		}
+		return $ret;
+	}
 }

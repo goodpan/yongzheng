@@ -37,11 +37,16 @@ $this->title = '添加权限';
         <h6>操作提示</h6>
         <p>网站系统角色, 由总平台设置管理.</p>
     </blockquote>
+    <?php
+        if (Yii::$app->session->hasFlash('info')) {
+            echo '<script>alert("'.Yii::$app->session->getFlash('info').'");window.history.go(-1);</script>';
+        }
+    ?>
     <form class="layui-form" action="/system/rbac/auth_add">
         <div class="layui-form-item">
             <label class="layui-form-label">上级权限<em>*</em></label>
             <div class="layui-input-block">
-                <select name="auth_pid" lay-verify="required">
+                <select name="auth_pid" lay-verify="required"  layui-value="<?=$auth['auth_pid']?>">
                     <option value="">请选择上级权限</option>';
                     <option value="0">顶级权限</option>';
                     <?php foreach ($parentData as $k => $v): ?>						
@@ -55,25 +60,25 @@ $this->title = '添加权限';
         <div class="layui-form-item">
             <label class="layui-form-label">权限名称<em>*</em></label>
             <div class="layui-input-block">
-                <input type="text" name="auth_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="auth_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input"  value="<?=$auth['auth_name']?>">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">模块名<em>*</em></label>
             <div class="layui-input-block">
-                <input type="text" name="auth_m" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="auth_m" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input" value="<?=$auth['auth_m']?>">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">控制器名<em>*</em></label>
             <div class="layui-input-block">
-                <input type="text" name="auth_c" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="auth_c" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input"  value="<?=$auth['auth_c']?>">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">方法名<em>*</em></label>
             <div class="layui-input-block">
-                <input type="text" name="auth_a" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="auth_a" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input"  value="<?=$auth['auth_a']?>">
             </div>
         </div>
 
