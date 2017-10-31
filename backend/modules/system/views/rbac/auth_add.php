@@ -99,17 +99,15 @@ $this->title = '添加权限';
 
             //监听提交
             form.on('submit(auth_add)', function(data){
-                layer.alert(JSON.stringify(data.field));
-                console.log(JSON.stringify(data.field));return;
-//                $.post('/system/rbac/auth_add',data.field,function (res) {
-//                    if(res.code>0){
-//                        layer.alert(res.msg);
-//                        window.location.reload()
-//                    }else{
-//                        layer.alert(res.error);
-//                    }
-//                })
-//                return false;
+                $.post('/system/rbac/auth_add',data.field,function (res) {
+                    if(res.code>0){
+                        layer.alert(res.msg);
+                        window.location.reload()
+                    }else{
+                        layer.alert(res.error);
+                    }
+                })
+                return false;
             });
         });
     </script>

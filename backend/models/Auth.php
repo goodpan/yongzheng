@@ -93,4 +93,57 @@ class Auth extends BaseModel
 		}
 		return $ret;
 	}
+
+    public function setPrefix($data, $p = "|-----")
+    {
+        $tree = [];
+        $num = 1;
+        $prefix = [0 => 1];
+        while($val = current($data)) {
+            $key = key($data);
+            if ($key > 0) {
+                if ($data[$key - 1]['parentid'] != $val['parentid']) {
+                    $num ++;
+                }
+            }
+            if (array_key_exists($val['parentid'], $prefix)) {
+                $num = $prefix[$val['parentid']];
+            }
+            $val['title'] = str_repeat($p, $num).$val['title'];
+            $prefix[$val['parentid']] = $num;
+            $tree[] = $val;
+            next($data);
+        }
+        return $tree;
+    }
+
+    public function getOptions()
+    {
+        $data = $this->getData();
+        $tree = $this->getTree($data);
+        $tree = $this->setPrefix($tree);
+        $options = ['添加顶级分类'];
+        foreach($tree as $cate) {
+            $options[$cate['cateid']] = $cate['title'];
+        }
+        return $options;
+    }
+
+    public function getTreeList()
+    {
+        $data = $this->getData();
+        $tree = $this->getTree($data);
+        return $tree = $this->setPrefix($tree);
+    }
+
+    public static function getMenu()
+    {
+        $top = self::find()->where('parentid = :pid', [":pid" => 0])->limit(11)->orderby('createtime asc')->asArray()->all();
+        $data = [];
+        foreach((array)$top as $k=>$cate) {
+            $cate['children'] = self::find()->where("parentid = :pid", [":pid" => $cate['cateid']])->limit(10)->asArray()->all();
+            $data[$k] = $cate;
+        }
+        return $data;
+    }
 }
