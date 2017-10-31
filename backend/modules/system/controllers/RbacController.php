@@ -117,7 +117,9 @@ class RbacController extends BaseController{
      * 添加角色
      */
     public function actionRole_add(){
-        return $this->render('role_add');
+        $model = new Auth();
+        $auth_list = $model->getTree();
+        return $this->render('role_add',['auth_list'=>$auth_list]);
     }
     /**
      * 添加、编辑角色

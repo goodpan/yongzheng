@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>雍正网后台管理系统-登录</title>
@@ -25,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <link rel="stylesheet" href="/css/layui.css" media="all">
     <link rel="stylesheet" href="/css/login.css" media="all">
 </head>
-
 <body class="site-home" id="LAY_home" style="background-image: linear-gradient(180deg,#0e81a5 0%,#1a1454  100%);">
 <div class="layui-header header header-index">
     <div class="layui-main">
@@ -141,9 +139,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <script>
     $(function(){
         var banner = $(".banner-row");
+        var inWidth = $(window).innerWidth();
+        var inHeight = $(window).innerHeight();
         banner.on("mousemove", function(e) {
-            var ax = ($(window).innerWidth() / 2 - e.pageX) / 50;
-            var ay = -($(window).innerHeight() / 2 - e.pageY) / 50;
+            var ax = -( inWidth/ 2 - e.pageX) / 80;
+            var ay = -( inHeight/ 2 - e.pageY) / 80;
             $(this).attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
         });
     })

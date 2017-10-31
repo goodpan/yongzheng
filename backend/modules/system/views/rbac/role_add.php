@@ -53,60 +53,17 @@ $this->title = '添加角色';
 </fieldset>
 <div class="layui-form-item" pane="">
     <div class="label-title">
-        <label class="layui-form-label">内容管理</label>
-        <input type="checkbox" name="like1[write]" title="全部" lay-skin="primary">
+        <label class="layui-form-label"></label>
+        <!-- <input type="checkbox" name="like1[write]" title="全部" lay-skin="primary"> -->
     </div>
     <div class="layui-input-block input-group">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
+    <?php foreach ($auth_list as $k => $v): ?>
+      <span style="color:#e3e3e3;"><?php echo str_repeat('_', $v['level'] * 4); ?></span>
+       <input lay-skin="primary" level="<?=$v['level']?>" type="checkbox" name="auth_id[]" value="<?=$v['auth_id']?>" title="<?=$v['auth_name']?>"><br>
+    <?php endforeach; ?>
     </div>
 </div>
-<div class="layui-form-item" pane="">
-    <div class="label-title">
-        <label class="layui-form-label">内容管理</label>
-        <input type="checkbox" name="like1[write]" title="全部" lay-skin="primary">
-    </div>
-    <div class="layui-input-block input-group">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-    </div>
-</div>
+
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 </fieldset>
 <div class="layui-form-item">
