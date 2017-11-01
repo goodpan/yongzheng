@@ -19,6 +19,7 @@ class Auth extends BaseModel
     public function rules()
     {
         return [
+            ['auth_pid','safe'],
             ['auth_name', 'required', 'message' => '权限名不能为空'],
             ['auth_m', 'required', 'message' => '模块名不能为空'],
             ['auth_c', 'required', 'message' => '控制器名不能为空'],
@@ -72,7 +73,7 @@ class Auth extends BaseModel
 		return $ret;
     }
     
-    public function getChildren($auth_id)
+    public function getChildren($auth_id=0)
 	{
 		$data = self::find()->asArray()->all();
 		return $this->_children($data, $auth_id);
@@ -94,6 +95,9 @@ class Auth extends BaseModel
 		return $ret;
 	}
 
+    /** 设置权限等级格式
+     * 
+     */
     public function setPrefix($data, $p = "|-----")
     {
         $tree = [];
@@ -102,15 +106,15 @@ class Auth extends BaseModel
         while($val = current($data)) {
             $key = key($data);
             if ($key > 0) {
-                if ($data[$key - 1]['parentid'] != $val['parentid']) {
+                if ($data[$key - 1]['auth_pid'] != $val['auth_pid']) {
                     $num ++;
                 }
             }
-            if (array_key_exists($val['parentid'], $prefix)) {
-                $num = $prefix[$val['parentid']];
+            if (array_key_exists($val['auth_pid'], $prefix)) {
+                $num = $prefix[$val['auth_pid']];
             }
-            $val['title'] = str_repeat($p, $num).$val['title'];
-            $prefix[$val['parentid']] = $num;
+            $val['auth_name'] = str_repeat($p, $num).$val['auth_name'];
+            $prefix[$val['auth_pid']] = $num;
             $tree[] = $val;
             next($data);
         }
@@ -136,14 +140,22 @@ class Auth extends BaseModel
         return $tree = $this->setPrefix($tree);
     }
 
+    /**获取权限树菜单
+     * 
+     */
     public static function getMenu()
     {
-        $top = self::find()->where('parentid = :pid', [":pid" => 0])->limit(11)->orderby('createtime asc')->asArray()->all();
+        $top = self::find()->where('auth_pid = :pid', [":pid" => 0])->orderby('create_time asc')->asArray()->all();
         $data = [];
-        foreach((array)$top as $k=>$cate) {
-            $cate['children'] = self::find()->where("parentid = :pid", [":pid" => $cate['cateid']])->limit(10)->asArray()->all();
-            $data[$k] = $cate;
+        foreach((array)$top as $k=>$auth) {
+            $auth['children'] = self::find()->where("auth_pid = :pid", [":pid" => $auth['auth_id']])->asArray()->all();
+            $data[$k] = $auth;
         }
         return $data;
     }
+
+    public function getAllTree(){
+        $result = self::find()->asArray()->all();
+    }
+
 }

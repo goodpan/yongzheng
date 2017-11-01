@@ -31,7 +31,6 @@ $this->title = '权限列表';
 </table>
  
 <script type="text/html" id="toolbar">
-  <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>
   <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
   <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
 </script>
@@ -46,15 +45,14 @@ layui.use('table', function(){
   //监听工具条
   table.on('tool(demo)', function(obj){
     var data = obj.data;
-    if(obj.event === 'detail'){
-      layer.msg('ID：'+ data.role_id + ' 的查看操作');
-    } else if(obj.event === 'del'){
+    if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
         obj.del();
         layer.close(index);
       });
     } else if(obj.event === 'edit'){
-      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+      var auth_id = data['auth_id'];
+      location.href = '/system/rbac/auth_edit?auth_id='+auth_id;
     }
   });
   

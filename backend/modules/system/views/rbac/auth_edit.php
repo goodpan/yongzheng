@@ -46,13 +46,11 @@ $this->title = '添加权限';
         <div class="layui-form-item">
             <label class="layui-form-label">上级权限<em>*</em></label>
             <div class="layui-input-block">
-                <select name="auth_pid" lay-verify="required"  layui-value="<?=$auth['auth_pid']?>">
+                <select name="auth_pid" lay-verify="required">
                     <option value="">请选择上级权限</option>';
-                    <option value="0">顶级权限</option>';
+                    <option value="0" <?=$auth['auth_pid']==0?'selected':''?>>顶级权限</option>';
                     <?php foreach ($parentData as $k => $v): ?>						
-                        <option value="<?php echo $v['auth_id']; ?>">
-                            <?php echo str_repeat('&nbsp;', 4*$v['level']).$v['auth_name']; ?>
-                        </option>
+                        <option value="<?php echo $v['auth_id']; ?>"<?=$auth['auth_pid']==$v['auth_id']?'selected':''?>><?php echo str_repeat('&nbsp;', 4*$v['level']).$v['auth_name']; ?></option>
                     <?php endforeach; ?>	
                 </select>
             </div>

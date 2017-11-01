@@ -45,9 +45,7 @@ $this->title = '添加权限';
                     <option value="">请选择上级权限</option>';
                     <option value="0">添加顶级权限</option>';
                     <?php foreach ($parentData as $k => $v): ?>						
-                        <option value="<?php echo $v['auth_id']; ?>" data-level="<?php echo $v['level']?>">
-                            <?php echo str_repeat('-', 4*$v['level']).$v['auth_name']; ?>
-                        </option>
+                        <option value="<?php echo $v['auth_id']; ?>" data-level="<?php echo $v['level']?>"><?php echo str_repeat('&nbsp;', 4*$v['level']).$v['auth_name']; ?></option>
                     <?php endforeach; ?>	
                 </select>
             </div>

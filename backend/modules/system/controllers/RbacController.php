@@ -118,7 +118,7 @@ class RbacController extends BaseController{
      */
     public function actionRole_add(){
         $model = new Auth();
-        $auth_list = $model->getTree();
+        $auth_list = $model->getMenu();
         return $this->render('role_add',['auth_list'=>$auth_list]);
     }
     /**
