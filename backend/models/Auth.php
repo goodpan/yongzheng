@@ -160,20 +160,20 @@ class Auth extends BaseModel
     /** 获取权限树菜单
      * 
      */
-    public function getTreeMenu(){
+    public function getAuthsFullTree(){
         $data = $this->getData();
-        $res = $this->getTreeNodes($data);
+        $res = $this->getAuthsTreeNodes($data);
         return $res;
     }
 
     /** 获取树节点
      * 
      */
-    public function getTreeNodes($data,$pid=0){  
+    public function getAuthsTreeNodes($data,$pid=0){
         $tree = array();//每次都声明一个新数组用来放子元素  
         foreach($data as $v){  
             if($v['auth_pid'] == $pid){//匹配子记录  
-                $v['children'] = $this->getTreeNodes($data,$v['auth_id']); //递归获取子记录  
+                $v['children'] = $this->getAuthsTreeNodes($data,$v['auth_id']); //递归获取子记录
                 if($v['children'] == null){  
                     unset($v['children']);//如果子元素为空则unset()进行删除，说明已经到该分支的最后一个元素了（可选）  
                 }  

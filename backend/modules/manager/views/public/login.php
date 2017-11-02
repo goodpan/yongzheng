@@ -43,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="login-inner">
             <div class="site-zfj">
                 <div class="site-info">
+                    后台管理系统
                 </div>
             </div>
             <div class="lg-content">
@@ -92,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?= Html::submitButton('登录', ['class' => 'qc-log-btn layui-btn', 'name' => 'login-button']) ?>
                                     <?php echo $form->field($model, 'rememberMe')->checkbox([
                                         'id' => 'remember-me',
-                                        'template' => '<div class="remember">{input}<label for="remember-me">记住我</label></div>',
+                                        'template' => '<div class="remember">{input}<label for="remember-me" style="color:#333">记住我</label></div>',
                                     ]); ?>
                                     <div class="psw-info">
                                         <a href="<?=\yii\helpers\Url::to(['/manager/public/seekpassword'])?>" class="forgot-psw J-link" hotrep="login.pc.forgotPwd">忘记密码？</a>

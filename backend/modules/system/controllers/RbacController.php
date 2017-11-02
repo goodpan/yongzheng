@@ -10,7 +10,7 @@ namespace backend\modules\system\controllers;
 
 use backend\controllers\BaseController;
 use backend\models\Auth;
-use phpDocumentor\Reflection\Types\Parent_;
+use backend\logics\UnLimitTree;
 
 /** 权限管理控制器
  * Class RcbcController
@@ -118,7 +118,8 @@ class RbacController extends BaseController{
      */
     public function actionRole_add(){
         $model = new Auth();
-        $auth_list = $model->getTreeMenu();
+        $data = $model->getData();
+        $auth_list = UnLimitTree::getAuthsFullTree($data);
         return $this->render('role_add',['auth_list'=>$auth_list]);
     }
     /**
