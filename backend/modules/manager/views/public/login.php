@@ -24,7 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <link rel="stylesheet" href="/css/layui.css" media="all">
     <link rel="stylesheet" href="/css/login.css" media="all">
 </head>
-<body class="site-home" id="LAY_home" style="background-image: linear-gradient(180deg,#0e81a5 0%,#1a1454  100%);">
+<body class="site-home">
+<div class="index-main" id="index-main">
 <div class="layui-header header header-index">
     <div class="layui-main">
         <a class="logo" href="/">
@@ -36,28 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </ul>
     </div>
 </div>
-<div class="site-banner" >
-    <div class="site-banner-bg">
-    <div class="baner-wrap">
-            <div banner-container class="banner-container" >
-                <div data-group class="center animating-enter-up">
-                    <div data-base-layer>
-                        <div class="banner-row" data-parallel="">
-                            <div class="layer right-image hover-image  no-transition" data-zindex="50" style="transform: translateZ(50px);">
-                                <img src="https://img.alicdn.com/tfs/TB1X6tlrgMPMeJjy1XbXXcwxVXa-1600-880.png" alt="">
-                            </div>
-                            <div class="layer right-image hover-image  no-transition" data-zindex="100" style="transform: translateZ(100px);">
-                                <img src="https://img.alicdn.com/tfs/TB1FiVBmvBNTKJjy0FdXXcPpVXa-1600-880.png" alt="">
-                            </div>
-                            <div class="layer right-image hover-image  no-transition" data-zindex="150" style="transform: translateZ(150px);">
-                                <img src="https://img.alicdn.com/tfs/TB1rpm4mWagSKJjy0FaXXb0dpXa-1600-880.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="site-banner-bg" id="particles-js">   </div>
+<div class="site-banner">
     <div class="site-banner-main">
         <div class="login-inner">
             <div class="site-zfj">
@@ -135,19 +116,121 @@ $this->params['breadcrumbs'][] = $this->title;
         </p>
     </div>
 </div>
-<script src="/js/jquery.min.js"></script>
+</div>
+<script src="/js/particles.min.js"></script>
 <script>
-    $(function(){
-        var banner = $(".banner-row");
-        var inWidth = $(window).innerWidth();
-        var inHeight = $(window).innerHeight();
-        banner.on("mousemove", function(e) {
-            var ax = -( inWidth/ 2 - e.pageX) / 80;
-            var ay = -( inHeight/ 2 - e.pageY) / 80;
-            $(this).attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
-        });
-    })
-    
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 1800
+      }
+    },
+    "color": {
+      "value": "#e3e3e3"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.1,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 15,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 200,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 3,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+
 </script>
 </body>
 </html>

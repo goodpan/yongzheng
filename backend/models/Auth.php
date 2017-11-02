@@ -47,12 +47,12 @@ class Auth extends BaseModel
     }
     /************************************* 递归相关方法 *************************************/
     /**
-     * 递归获取权限树
+     * 递归获取权限树(按权限等级进行排序)
      * 
      */
 	public function getTree()
 	{
-        $result = self::find()->asArray()->all();
+        $result = $this->getData();
 		return $this->_reSort($result);
     }
     
@@ -75,7 +75,7 @@ class Auth extends BaseModel
     
     public function getChildren($auth_id=0)
 	{
-		$data = self::find()->asArray()->all();
+		$data = $this->getData();
 		return $this->_children($data, $auth_id);
     }
     
@@ -120,6 +120,9 @@ class Auth extends BaseModel
         }
         return $tree;
     }
+    public function getData(){
+        return self::find()->asArray()->all();
+    }
 
     public function getOptions()
     {
@@ -154,8 +157,29 @@ class Auth extends BaseModel
         return $data;
     }
 
-    public function getAllTree(){
-        $result = self::find()->asArray()->all();
+    /** 获取权限树菜单
+     * 
+     */
+    public function getTreeMenu(){
+        $data = $this->getData();
+        $res = $this->getTreeNodes($data);
+        return $res;
     }
 
+    /** 获取树节点
+     * 
+     */
+    public function getTreeNodes($data,$pid=0){  
+        $tree = array();//每次都声明一个新数组用来放子元素  
+        foreach($data as $v){  
+            if($v['auth_pid'] == $pid){//匹配子记录  
+                $v['children'] = $this->getTreeNodes($data,$v['auth_id']); //递归获取子记录  
+                if($v['children'] == null){  
+                    unset($v['children']);//如果子元素为空则unset()进行删除，说明已经到该分支的最后一个元素了（可选）  
+                }  
+                $tree[] = $v;//将记录存入新数组  
+            }  
+        }  
+        return $tree;//返回新数组  
+    } 
 }
