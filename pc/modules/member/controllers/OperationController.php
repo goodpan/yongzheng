@@ -15,6 +15,7 @@ use pc\models\Tesr;
  * @package pc\modules\member\controllers
  */
 class OperationController extends BaseController{
+    public $enableCsrfValidation = false;
     public function actionIndex(){
         echo 'menber index';
     }
@@ -27,5 +28,23 @@ class OperationController extends BaseController{
     public function actionBusiness(){
         $this->layout='@app/views/layouts/main.php';
         return $this->render('business');
+    }
+
+    /**
+     * 保存商家入驻信息
+     */
+    public function actionBusinessinfosave(){
+        echo '<pre>';
+        print_r(\Yii::$app->request->post());
+        print_r($_FILES['file3']);
+    }
+
+    /**
+     * 图片保存
+     */
+    public function actionImagesave(){
+        echo '<pre>';
+        print_r(\Yii::$app->request->post());
+        echo $_FILES["file"]["file"];
     }
 }

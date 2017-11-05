@@ -97,6 +97,7 @@ ul {
 }
 
 .item-1 {
+    clear: both;
     width: 100%;
     height: 100px;
 
@@ -120,10 +121,13 @@ ul {
     border-radius: 5px;
 }
 .input-file{
+    padding-left: 3px;
+    padding-top: 23px;
     margin-left: 10px;
 }
 
 .container-main-foot img {
+    float:left;
     margin-top: 22px;
     margin-left: 15px;
     height: 80px;
