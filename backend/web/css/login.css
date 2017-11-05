@@ -1,7 +1,37 @@
 html {
-    background-color: #373d41 !important;
+    width: 100%;
     height: 100%;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default
+}
+
+.cube {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    /* Other transform properties here */
+}
+
+
 /* 布局 */
 
 .site-inline {
@@ -35,7 +65,7 @@ html {
 .header {
     height: 59px;
     border-bottom: 1px solid #404553;
-    background-color: #393D49;
+    /* background-color: #393D49; */
 }
 
 .logo {
@@ -116,8 +146,8 @@ html {
 }
 
 .header-index {
-    background-color: #0A0E11;
-    background-color: #100903;
+    /* background-color: #0A0E11;
+    background-color: #100903; */
     border: none;
 }
 
@@ -242,7 +272,7 @@ body .layui-layout-admin .footer-demo {
     height: 600px;
     text-align: center;
     overflow: hidden;
-    background-color: #393D49;
+    /* background-color: #393D49; */
 }
 
 .site-banner-bg,
@@ -254,8 +284,14 @@ body .layui-layout-admin .footer-demo {
     height: 100%;
 }
 
-.site-banner-bg {
-    background-position: center 0;
+.index-main {
+    text-align: center;
+    background-image: linear-gradient(135deg, #009688 0%, #000 100%);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .site-zfj {
@@ -1457,13 +1493,13 @@ body .site-demo-nav .layui-nav-item {
 }
 
 .footer-index {
-    background: #373d41;
+    /* background: #373d41; */
 }
 
 .footer-index p,
 .footer-index a {
     /* color: #73777a; */
-    color: #999;
+    color: #fff;
 }
 
 
@@ -1479,7 +1515,8 @@ body .site-demo-nav .layui-nav-item {
 .lg-content {
     position: absolute;
     right: 40px;
-    top: 120px;
+    top: 160px;
+    z-index: 999;
 }
 
 .qc-pt-login-content {
@@ -1641,13 +1678,16 @@ select {
     padding-top: 11px;
     padding-bottom: 9px;
 }
-.field-remember-me{
-    float:left;
+
+.field-remember-me {
+    float: left;
     margin-top: 15px;
 }
-.field-remember-me label:hover{
+
+.field-remember-me label:hover {
     cursor: pointer;
 }
+
 
 /*找回密码*/
 

@@ -21,40 +21,11 @@ $this->title = '添加角色';
 .form-wrap .layui-form{
   padding-right:30px;
 }
+.sub-input-block{
+  padding-left:50px;
+}
 </style>
-<?php $this->beginBlock('sitebar')?>
-    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-    <ul class="layui-nav layui-nav-tree" lay-filter="test">
-      <li class="layui-nav-item">
-        <a class="" href="javascript:;">设置</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">网站设置</a></dd>
-          <dd><a href="javascript:;">友情链接</a></dd>
-          <dd><a href="javascript:;">短信设置</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item <?=$this->context->id == 'operation'?'layui-nav-itemed':''?>">
-        <a href="javascript:;">管理员设置</a>
-        <dl class="layui-nav-child">
-          <dd class="<?=$this->context->action->id == 'managers'?'layui-this':''?>"><a href="/manager/operation/managers">管理员列表</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item <?=$this->context->id == 'rbac'?'layui-nav-itemed':''?>">
-        <a href="javascript:;">权限管理</a>
-        <dl class="layui-nav-child">
-          <dd class="<?=$this->context->action->id == 'role_add'?'layui-this':''?>"><a href="/system/rbac/roles">角色管理</a></dd>
-          <dd class="<?=$this->context->action->id == 'auths'?'layui-this':''?>"><a href="/system/rbac/auths">权限列表</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item">
-        <a href="javascript:;">数据</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">清除缓存</a></dd>
-          <dd><a href="javascript:;">数据备份</a></dd>
-        </dl>
-      </li>
-    </ul>
-<?php $this->endBlock('sitebar')?>
+
 <div class="breadcrumb">
     <span class="layui-breadcrumb" lay-separator="-">
         <a href="/console/overview/index">首页</a>
@@ -64,87 +35,43 @@ $this->title = '添加角色';
 </div>
 
 <div class="form-wrap"></div>
-<form class="layui-form" action="">
+<form class="layui-form" action="" id="roleForm">
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
   <legend>角色信息</legend>
 </fieldset>
   <div class="layui-form-item">
-    <label class="layui-form-label">角色名称</label>
+    <label class="layui-form-label">角色名称<em>*</em></label>
     <div class="layui-input-block">
-      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      <input type="text" name="role_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item layui-form-text">
     <label class="layui-form-label">角色描述</label>
     <div class="layui-input-block">
-      <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+      <textarea name="role_desc" placeholder="请输入内容" class="layui-textarea"></textarea>
     </div>
   </div>
   <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-  <legend>权限分配</legend>
+  <legend>权限分配<em style="color:#ff0000">*</em></legend>
 </fieldset>
-<div class="layui-form-item" pane="">
-    <div class="label-title">
-        <label class="layui-form-label">内容管理</label>
-        <input type="checkbox" name="like1[write]" title="全部" lay-skin="primary">
-    </div>
-    <div class="layui-input-block input-group">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-    </div>
-</div>
-<div class="layui-form-item" pane="">
-    <div class="label-title">
-        <label class="layui-form-label">内容管理</label>
-        <input type="checkbox" name="like1[write]" title="全部" lay-skin="primary">
-    </div>
-    <div class="layui-input-block input-group">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-      <input type="checkbox" name="like1[write]" title="广告列表" lay-skin="primary">
-      <input type="checkbox" name="like1[read]" title="广告位管理" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章列表(文章管理)" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="文章分类" lay-skin="primary">
-      <input type="checkbox" name="like1[game]" title="专题列表" lay-skin="primary">
-    </div>
-</div>
+<?php foreach ($auth_list as $k => $auths): ?>
+  <div class="layui-form-item" pane="">
+      <div class="layui-input-block">
+          <input lay-filter="checkall" type="checkbox" name="auth_id[]" lay-skin="primary" value="<?=$auths['auth_id']?>" title="<?=$auths['auth_name']?>">
+      </div>
+      <div class="layui-input-block sub-input-block">
+      <?php foreach ($auths['children'] as $k2 => $auth): ?>
+          <input  lay-filter="subcheckbox" lay-skin="primary" type="checkbox" name="auth_id[]" value="<?=$auth['auth_id']?>" title="<?=$auth['auth_name']?>">
+      <?php endforeach; ?>
+      </div>
+  </div>
+<?php endforeach; ?>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 </fieldset>
 <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn" lay-submit="" lay-filter="demo1">确认提交</button>
-      <a class="layui-btn" data-type="cancel" href="/system/rbac/roles">取消</a>
+      <button class="layui-btn" lay-submit="" lay-filter="role_add">确认提交</button>
+      <a class="layui-btn" data-type="cancel" href="javascript:window.history.go(-1)">取消</a>
     </div>
 </div>
 </form>
@@ -152,14 +79,37 @@ $this->title = '添加角色';
 <?php $this->beginBlock('jsblock')?>  
 <script>
 layui.use('form', function(){
-  var $ = layui.$, active = {
+  var $ = layui.$,form=layui.form,active = {
     
   };
-  
+  form.on('checkbox(checkall)', function(data){
+    var isChecked = data.elem.checked;
+    var cbSubList = $(this).closest('.layui-form-item').find('.layui-input-block').find('input[type="checkbox"]');
+    var cbWrap =  $(this).closest('.layui-form-item').find('.layui-input-block').find('.layui-form-checkbox');
+    cbSubList.prop('checked',isChecked);
+    isChecked?cbWrap.addClass('layui-form-checked'):cbWrap.removeClass('layui-form-checked');
+  });  
+  form.on('checkbox(subcheckbox)', function(data){
+
+  });
   $('.layui-btn').on('click', function(){
     var type = $(this).data('type');
     active[type] ? active[type].call(this) : '';
   });
+
+  //监听提交
+  form.on('submit(role_add)', function(data){
+        console.log($('#roleForm').serialize());
+        // $.post('/system/rbac/auth_add',data.field,function (res) {
+        //     if(res.code>0){
+        //         layer.alert(res.msg);
+        //         window.location.reload()
+        //     }else{
+        //         layer.alert(res.error); 
+        //     }
+        // })
+        return false;
+    });
 });
 </script>
 <?php $this->endBlock('jsblock') ?>

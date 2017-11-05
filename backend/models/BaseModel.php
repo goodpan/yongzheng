@@ -17,4 +17,8 @@ class BaseModel extends ActiveRecord{
     public function getCount(){
         return self::find()->count();
     }
+
+    public function getOneById($field,$id){
+        return self::find()->where([$field=>$id])->one();
+    }
 }

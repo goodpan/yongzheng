@@ -22,7 +22,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -49,7 +48,7 @@ AppAsset::register($this);
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    admin
+                    <?=\Yii::$app->session['admin']['admin_user']?>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="<?=Url::to('/manager/operation/baseinfo')?>">基本资料</a></dd>
@@ -57,6 +56,7 @@ AppAsset::register($this);
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="<?=Url::to(['/manager/public/logout'])?>">退出</a></li>
+
         </ul>
     </div>
     <div class="layui-side layui-bg-black">
