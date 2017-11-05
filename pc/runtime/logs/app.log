@@ -11229,3 +11229,574 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1509808899.8407
     'REQUEST_TIME' => 1509808899
 ]
+2017-11-05 03:31:27 [127.0.0.1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: file in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:48
+Stack trace:
+#0 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(48): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\wwwroot\\yong...', 48, Array)
+#1 [internal function]: pc\modules\member\controllers\OperationController->actionImagesave()
+#2 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('imagesave', Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-11-05 03:31:27 [127.0.0.1][-][-][info][application] $_POST = [
+    'file' => 'undefined'
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/imagesave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/imagesave'
+    'REMOTE_PORT' => '57930'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygVUV5GvKlW6IT0Zs'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'CONTENT_LENGTH' => '144'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509852687.4398
+    'REQUEST_TIME' => 1509852687
+]
+2017-11-05 03:31:47 [127.0.0.1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: file in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:48
+Stack trace:
+#0 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(48): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\wwwroot\\yong...', 48, Array)
+#1 [internal function]: pc\modules\member\controllers\OperationController->actionImagesave()
+#2 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('imagesave', Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-11-05 03:31:47 [127.0.0.1][-][-][info][application] $_POST = [
+    'file' => 'undefined'
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/imagesave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/imagesave'
+    'REMOTE_PORT' => '57973'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary1pCCNXaE8CKFTS4F'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '144'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509852707.7107
+    'REQUEST_TIME' => 1509852707
+]
+2017-11-05 03:40:15 [127.0.0.1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: file3 in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:39
+Stack trace:
+#0 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(39): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\wwwroot\\yong...', 39, Array)
+#1 [internal function]: pc\modules\member\controllers\OperationController->actionBusinessinfosave()
+#2 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('businessinfosav...', Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-11-05 03:40:15 [127.0.0.1][-][-][info][application] $_POST = [
+    'comp-name' => ''
+    'user-name' => ''
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2744'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/businessinfosave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/businessinfosave'
+    'REMOTE_PORT' => '58925'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_CSRF_TOKEN' => 'CvBvTv9ad5O5LJJ4WYrhVyOptG9xeqxuSszyhEUYOtvwRyj50KMgCefPTrkwxwD3ogM0qb3hS1zH-5AbHcTFlg=='
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'CONTENT_LENGTH' => '21'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509853215.5232
+    'REQUEST_TIME' => 1509853215
+]
+2017-11-05 04:52:35 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-05 04:52:35 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2804'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/undefined'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/undefined'
+    'REMOTE_PORT' => '65434'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'HTTP_ACCEPT' => 'image/webp,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509857555.1519
+    'REQUEST_TIME' => 1509857555
+]
+2017-11-05 07:42:11 [127.0.0.1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: file_get_contents() expects parameter 1 to be a valid path, array given in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:55
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'file_get_conten...', 'E:\\wwwroot\\yong...', 55, Array)
+#1 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(55): file_get_contents(Array)
+#2 [internal function]: pc\modules\member\controllers\OperationController->actionImagesave()
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('imagesave', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#7 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2017-11-05 07:42:11 [127.0.0.1][-][-][info][application] $_FILES = [
+    'file' => [
+        'name' => '57a81a5f71931.jpg'
+        'type' => 'image/jpeg'
+        'tmp_name' => 'C:\\Windows\\php6C39.tmp'
+        'error' => 0
+        'size' => 579080
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2936'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/imagesave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/imagesave'
+    'REMOTE_PORT' => '57299'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary31OsAStCKkx88z97'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_CSRF_TOKEN' => 'URzcW7JnfiWFuf2IDDWOSBUL8Fi6Eo2zq6hwVws5T6Crq5vsnZ4pv9taIUlleG_olKFwnnaJaoEmnxLIU-Ww7Q=='
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'CONTENT_LENGTH' => '579271'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509867731.3625
+    'REQUEST_TIME' => 1509867731
+]
+2017-11-05 07:44:10 [127.0.0.1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: file in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:54
+Stack trace:
+#0 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(54): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\wwwroot\\yong...', 54, Array)
+#1 [internal function]: pc\modules\member\controllers\OperationController->actionImagesave()
+#2 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('imagesave', Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-11-05 07:44:10 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2936'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/imagesave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/imagesave'
+    'REMOTE_PORT' => '57518'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_TYPE' => 'text/plain;charset=UTF-8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_CSRF_TOKEN' => 'A0S_gIbjWhrugRiZLjEba9uu0EmwmrAkjy_hCPHvCrD58_g3qRoNgLBixFhHfPrLWgRQj3wBVxYCGIOXqTP1_Q=='
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'CONTENT_LENGTH' => '871599'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509867850.4353
+    'REQUEST_TIME' => 1509867850
+]
+2017-11-05 07:46:25 [127.0.0.1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: file in E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php:54
+Stack trace:
+#0 E:\wwwroot\yongzheng\pc\modules\member\controllers\OperationController.php(54): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\wwwroot\\yong...', 54, Array)
+#1 [internal function]: pc\modules\member\controllers\OperationController->actionImagesave()
+#2 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#4 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('imagesave', Array)
+#5 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('member/operatio...', Array)
+#6 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-11-05 07:46:25 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '2936'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/imagesave'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/imagesave'
+    'REMOTE_PORT' => '57778'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/business'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_TYPE' => 'text/plain;charset=UTF-8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_X_CSRF_TOKEN' => 'PgQ2HAj_8kyM-GjwXfXH4HE6I50OgWyg1yltcY0H17jEs3GrJwal1tIbtDE0uCZA8JCjW8Iai5JaHg_u1dso9Q=='
+    'HTTP_ORIGIN' => 'http://www.yongzheng.dev'
+    'CONTENT_LENGTH' => '15280'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509867985.5267
+    'REQUEST_TIME' => 1509867985
+]
+2017-11-05 08:13:38 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-05 08:13:38 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '3076'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/css/login.css'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/css/login.css'
+    'REMOTE_PORT' => '61591'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509869618.2391
+    'REQUEST_TIME' => 1509869618
+]
+2017-11-05 08:13:39 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in E:\wwwroot\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\wwwroot\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wwwroot\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-05 08:13:39 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú·G·/ùWš^ãÜÁiMá ª€ÆÌ›ç27bŸXÜÿM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\lc\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php/php-7.0.12-nts/'
+    '_FCGI_SHUTDOWN_EVENT_' => '3076'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '61592'
+    'SCRIPT_FILENAME' => 'E:/wwwroot/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/wwwroot/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=db9d86342f3b3f984f02c10f8b51a464825e38c3c066fdec5c0c1bb4bb247b00a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%B7G%B7%2F%F9W%9A%5E%E3%DC%C1iM%E1%A0%81%AA%80%C6%CC%9B%E72%8D7b%9FX%DC%FFM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3004.3 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1509869619.2445
+    'REQUEST_TIME' => 1509869619
+]
