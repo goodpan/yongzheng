@@ -7,126 +7,204 @@
  */
 ?>
 <link rel="stylesheet" type="text/css" href="/css/business.css">
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 <div class="container">
     <div class="container-main">
         <div class="container-main-top">
             <h1 class="business-title">
-                <!--                <span class="title-text-1">商家入驻申请</span>-->
-                <span class="title-text-2">审核中-重新提交可修改信息</span>
+                <span class="title-text-1">商家入驻申请</span>
+                <!--                <span class="title-text-2">审核中-重新提交可修改信息</span>-->
             </h1>
         </div>
         <div class="container-main-foot">
-            <form id="business" method="post" action="#">
+            <form id="submit-form">
                 <div class="item-1">
                     <span>企业名称</span>
-                    <input class="input-text" placeholder="请输入企业名称">
+                    <input id="comp-name" name="comp-name" class="input-text" placeholder="请输入企业名称">
                 </div>
-                <div class="item-1">
+                <div id="comp-img" class="item-1">
                     <span>企业营业执照扫描件</span>
                     <img src="#">
-                    <input class="input-file" type="file" name="idcardpicfile" id="ID_img_input">
+                    <input class="input-file" type="file" name="comp-img">
                 </div>
-                <div class="item-1">
+                <div id="comp-comf-img" class="item-1">
                     <span>确认书扫描件</span>
                     <img src="#">
-                    <input class="input-file" type="file" name="idcardpicfile" id="ID_img_input">
+                    <input class="input-file" type="file" name="comp-comf-img">
                 </div>
                 <div class="item-1">
                     <span>姓名</span>
-                    <input class="input-text" placeholder="请输入真实姓名">
+                    <input id="user-name" value="" type="text" name="user-name" class="input-text"
+                           placeholder="请输入真实姓名">
                 </div>
                 <div class="item-1">
                     <span>身份证号</span>
-                    <input class="input-text" placeholder="请输入身份证号">
+                    <input id="info-num" value="" type="text" class="input-text" placeholder="请输入身份证号">
                 </div>
-                <div class="item-1">
+                <div id="info-img" class="item-1">
                     <span>身份证正面照</span>
                     <img src="#">
-                    <input class="input-file" type="file" name="idcardpicfile" id="ID_img_input">
+                    <input class="input-file" type="file" name="info-img">
                 </div>
                 <div class="item-1">
                     <span>联系电话</span>
-                    <input class="input-text" placeholder="请输入联系电话">
+                    <input id="tel" class="input-text" placeholder="请输入联系电话">
                 </div>
                 <div class="item-1">
                     <span>邮箱</span>
-                    <input class="input-text" placeholder="请输入邮箱">
+                    <input id="email" class="input-text" placeholder="请输入邮箱">
+                </div>
+                <div class="item-button">
+                    <button class="submit-button">提交审核</button>
                 </div>
             </form>
-            <div class="item-button">
-                <button class="submit-button">提交审核</button>
-            </div>
+
         </div>
     </div>
 </div>
 <script>
-    $('#articleImgBtn').change(function () {
-        run(this, function (data) {
-            uploadImage(data);
-        });
+    //企业营业执照扫描件上传
+    $("#comp-img > input").change(function (e) {
+//        var formData = new FormData();
+//        formData.append("file", e.target.files[0]);
+        var img = $('#comp-img > img');
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);//base64
+//        reader.readAsBinaryString(this.files[0]);//base64
+        reader.onload = function () {
+            $.ajax({
+                url: "imagesave",
+                type: "post",
+                data: this.result,
+                processData: false, // 不要对data参数进行序列化处理，默认为true
+                contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
+                success: function (res) {
+                    // 请求成功
+                },
+                error: function (res) {
+                    // 请求失败
+                    console.log(res);
+                }
+            });
+        }
     });
-
-    function run(input_file, get_data) {
-        /*input_file：文件按钮对象*/
-        /*get_data: 转换成功后执行的方法*/
-        if (typeof (FileReader) === 'undefined') {
-            alert("抱歉，你的浏览器不支持 FileReader，不能将图片转换为Base64，请使用现代浏览器操作！");
-        } else {
-            try {
-                /*图片转Base64 核心代码*/
-                var file = input_file.files[0];
-                //这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件
-                if (!/image\/\w+/.test(file.type)) {
-                    alert("请确保文件为图像类型");
-                    return false;
-                }
-                var reader = new FileReader();
-                reader.onload = function () {
-                    get_data(this.result);
-                }
-                reader.readAsDataURL(file);
-            } catch (e) {
-                alert('图片转Base64出错啦！' + e.toString())
-            }
-        }
-    }
-
-    function uploadImage(img) {
-        //判断是否有选择上传文件
-        var imgPath = $("#articleImgBtn").val();
-        if (imgPath == "") {
-            alert("请选择上传图片！");
-            return;
-        }
-        //判断上传文件的后缀名
-        var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
-        if (strExtension != 'jpg' && strExtension != 'gif'
-            && strExtension != 'png' && strExtension != 'bmp') {
-            alert("请选择图片文件");
-            return;
+    //确认书扫描件上传
+    $("#comp-comf-img > input").change(function (e) {
+        var formData = new FormData();
+        formData.append("file", e.target.files[0]);
+        var img = $('#comp-comf-img > img');
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);//base64
+        reader.onload = function () {
+            img[0].src = this.result;
         }
         $.ajax({
+            url: "imagesave",
             type: "POST",
-            url: ’上传图片接口‘,
-        data: {
-            token: token, file
-        :
-            img.substr(img.indexOf(',') + 1)
+            data: formData,
+            processData: false, // 不要对data参数进行序列化处理，默认为true
+            contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
+            success: function (res) {
+                // 请求成功
+            },
+            error: function (res) {
+                // 请求失败
+                console.log(res);
+            }
+        });
+    });
+    //身份证正面照上传
+    $("#info-img > input").change(function (e) {
+        var formData = new FormData();
+        formData.append("file", e.target.files[0]);
+        var img = $('#info-img > img');
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);//base64
+        reader.onload = function () {
+            img[0].src = this.result;
         }
-    ,    //视情况将base64的前面字符串data:image/png;base64,删除
-        cache: false,
-            success
-    :
-        function (data) {
-            alert("上传成功");
-            $("#articleImg").attr('src', JSON.parse(data).imageUrl);
-        }
-
-    ,
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("上传失败，请检查网络后重试");
-        }
-    })
-        ;
+        $.ajax({
+            url: "imagesave",
+            type: "POST",
+            data: formData,
+            processData: false, // 不要对data参数进行序列化处理，默认为true
+            contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
+            success: function (res) {
+                // 请求成功
+            },
+            error: function (res) {
+                // 请求失败
+                console.log(res);
+            }
+        });
+    });
+    // 验证手机号
+    function isPhoneNo(phone) {
+        var pattern = /^1[34578]\d{9}$/;
+        return pattern.test(phone);
     }
+    ;
+    // 验证身份证
+    function isCardNo(card) {
+        var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        return pattern.test(card);
+    }
+    ;
+    //验证邮箱
+    function isEmail(email) {
+        var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+        return pattern.test(email);
+    }
+    ;
+
+    $(".submit-button").click(function () {
+        var comp_name = $("#comp-name").val();
+        var input_file1 = $("#input-file1").val();
+        var input_file2 = $("#input-file2").val();
+        var user_name = $("#user-name").val();
+        var info_num = $("#info-num").val();
+        var input_file3 = $("#input-file3").val();
+        var tel = $("#tel").val();
+        var email = $("#email").val();
+//        if (comp_name == '') {
+//            alert('企业名称不能为空');
+//            return false;
+//        }
+//        if (input_file1 == '') {
+//            alert('企业营业执照不能为空');
+//            return false;
+//        }
+//        if (input_file2 == '') {
+//            alert('确认书扫描件不能为空');
+//            return false;
+//        }
+//        if (user_name == '') {
+//            alert('姓名不能为空');
+//            return false;
+//        }
+//        if (!isCardNo(info_num)) {
+//            alert('身份证号码不能为空');
+//            return false;
+//        }
+//        if (input_file3 == '') {
+//            alert('身份证照片不能为空');
+//            return false;
+//        }
+//        if (!isPhoneNo(tel)) {
+//            alert('手机号码格式不正确');
+//            return false;
+//        }
+//        if (!isEmail(email)) {
+//            alert('邮箱格式不正确');
+//            return false;
+//        }
+        $.ajax({
+            url: 'businessinfosave',
+            type: 'post',
+            data: $('#submit-form').serialize()
+        }, function (result) {
+            console.log(result)
+        });
+        return false;
+    })
 </script>
