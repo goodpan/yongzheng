@@ -24,6 +24,13 @@ $this->title = '添加角色';
 .sub-input-block{
   padding-left:50px;
 }
+.p-node{
+    padding-left: 30px;
+    margin-top: 10px;
+}
+.c-node{
+
+}
 </style>
 
 <div class="breadcrumb">
@@ -54,18 +61,7 @@ $this->title = '添加角色';
   <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
   <legend>权限分配<em style="color:#ff0000">*</em></legend>
 </fieldset>
-<?php foreach ($auth_list as $k => $auths): ?>
-  <div class="layui-form-item" pane="">
-      <div class="layui-input-block">
-          <input lay-filter="checkall" type="checkbox" name="auth_id[]" lay-skin="primary" value="<?=$auths['auth_id']?>" title="<?=$auths['auth_name']?>">
-      </div>
-      <div class="layui-input-block sub-input-block">
-      <?php foreach ($auths['children'] as $k2 => $auth): ?>
-          <input  lay-filter="subcheckbox" lay-skin="primary" type="checkbox" name="auth_id[]" value="<?=$auth['auth_id']?>" title="<?=$auth['auth_name']?>">
-      <?php endforeach; ?>
-      </div>
-  </div>
-<?php endforeach; ?>
+<?=$auth_list?>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 </fieldset>
 <div class="layui-form-item">
@@ -78,19 +74,24 @@ $this->title = '添加角色';
 </div>
 <?php $this->beginBlock('jsblock')?>  
 <script>
+    $(function () {
+        $('.p-node').on('click',function (e) {
+            e.stopPropagation();
+        })
+    })
 layui.use('form', function(){
   var $ = layui.$,form=layui.form,active = {
     
   };
-  form.on('checkbox(checkall)', function(data){
-    var isChecked = data.elem.checked;
-    var cbSubList = $(this).closest('.layui-form-item').find('.layui-input-block').find('input[type="checkbox"]');
-    var cbWrap =  $(this).closest('.layui-form-item').find('.layui-input-block').find('.layui-form-checkbox');
-    cbSubList.prop('checked',isChecked);
-    isChecked?cbWrap.addClass('layui-form-checked'):cbWrap.removeClass('layui-form-checked');
-  });  
-  form.on('checkbox(subcheckbox)', function(data){
-
+//  form.on('checkbox(checkall)', function(data){
+//    var isChecked = data.elem.checked;
+//    var cbSubList = $(this).closest('.layui-form-item').find('.layui-input-block').find('input[type="checkbox"]');
+//    var cbWrap =  $(this).closest('.layui-form-item').find('.layui-input-block').find('.layui-form-checkbox');
+//    cbSubList.prop('checked',isChecked);
+//    isChecked?cbWrap.addClass('layui-form-checked'):cbWrap.removeClass('layui-form-checked');
+//  });
+  form.on('checkbox(check)', function(data){
+        console.log('aaa')
   });
   $('.layui-btn').on('click', function(){
     var type = $(this).data('type');
@@ -99,15 +100,15 @@ layui.use('form', function(){
 
   //监听提交
   form.on('submit(role_add)', function(data){
-        console.log($('#roleForm').serialize());
-        // $.post('/system/rbac/auth_add',data.field,function (res) {
-        //     if(res.code>0){
-        //         layer.alert(res.msg);
-        //         window.location.reload()
-        //     }else{
-        //         layer.alert(res.error); 
-        //     }
-        // })
+        var reqData = $('#roleForm').serialize();
+         $.post('/system/rbac/role_add',reqData,function (res) {
+             if(res.code>0){
+                 layer.alert(res.msg);
+                 window.location.reload();
+             }else{
+                 layer.alert(res.error);
+             }
+         })
         return false;
     });
 });

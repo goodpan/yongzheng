@@ -23,11 +23,11 @@ class UnLimitTree
         return $arr;
     }
     //组合多维数组
-    Static Public function unlimitedForLayer ($cate, $name = 'child', $pid = 0) {
+    Static Public function unlimitedForLayer ($cate, $c_ame = 'children', $pid = 0) {
         $arr = array();
         foreach ($cate as $v) {
             if ($v['pid'] == $pid) {
-                $v[$name] = self::unlimitedForLayer($cate, $name, $v['id']);
+                $v[$c_ame] = self::unlimitedForLayer($cate, $c_ame, $v['id']);
                 $arr[] = $v;
             }
         }
@@ -81,4 +81,17 @@ class UnLimitTree
         return $tree;//返回新数组
     }
 
+
+    static public function getDomeTree($data){
+        static $html = '';
+        foreach($data as $v){
+            $html.='<div class="p-node">';
+            $html.='<div class="c-node">|-----<input lay-verify="check" name="auth_id[]" type="checkbox" lay-skin="primary" title="'.$v["auth_name"].'" value="'.$v["auth_id"].'"/></div>';
+            if(isset($v['children'])){//匹配子记录
+                self::getDomeTree($v['children']);
+            }
+            $html.='</div>';
+        }
+        return $html;//返回新数组
+    }
 }

@@ -12,16 +12,16 @@
     <p>网站系统角色, 由总平台设置管理.</p>
 </blockquote>
 <div class="layui-btn-group">
-  <button class="layui-btn" data-type=""><i class="layui-icon">&#xe608;</i>添加分类</button>
+    <a class="layui-btn" data-type="" href="/info/classify/add"><i class="layui-icon">&#xe608;</i>新增分类</a>
   <button class="layui-btn" data-type=""><i class="layui-icon">&#xe640;</i>删除选中</button>
 </div>
-<table class="layui-table" lay-data="{url:'/system/rbac/roledata', page:true, id:'roles'}" lay-filter="demo">
+<table class="layui-table" lay-data="{url:'/info/classify/list', page:true, id:'cate'}" lay-filter="tools">
     <thead>
         <tr>
         <th lay-data="{checkbox:true}"></th>
-        <th lay-data="{field:'id', width:100, sort: true}">角色ID</th>
-        <th lay-data="{field:'name', width:180}">角色名</th>
-        <th lay-data="{field:'description', width:360}">角色描述</th>
+        <th lay-data="{field:'cate_id', width:100, sort: true}">分类ID</th>
+        <th lay-data="{field:'parent_id', width:100, sort: true}">上级ID</th>
+        <th lay-data="{field:'cate_name', width:180}">角色名</th>
         <th lay-data="{field:'create_time', width:360}">创建时间</th>
         <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#toolbar'}">操作</th>
         </tr>
@@ -40,10 +40,10 @@
 layui.use('table', function(){
   var table = layui.table;
     //监听工具条
-    table.on('tool(demo)', function(obj){
+    table.on('tool(tools)', function(obj){
     var data = obj.data;
     if(obj.event === 'detail'){
-      layer.msg('ID：'+ data.id + ' 的查看操作');
+      layer.msg('ID：'+ data.cate_id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
         obj.del();

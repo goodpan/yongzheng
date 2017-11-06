@@ -27,10 +27,6 @@ class Auth extends BaseModel
         ];
     }
 
-    public function getAuthsNameByAll(){
-        return self::find()->select(['auth_id','auth_name'])->all();
-    }
-
     public function add($data){
         if($this->load($data,'')&&$this->validate()){
             $this->create_time = time();//创建时间
@@ -42,9 +38,7 @@ class Auth extends BaseModel
         return false;
     }
 
-    public function getAuthsByPager($offset,$limit){
-        return self::find()->offset($offset)->limit($limit)->all();
-    }
+
     /************************************* 递归相关方法 *************************************/
     /**
      * 递归获取权限树(按权限等级进行排序)
@@ -52,7 +46,7 @@ class Auth extends BaseModel
      */
 	public function getTree()
 	{
-        $result = $this->getData();
+        $result = $this->getAll();
 		return $this->_reSort($result);
     }
     
@@ -75,7 +69,7 @@ class Auth extends BaseModel
     
     public function getChildren($auth_id=0)
 	{
-		$data = $this->getData();
+		$data = $this->getAll();
 		return $this->_children($data, $auth_id);
     }
     
@@ -120,13 +114,10 @@ class Auth extends BaseModel
         }
         return $tree;
     }
-    public function getData(){
-        return self::find()->asArray()->all();
-    }
 
     public function getOptions()
     {
-        $data = $this->getData();
+        $data = $this->getAll();
         $tree = $this->getTree($data);
         $tree = $this->setPrefix($tree);
         $options = ['添加顶级分类'];
@@ -138,7 +129,7 @@ class Auth extends BaseModel
 
     public function getTreeList()
     {
-        $data = $this->getData();
+        $data = $this->getAll();
         $tree = $this->getTree($data);
         return $tree = $this->setPrefix($tree);
     }
@@ -161,7 +152,7 @@ class Auth extends BaseModel
      * 
      */
     public function getAuthsFullTree(){
-        $data = $this->getData();
+        $data = $this->getAll();
         $res = $this->getAuthsTreeNodes($data);
         return $res;
     }

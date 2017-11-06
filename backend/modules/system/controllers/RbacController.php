@@ -11,6 +11,8 @@ namespace backend\modules\system\controllers;
 use backend\controllers\BaseController;
 use backend\models\Auth;
 use backend\logics\UnLimitTree;
+use backend\models\Role;
+use backend\models\RoleAuth;
 
 /** 权限管理控制器
  * Class RcbcController
@@ -33,6 +35,32 @@ class RbacController extends BaseController{
         return $this->render('roles');
     }
 
+    public function actionRole_page(){
+        $page = \Yii::$app->request->get('page');
+        $limit = \Yii::$app->request->get('limit');
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $model = new Role();
+        $count = $model->getCount();
+        $roles = $model->getAllByPager($page,$limit);
+        if($roles){
+            //日期转换
+            foreach($roles as $item){
+                $item['create_time'] = date("Y-m-d H:i:s", $item['create_time']);
+            }
+            return [
+                'code'=>0,
+                'msg'=>'成功',
+                'count'=>$count,
+                'data'=>$roles
+            ];
+        };
+        return [
+            'code'=>0,
+            'msg'=>'查询错误',
+            'data'=>[]
+        ];
+    }
+
     /**
      * 权限列表
      */
@@ -49,7 +77,7 @@ class RbacController extends BaseController{
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $model = new Auth();
         $count = $model->getCount();
-        $auths = $model->getAuthsByPager($page,$limit);
+        $auths = $model->getAllByPager($page,$limit);
         if($auths){
             //日期转换
             foreach($auths as $item){
@@ -74,9 +102,9 @@ class RbacController extends BaseController{
      */
     public function actionAuth_add(){
         $auth = new Auth();
-        $model = $auth->getAuthsNameByAll();
+        $model = $auth->getListByFiled(['auth_id','auth_name']);
         $parentData = $auth->getTree();
-        if(\Yii::$app->request->isPost){
+        if(\Yii::$app->request->isAjax){
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $post = \Yii::$app->request->post();
             if ($auth->add($post)) {
@@ -118,8 +146,50 @@ class RbacController extends BaseController{
      */
     public function actionRole_add(){
         $model = new Auth();
-        $data = $model->getData();
-        $auth_list = UnLimitTree::getAuthsFullTree($data);
+        $data = $model->getTree();
+        $tree = UnLimitTree::getAuthsFullTree($data);
+        $auth_list = UnLimitTree::getDomeTree($tree);
+        if(\Yii::$app->request->isPost){
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $post = \Yii::$app->request->post();
+            $role = new Role();
+            //先添加角色，在添加角色权限表
+            if ($role->add($post)) {
+                $role_id = $role->attributes['role_id'];
+                $role_auth = new RoleAuth();
+                $data = [];
+                foreach ($post['auth_id'] as $v){
+                    $item[0]=$role_id;
+                    $item[1]=$v;
+                    $item[2]=time();
+                    $data[]=$item;
+                }
+                $res = $role_auth->batchAdd($data);
+                if($res>0){
+                    return [
+                        'code'=>1,
+                        'msg'=>'添加成功',
+                        'data'=>[]
+                    ];
+                }else{
+                    $error = array_values($role->getFirstErrors())[0];
+                    return [
+                        'code'=>-1,
+                        'msg'=>'批量添加出错',
+                        'error'=>$error,
+                        'data'=>[]
+                    ];
+                }
+            }else{
+                $error = array_values($role->getFirstErrors())[0];
+                return [
+                    'code'=>0,
+                    'msg'=>'添加失败',
+                    'error'=>$error,
+                    'data'=>[]
+                ];
+            }
+        }
         return $this->render('role_add',['auth_list'=>$auth_list]);
     }
     /**

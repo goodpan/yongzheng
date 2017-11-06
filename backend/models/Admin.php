@@ -83,7 +83,6 @@ class Admin extends BaseModel
             ];
             //登录成功更新用户表中相关信息
             $this->updateAll(['login_time' => time(), 'login_ip' => ip2long(\Yii::$app->request->userIP)], 'admin_user = :user', [':user' => $this->admin_user]);
-            //返回存储session是否成功的状态
             return (bool)$session['admin']['isLogin'];
         }
         return false;

@@ -18,6 +18,4 @@ class PublicLogic extends BaseLogic{
     public static function getAdminModel(){
         return new Admin();
     }
-
-
 }
