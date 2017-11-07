@@ -102,7 +102,7 @@ class RbacController extends BaseController{
      */
     public function actionAuth_add(){
         $auth = new Auth();
-        $model = $auth->getListByFiled(['auth_id','auth_name']);
+        $model = $auth->getListByFiled(['pid','name']);
         $parentData = $auth->getTree();
         if(\Yii::$app->request->isAjax){
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
@@ -132,11 +132,11 @@ class RbacController extends BaseController{
      */
     public function actionAuth_edit(){
         $model = new Auth();
-        $auth_id = \Yii::$app->request->get('auth_id');
-        if(!$auth_id){
+        $pid = \Yii::$app->request->get('pid');
+        if(!$pid){
             \Yii::$app->session->setFlash('info','参数错误');
         }
-        $auth = $model->getOneById('auth_id',$auth_id);
+        $auth = $model->getOneById('pid',$pid);
         $parentData = $model->getTree();
         return $this->render('auth_edit',['auth'=>$auth,'parentData'=>$parentData]);
     }
@@ -158,7 +158,7 @@ class RbacController extends BaseController{
                 $role_id = $role->attributes['role_id'];
                 $role_auth = new RoleAuth();
                 $data = [];
-                foreach ($post['auth_id'] as $v){
+                foreach ($post['pid'] as $v){
                     $item[0]=$role_id;
                     $item[1]=$v;
                     $item[2]=time();

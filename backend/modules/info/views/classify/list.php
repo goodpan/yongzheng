@@ -19,9 +19,9 @@
     <thead>
         <tr>
         <th lay-data="{checkbox:true}"></th>
-        <th lay-data="{field:'cate_id', width:100, sort: true}">分类ID</th>
-        <th lay-data="{field:'parent_id', width:100, sort: true}">上级ID</th>
-        <th lay-data="{field:'cate_name', width:180}">角色名</th>
+        <th lay-data="{field:'id', width:100, sort: true}">分类ID</th>
+        <th lay-data="{field:'pid', width:100, sort: true}">上级ID</th>
+        <th lay-data="{field:'name', width:180}">角色名</th>
         <th lay-data="{field:'create_time', width:360}">创建时间</th>
         <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#toolbar'}">操作</th>
         </tr>
@@ -43,7 +43,7 @@ layui.use('table', function(){
     table.on('tool(tools)', function(obj){
     var data = obj.data;
     if(obj.event === 'detail'){
-      layer.msg('ID：'+ data.cate_id + ' 的查看操作');
+      layer.msg('ID：'+ data.id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
         obj.del();
@@ -56,3 +56,4 @@ layui.use('table', function(){
 })
 </script>
 <?php $this->endBlock('jsblock') ?>
+

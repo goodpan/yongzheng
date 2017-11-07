@@ -18,8 +18,8 @@ $this->title = '权限列表';
   <thead>
     <tr>
       <th lay-data="{checkbox:true}"></th>
-      <th lay-data="{field:'auth_id', width:100, sort: true}">权限ID</th>
-      <th lay-data="{field:'auth_name', width:150}">权限名</th>
+      <th lay-data="{field:'id', width:100, sort: true}">权限ID</th>
+      <th lay-data="{field:'name', width:150}">权限名</th>
       <th lay-data="{field:'auth_m', width:150}">模块名称</th>
       <th lay-data="{field:'auth_c', width:150}">控制器名称</th>
       <th lay-data="{field:'auth_a', width:150}">方法名称</th>
@@ -51,8 +51,8 @@ layui.use('table', function(){
         layer.close(index);
       });
     } else if(obj.event === 'edit'){
-      var auth_id = data['auth_id'];
-      location.href = '/system/rbac/auth_edit?auth_id='+auth_id;
+      var id = data['id'];
+      location.href = '/system/rbac/auth_edit?id='+id;
     }
   });
   

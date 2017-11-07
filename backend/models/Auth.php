@@ -19,8 +19,8 @@ class Auth extends BaseModel
     public function rules()
     {
         return [
-            ['auth_pid','safe'],
-            ['auth_name', 'required', 'message' => '权限名不能为空'],
+            ['pid','safe'],
+            ['name', 'required', 'message' => '权限名不能为空'],
             ['auth_m', 'required', 'message' => '模块名不能为空'],
             ['auth_c', 'required', 'message' => '控制器名不能为空'],
             ['auth_a', 'required', 'message' => '方法名不能为空']
@@ -40,54 +40,7 @@ class Auth extends BaseModel
 
 
     /************************************* 递归相关方法 *************************************/
-    /**
-     * 递归获取权限树(按权限等级进行排序)
-     * 
-     */
-	public function getTree()
-	{
-        $result = $this->getAll();
-		return $this->_reSort($result);
-    }
     
-    private function _reSort($data, $auth_pid=0, $level=0, $isClear=TRUE)
-	{
-		static $ret = array();
-		if($isClear)
-            $ret = array();
-		foreach ($data as $k => $v)
-		{
-			if($v['auth_pid'] == $auth_pid)
-			{
-				$v['level'] = $level;
-				$ret[] = $v;
-				$this->_reSort($data, $v['auth_id'], $level+1, FALSE);
-			}
-		}
-		return $ret;
-    }
-    
-    public function getChildren($auth_id=0)
-	{
-		$data = $this->getAll();
-		return $this->_children($data, $auth_id);
-    }
-    
-	private function _children($data, $parent_id=0, $isClear=TRUE)
-	{
-		static $ret = array();
-		if($isClear)
-			$ret = array();
-		foreach ($data as $k => $v)
-		{
-			if($v['auth_pid'] == $parent_id)
-			{
-				$ret[] = $v['auth_id'];
-				$this->_children($data, $v['auth_id'], FALSE);
-			}
-		}
-		return $ret;
-	}
 
     /** 设置权限等级格式
      * 
@@ -100,15 +53,15 @@ class Auth extends BaseModel
         while($val = current($data)) {
             $key = key($data);
             if ($key > 0) {
-                if ($data[$key - 1]['auth_pid'] != $val['auth_pid']) {
+                if ($data[$key - 1]['pid'] != $val['pid']) {
                     $num ++;
                 }
             }
-            if (array_key_exists($val['auth_pid'], $prefix)) {
-                $num = $prefix[$val['auth_pid']];
+            if (array_key_exists($val['pid'], $prefix)) {
+                $num = $prefix[$val['pid']];
             }
-            $val['auth_name'] = str_repeat($p, $num).$val['auth_name'];
-            $prefix[$val['auth_pid']] = $num;
+            $val['name'] = str_repeat($p, $num).$val['name'];
+            $prefix[$val['pid']] = $num;
             $tree[] = $val;
             next($data);
         }
@@ -139,10 +92,10 @@ class Auth extends BaseModel
      */
     public static function getMenu()
     {
-        $top = self::find()->where('auth_pid = :pid', [":pid" => 0])->orderby('create_time asc')->asArray()->all();
+        $top = self::find()->where('pid = :pid', [":pid" => 0])->orderby('create_time asc')->asArray()->all();
         $data = [];
         foreach((array)$top as $k=>$auth) {
-            $auth['children'] = self::find()->where("auth_pid = :pid", [":pid" => $auth['auth_id']])->asArray()->all();
+            $auth['children'] = self::find()->where("pid = :pid", [":pid" => $auth['id']])->asArray()->all();
             $data[$k] = $auth;
         }
         return $data;
@@ -163,8 +116,8 @@ class Auth extends BaseModel
     public function getAuthsTreeNodes($data,$pid=0){
         $tree = array();//每次都声明一个新数组用来放子元素  
         foreach($data as $v){  
-            if($v['auth_pid'] == $pid){//匹配子记录  
-                $v['children'] = $this->getAuthsTreeNodes($data,$v['auth_id']); //递归获取子记录
+            if($v['pid'] == $pid){//匹配子记录  
+                $v['children'] = $this->getAuthsTreeNodes($data,$v['id']); //递归获取子记录
                 if($v['children'] == null){  
                     unset($v['children']);//如果子元素为空则unset()进行删除，说明已经到该分支的最后一个元素了（可选）  
                 }  

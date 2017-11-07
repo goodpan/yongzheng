@@ -52,7 +52,7 @@ $this->title = '新增商品分类';
                     <option value="">请选择上级分类</option>';
                     <option value="0">添加顶级分类</option>';
                     <?php foreach ($cates as $k => $cate): ?>
-                        <option value="<?php echo $cate['cate_id']; ?>" data-level="<?php echo $cate['level']?>"><?php echo str_repeat('-', 4*$cate['level']).$cate['cate_name']; ?></option>
+                        <option value="<?php echo $cate['id']; ?>" data-level="<?php echo $cate['level']?>"><?php echo str_repeat('-', 4*$cate['level']).$cate['name']; ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -60,7 +60,7 @@ $this->title = '新增商品分类';
         <div class="layui-form-item">
             <label class="layui-form-label">分类名<em>*</em></label>
             <div class="layui-input-block">
-                <input type="text" name="cate_name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="name" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">

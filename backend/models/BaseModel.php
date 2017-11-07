@@ -62,4 +62,53 @@ class BaseModel extends ActiveRecord{
     public function getFiledByPager($offset=1,$limit=10,$filedArr=[]){
         return self::find()->scalar($filedArr)->offset($offset)->limit($limit)->all();
     }
+
+    /**
+     * 递归获分类树(按等级进行排序)
+     * 
+     */
+	public function getTree()
+	{
+        $result = $this->getAll();
+		return $this->_reSort($result);
+    }
+    
+    private function _reSort($data, $pid=0, $level=0, $isClear=TRUE)
+	{
+		static $ret = array();
+		if($isClear)
+            $ret = array();
+		foreach ($data as $k => $v)
+		{
+			if($v['pid'] == $pid)
+			{
+				$v['level'] = $level;
+				$ret[] = $v;
+				$this->_reSort($data, $v['id'], $level+1, FALSE);
+			}
+		}
+		return $ret;
+    }
+    
+    public function getChildren($id=0)
+	{
+		$data = $this->getAll();
+		return $this->_children($data, $id);
+    }
+    
+	private function _children($data, $parent_id=0, $isClear=TRUE)
+	{
+		static $ret = array();
+		if($isClear)
+			$ret = array();
+		foreach ($data as $k => $v)
+		{
+			if($v['pid'] == $parent_id)
+			{
+				$ret[] = $v['id'];
+				$this->_children($data, $v['id'], FALSE);
+			}
+		}
+		return $ret;
+	}
 }
