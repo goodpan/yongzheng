@@ -73,7 +73,7 @@ class OperationController extends BaseController{
             $res = [
                 'code'=>1,
                 'msg'=>'成功',
-                'data'=>$res['managers']
+                'data'=>$managerData['managers']
             ];
         }else{
             $res = [

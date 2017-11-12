@@ -70,8 +70,8 @@ class UnLimitTree
     static  public function getAuthsFullTree($data,$pid=0){
         $tree = array();//每次都声明一个新数组用来放子元素
         foreach($data as $v){
-            if($v['auth_pid'] == $pid){//匹配子记录
-                $v['children'] = self::getAuthsFullTree($data,$v['auth_id']); //递归获取子记录
+            if($v['pid'] == $pid){//匹配子记录
+                $v['children'] = self::getAuthsFullTree($data,$v['id']); //递归获取子记录
                 if($v['children'] == null){
                     unset($v['children']);//如果子元素为空则unset()进行删除，说明已经到该分支的最后一个元素了（可选）
                 }
@@ -86,7 +86,7 @@ class UnLimitTree
         static $html = '';
         foreach($data as $v){
             $html.='<div class="p-node">';
-            $html.='<div class="c-node">|-----<input lay-verify="check" name="auth_id[]" type="checkbox" lay-skin="primary" title="'.$v["auth_name"].'" value="'.$v["auth_id"].'"/></div>';
+            $html.='<div class="c-node">|-----<input lay-verify="check" name="id[]" type="checkbox" lay-skin="primary" title="'.$v["name"].'" value="'.$v["id"].'"/></div>';
             if(isset($v['children'])){//匹配子记录
                 self::getDomeTree($v['children']);
             }
