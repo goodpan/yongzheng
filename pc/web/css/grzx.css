@@ -1,0 +1,4 @@
+.left-nav{width: 150px;height: 600px;border-right:1px solid #D8D8D8;position:absolute;left: 0px;}
+.right-show{width: 800px;height: 600px;position: absolute;left: 160px;}
+.yz-grzl{display: block;margin-bottom: 2px;text-align: center;}
+.yz-grzl ul li{display: block;background-color: #C0C0C0;margin-bottom: 3px;height: 40px;line-height: 38px;}
