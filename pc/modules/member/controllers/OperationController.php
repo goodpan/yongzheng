@@ -10,6 +10,11 @@ namespace pc\modules\member\controllers;
 use pc\controllers\BaseController;
 use pc\models\User;
 use pc\models\Business;
+<<<<<<< HEAD
+use pc\models\Tesr;
+
+=======
+>>>>>>> c24a8c4ac10632c255287f16ed1e46a4655f2e76
 /** 会员操作控制器
  * Class OperationController
  * @package pc\modules\member\controllers
@@ -57,7 +62,15 @@ class OperationController extends BaseController
     public function actionBusiness()
     {
         $this->layout = '@app/views/layouts/main.php';
+<<<<<<< HEAD
+        $user_id = 7;
+        $data = [];
+        $data['result'] = Business::getBusinessInfo($user_id);
+        // var_dump($data);exit;
+        return $this->render('business',$data);
+=======
         return $this->render('business');
+>>>>>>> c24a8c4ac10632c255287f16ed1e46a4655f2e76
     }
 
     /**

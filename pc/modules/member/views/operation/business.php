@@ -12,7 +12,7 @@
     <div class="container-main">
         <div class="container-main-top">
             <h1 class="business-title">
-                <? $status = 1; ?>
+                <? $status = 1;?>
                 <? if ((isset($result))) { ?>
                     <? if ($result->status == 0) { ?>
                         <span class="title-text-2">审核中-重新提交可修改信息</span>
