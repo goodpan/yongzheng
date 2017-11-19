@@ -8,6 +8,7 @@
 
 namespace backend\models;
 
+use yii\base\Object;
 use yii\db\ActiveRecord;
 use yii\data\Pagination;
 class BaseModel extends ActiveRecord{
@@ -26,6 +27,7 @@ class BaseModel extends ActiveRecord{
         return false;
     }
 
+
     /** 获取总数
      * @return int|string
      */
@@ -38,7 +40,7 @@ class BaseModel extends ActiveRecord{
      * @return array|null|ActiveRecord
      */
     public function getOneById($filedArr=[]){
-        return self::find()->where($filedArr)->one();
+        return self::find()->where($filedArr)->asArray()->one();
     }
 
     /** 查询所有数据
