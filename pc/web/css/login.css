@@ -1,0 +1,189 @@
+@charset "utf-8";
+body ,html{
+    margin: 0 0;
+}
+p{
+    line-height: 0px;
+}
+/*左浮动*/
+.fl {
+    float: left;
+}
+/*右浮动*/
+.fr {
+    float: right;
+}
+/*清除浮动*/
+.clear {
+    clear: both;
+}
+/*去除a标签下划线*/
+a {
+    text-decoration: none;
+}
+div {
+    display: block;
+}
+.color-red{
+    color: #EF1300!important;
+}
+.sig-head{
+    height: 120px;
+    text-align: center;
+    background-color: #edf1f2;
+}
+.sig-img{
+    display: inline-block;
+    /*height: 46px;*/
+    /*width: 136px;*/
+    height: 86px;
+    width: 600px;
+    /*background: url('/image/member/siglogo.png') no-repeat center center;*/
+    background: url('/image/member/logotop.png') no-repeat center center;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 200px;
+}
+.main{
+    min-height: 0;
+}
+.container{
+    width: 1190px;
+    margin:0 auto;
+    padding:  20px 0;
+}
+
+.login-wrap{
+    width: 320px;
+    margin: 0 auto;
+}
+.rlf-tip-wrap{
+    clear: both;
+    font-size: 12px;
+}
+.wel-hd{
+    padding-bottom: 25px;
+}
+.form-h1 {
+    font-size: 24px;
+    color: #14191e;
+}
+.login-wrap .no-account, .login-wrap .on-register {
+    margin-top: 27px;
+    font-size: 14px;
+}
+.login-wrap .on-register {
+    color: #f01400;
+}
+.loginWrap {
+    padding-top: 40px;
+}
+
+.ipt{
+    border-radius: 0;
+    width: 299px;
+    padding: 9px 9px 9px 10px;
+    height: 20px;
+    line-height: 20px;
+}
+.rlf-forget{
+    color: #787d82;
+}
+.rlf-forget:hover{
+    color: #f01400;
+}
+.btn-full {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
+}
+.btn-red {
+    color: #fff;
+    background-color: #ec1500;
+    border-color: #ec1500;
+    border-style: solid;
+    border-width: 1px;
+    transition: all .3s;
+}
+.btn, .btn-red {
+    cursor: pointer;
+}
+.rlf-bottom{
+    margin-bottom: 20px;
+}
+.login-sns-wrap {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.icon-qq{
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    background: url('/image/member/qq.png') no-repeat center center;
+}
+.icon-weixin{
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    background: url('/image/member/weixin.png') no-repeat center center;
+}
+.icon-weibo{
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    background: url('/image/member/weibo.png') no-repeat center center;
+}
+
+.vright {
+    color: #b5b9bc;
+    font-size: 12px;
+    line-height: 50px;
+}
+.rlf-group{
+    position: relative;
+}
+.re-send{
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    padding: 10px 20px;
+    border-left: 1px solid #B4B8BB;
+    cursor: pointer;
+}
+
+/**                忘记密码                           */
+.fgtpaw-wrap{
+    color: #14191e;
+    font-size: 24px;
+}
+
+.link-info{
+    position: relative;
+}
+.link-info span{
+    line-height: 32px;
+    font-size: 12px;
+    color: #b5b9bc;
+}
+.right-back{
+    transition: all .3s;
+    font-size: 14px;
+    color: #f01400;
+    position: absolute;
+    right: 0;
+    top: 3px;
+}
+
+
+
+
+
+

@@ -224,4 +224,13 @@ class SiteController extends BaseController
         $this->layout='@app/views/layouts/main.php';
         return $this->render('search');
     }
+
+    /**
+     * @return string
+     * @author ldz
+     */
+    public function actionDetail(){
+        $this->layout = false;
+        return $this->render('detail');
+    }
 }

@@ -16,8 +16,29 @@ use pc\controllers\BaseController;
  */
 class SpaceController extends BaseController{
 
+    //基本资料
     public function actionIndex(){
-        echo 'space index';
+        $this->layout = '@app/views/layouts/main.php';
+        return $this->render('grzx');
     }
+
+    //联系方式
+    public function actionLxfs(){
+        $this->layout = '@app/views/layouts/main.php';
+        return $this->render('lxfs');
+    }
+
+    //修改密码
+    public function actionXgmm(){
+        $this->layout = '@app/views/layouts/main.php';
+        return $this->render('xgmm');
+    }
+
+    //账户管理
+    public function actionZhgl(){
+        $this->layout = '@app/views/layouts/main.php';
+        return $this->render('zhgl');
+    }
+
 
 }
