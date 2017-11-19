@@ -12,51 +12,94 @@
     <div class="container-main">
         <div class="container-main-top">
             <h1 class="business-title">
-                <span class="title-text-1">商家入驻申请</span>
-                <!--                <span class="title-text-2">审核中-重新提交可修改信息</span>-->
+                <? $status = 1; ?>
+                <? if ((isset($result))) { ?>
+                    <? if ($result->status == 0) { ?>
+                        <span class="title-text-2">审核中-重新提交可修改信息</span>
+                    <? } elseif ($result->status == 1) {?>
+                        <span class="title-text-2">抱歉，审核未通过，请重新提交</span>
+                    <? } elseif ($result->status == 2) {
+                        $status = '0'; ?>
+                        <span class="title-text-2">您的信息正在被审核，请稍等</span>
+                    <? } elseif ($result->status == 3) {
+                        $status = '0'; ?>
+                        <span class="title-text-2">恭喜您，您的信息审核通过</span>
+                    <? }
+                } else { ?>
+                    <span class="title-text-1">商家入驻申请</span>
+                <? } ?>
             </h1>
         </div>
         <div class="container-main-foot">
             <form id="submit-form">
                 <div class="item-1">
                     <span>企业名称</span>
-                    <input id="comp-name" name="comp-name" class="input-text" placeholder="请输入企业名称">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> id="comp-name" name="comp-name" class="input-text"
+                         value="<? echo isset($result) ? $result->comp_name : ''; ?>" placeholder="请输入企业名称">
                 </div>
                 <div id="comp-img" class="item-1">
                     <span>企业营业执照扫描件</span>
-                    <img src="#">
-                    <input class="input-file" type="file" name="comp-img">
+                    <img src="<? echo isset($result) ? $result->comp_img : '#'; ?>">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> class="input-file" type="file">
+                    <input id="comp-img-hidden" value="<? echo isset($result) ? $result->comp_img : '#'; ?>"
+                           type="hidden" name="comp-img">
                 </div>
                 <div id="comp-comf-img" class="item-1">
                     <span>确认书扫描件</span>
-                    <img src="#">
-                    <input class="input-file" type="file" name="comp-comf-img">
+                    <img src="<? echo isset($result) ? $result->comp_comf_img : '#'; ?>">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> class="input-file" type="file" name="comp-comf-img">
+                    <input id="comp-comf-img-hidden" value="<? echo isset($result) ? $result->comp_comf_img : '#'; ?>"
+                           type="hidden" name="comp-comf-img">
                 </div>
                 <div class="item-1">
                     <span>姓名</span>
-                    <input id="user-name" value="" type="text" name="user-name" class="input-text"
-                           placeholder="请输入真实姓名">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> id="user-name" value="<? echo isset($result) ? $result->info_name : ''; ?>" type="text"
+                         name="user-name" class="input-text"
+                         placeholder="请输入真实姓名">
                 </div>
                 <div class="item-1">
                     <span>身份证号</span>
-                    <input id="info-num" value="" type="text" class="input-text" placeholder="请输入身份证号">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> id="info-num" value="<? echo isset($result) ? $result->info_num : ''; ?>" name="info-num"
+                         type="text" class="input-text" placeholder="请输入身份证号">
                 </div>
                 <div id="info-img" class="item-1">
                     <span>身份证正面照</span>
-                    <img src="#">
-                    <input class="input-file" type="file" name="info-img">
+                    <img src="<? echo isset($result) ? $result->info_img : '#'; ?>">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> class="input-file" type="file" name="info-img">
+                    <input id="info-img-hidden" value="<? echo isset($result) ? $result->info_img : '#'; ?>"
+                           type="hidden" name="info-img">
                 </div>
                 <div class="item-1">
                     <span>联系电话</span>
-                    <input id="tel" class="input-text" placeholder="请输入联系电话">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> id="tel" class="input-text" value="<? echo isset($result) ? $result->tel : ''; ?>" name="tel"
+                         placeholder="请输入联系电话">
                 </div>
                 <div class="item-1">
                     <span>邮箱</span>
-                    <input id="email" class="input-text" placeholder="请输入邮箱">
+                    <input <? if (!$status) {
+                        echo 'disabled="disabled"';
+                    } ?> id="email" class="input-text" value="<? echo isset($result) ? $result->email : ''; ?>"
+                         name="email" placeholder="请输入邮箱">
                 </div>
-                <div class="item-button">
-                    <button class="submit-button">提交审核</button>
-                </div>
+                <? if ($status) { ?>
+                    <div class="item-button">
+                        <button class="submit-button">提交审核</button>
+                    </div>
+                <? } ?>
             </form>
 
         </div>
@@ -65,78 +108,45 @@
 <script>
     //企业营业执照扫描件上传
     $("#comp-img > input").change(function (e) {
-//        var formData = new FormData();
-//        formData.append("file", e.target.files[0]);
         var img = $('#comp-img > img');
         var reader = new FileReader();
         reader.readAsDataURL(this.files[0]);//base64
-//        reader.readAsBinaryString(this.files[0]);//base64
         reader.onload = function () {
-            $.ajax({
-                url: "imagesave",
-                type: "post",
-                data: this.result,
-                processData: false, // 不要对data参数进行序列化处理，默认为true
-                contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
-                success: function (res) {
-                    // 请求成功
-                },
-                error: function (res) {
-                    // 请求失败
-                    console.log(res);
-                }
-            });
+            $.post('imagesave', {image: this.result}, function (result) {
+                console.log(result);
+                img.attr('src', result.url);
+                $("#comp-img-hidden").attr('value', result.url);
+                alert(result.msg);
+            }, 'json');
         }
     });
-    //确认书扫描件上传
+    //企业确认书扫描件上传
     $("#comp-comf-img > input").change(function (e) {
-        var formData = new FormData();
-        formData.append("file", e.target.files[0]);
         var img = $('#comp-comf-img > img');
         var reader = new FileReader();
         reader.readAsDataURL(this.files[0]);//base64
         reader.onload = function () {
-            img[0].src = this.result;
+            $.post('imagesave', {image: this.result}, function (result) {
+                console.log(result);
+                img.attr('src', result.url);
+                $("#comp-comf-img-hidden").attr('value', result.url);
+                alert(result.msg);
+            }, 'json');
         }
-        $.ajax({
-            url: "imagesave",
-            type: "POST",
-            data: formData,
-            processData: false, // 不要对data参数进行序列化处理，默认为true
-            contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
-            success: function (res) {
-                // 请求成功
-            },
-            error: function (res) {
-                // 请求失败
-                console.log(res);
-            }
-        });
     });
     //身份证正面照上传
     $("#info-img > input").change(function (e) {
-        var formData = new FormData();
-        formData.append("file", e.target.files[0]);
         var img = $('#info-img > img');
         var reader = new FileReader();
         reader.readAsDataURL(this.files[0]);//base64
         reader.onload = function () {
-            img[0].src = this.result;
+            $.post('imagesave', {image: this.result}, function (result) {
+                console.log(result);
+                img.attr('src', result.url);
+                $("#info-img-hidden").attr('value', result.url);
+                alert(result.msg);
+            }, 'json');
         }
-        $.ajax({
-            url: "imagesave",
-            type: "POST",
-            data: formData,
-            processData: false, // 不要对data参数进行序列化处理，默认为true
-            contentType: false, // 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
-            success: function (res) {
-                // 请求成功
-            },
-            error: function (res) {
-                // 请求失败
-                console.log(res);
-            }
-        });
     });
     // 验证手机号
     function isPhoneNo(phone) {
@@ -156,7 +166,6 @@
         return pattern.test(email);
     }
     ;
-
     $(".submit-button").click(function () {
         var comp_name = $("#comp-name").val();
         var input_file1 = $("#input-file1").val();
@@ -201,9 +210,11 @@
         $.ajax({
             url: 'businessinfosave',
             type: 'post',
-            data: $('#submit-form').serialize()
-        }, function (result) {
-            console.log(result)
+            data: $('#submit-form').serialize(),
+            success: function (result) {
+                alert('提交成功');
+                window.location.reload();
+            }
         });
         return false;
     })

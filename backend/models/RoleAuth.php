@@ -24,17 +24,6 @@ class RoleAuth extends BaseModel
         ];
     }
 
-    public function add($data){
-        if($this->load($data,'')&&$this->validate()){
-            $this->create_time = time();//创建时间
-            if ($this->save(false)) {
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-
     public function batchAdd($data){
         return \Yii::$app->db->createCommand()->batchInsert(self::tableName(), ['role_id','auth_id','create_time'], $data)->execute();
     }

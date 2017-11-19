@@ -23,15 +23,4 @@ class Role extends BaseModel
             ['role_name', 'unique', 'message' => '该角色名已经存在'],
         ];
     }
-
-    public function add($data){
-        if($this->load($data,'')&&$this->validate()){
-            $this->create_time = time();//创建时间
-            if ($this->save(false)) {
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
 }

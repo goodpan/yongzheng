@@ -27,18 +27,6 @@ class Auth extends BaseModel
         ];
     }
 
-    public function add($data){
-        if($this->load($data,'')&&$this->validate()){
-            $this->create_time = time();//创建时间
-            if ($this->save(false)) {
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
-
-
     /************************************* 递归相关方法 *************************************/
     
 

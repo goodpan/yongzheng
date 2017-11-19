@@ -20,31 +20,41 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <?=Html::cssFile('@web/css/common.css')?>
+    <?=Html::cssFile('@web/css/style.css')?>
+    <?=Html::cssFile('@web/css/grzx.css')?>
+
     <title><?= Html::encode('雍正网') ?></title>
+  <script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/unslider.min.js"></script>
+<script src="./js/grzx.js"></script>
+
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+   
 <!-- 最顶部的导航 -->
     <div class="yz-nav-top">
         <div class="yz-grid">
             <span class="left-top fl">
-                <a href="">首页</a>
-                <a href="">地区></a>
+                <a href="/">首页</a>
+                <a href="member/space/index">地区></a>
             </span>
             <span class="right-top fr">
                 <a href="">登录</a>
                 <a href="">注册</a>
-                <a href="">个人中心</a>
+                <a href="/member/space/index">个人中心</a>
                 <a href="">退出</a>
             </span>
         </div>
     </div>
 
     <div class="container">
+    
         <?= $content ?>
     </div>
 </div>
@@ -86,8 +96,8 @@ AppAsset::register($this);
     <p>Copyright 2005- 2017 zbj.com 版权所有 渝ICP备10202274-4号 渝B2-20080005 渝公网安备 50019002500154号 </p>
     <p>厦门市雍正网</p>
 </div>
-                                                                                                                                                                                                                                                                                   
+
 <?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage() ?>            
+<?php $this->endPage() ?>
