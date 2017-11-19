@@ -135,17 +135,3 @@ CREATE TABLE `yz_comment` (
   PRIMARY KEY (`com_id`),
   KEY yz_comment_credid (`cred_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论表';
-######商家表########
-CREATE TABLE yz_business(
-id int UNSIGNED auto_increment PRIMARY key,
-user_id INT UNSIGNED, -- 关联用户表
-comp_name VARCHAR(20) not null, -- 企业名称,
-comp_img VARCHAR(50) not null, -- 企业营业执照扫描件,
-comp_comf_img VARCHAR(50) not null, -- 确认书扫描件,
-info_name VARCHAR(20) not null, -- 姓名,
-info_num VARCHAR(20) not null, -- 身份证号码,
-info_img VARCHAR(50) not null, -- 身份证正面照,
-tel VARCHAR(11) not null, -- 电话号码,
-email VARCHAR(30) not null -- 邮箱
-)
-ALTER TABLE yz_business ADD STATUS TINYINT DEFAULT 0 -- 0：审核中，1：拒绝：2锁定，3：审核通过
