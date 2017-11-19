@@ -58,15 +58,11 @@ a:hover,a:active{text-decoration:underline;}
 .menu .nav ul li a{display:block;width:100%;color:#272727;text-align:center;font:700 15px/40px "Microsoft Yahei";}
 .menu .nav ul li a:hover, .menu .nav ul li a.current{background:#CAFFFF;text-decoration:none;}
 .menu .all-sort a{color: #272727;}
-.wrap_sort{width:1210px;margin:0px auto;position: relative;height: 300px;}
-.all-sort-list{position:absolute;float: left;top:0;left: 0;width:203px;border:2px solid #FBFBFF;border-top:none;padding:3px 3px 3px 0px;background:#FAFAFA;}
-.all-sort-list .item{height:30px;border-top:1px solid #D7FFEE;}
-.all-sort-list .item.bo{border-top:none;background-color: #FBFFFD;} 
-.all-sort-list .item h3{margin-top: 0px;background-color: #D7FFEE;display:block;text-align:center;height:28px;line-height:28px;border:1px 0px;font-size:14px;font-weight:normal;width:210px;overflow:hidden;}
-.all-sort-list .hover h3{position:relative;z-index:13;background:#FFF;border-color:#DDD;border-width:1px 0px;border-style:solid;}
-.all-sort-list .item span{padding:0px 5px;color:#A40000;font-family:"\5B8B\4F53";} 
-.all-sort-list .item a{color:#000;text-decoration:none;}
-.all-sort-list .item a:hover{font-weight:bold;color:#E4393C;}
+.wrap_sort{width:1210px;margin:0px auto;position: relative;height: 250px;}
+.all-sort-list{position:absolute;float: left;top:0;left: 0;width:210px;height:250px;border:2px solid #FBFBFF;border-top:none;background:#FAFAFA;}
+.all-sort-list .item{height:28px;width:210px;border-top:1px solid #D7FFEE;line-height: 28px;text-align: center;background-color:#99FFFF;margin-bottom:3px;}
+.all-sort-list .item:hover{font-weight:bold;background-color:#99FFFF;}
+
 
 .wrap_sort .right-float{width: 370px;height:250px;float: right; position:absolute;border: 1px #DFFFDF;top:0;right: 0;} 
 .right-float ul li{display: block;margin-bottom: 3px;width: 100%;height: 30px;line-height: 28px;text-align: center;background-color: #CEFFCE;}

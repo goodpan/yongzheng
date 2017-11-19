@@ -13,14 +13,14 @@ $config = [
             'charset' => 'utf8',
             'tablePrefix' => 'yz_'
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=yongzheng',
-            'username' => 'root',
-            'password' => 'root',
-            'charset' => 'utf8',
-            'tablePrefix' =>'yz_',
-        ],
+        // 'db' => [
+        //     'class' => 'yii\db\Connection',
+        //     'dsn' => 'mysql:host=127.0.0.1;dbname=yongzheng',
+        //     'username' => 'root',
+        //     'password' => 'root',
+        //     'charset' => 'utf8',
+        //     'tablePrefix' =>'yz_',
+        // ],
     ],
 ];
 
