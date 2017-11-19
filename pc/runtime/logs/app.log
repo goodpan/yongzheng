@@ -11800,3 +11800,1212 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1509869619.2445
     'REQUEST_TIME' => 1509869619
 ]
+2017-11-07 22:42:48 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: info/site/detail' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php:127
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('detail', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('info/site/detai...', Array)
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 22:42:48 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2064'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/info/site/detail'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/info/site/detail'
+    'REMOTE_PORT' => '54699'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510065768.0013
+    'REQUEST_TIME' => 1510065768
+]
+2017-11-07 22:59:42 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 22:59:42 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2064'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '55172'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_IF_MODIFIED_SINCE' => 'Sat, 08 Oct 2016 09:37:56 GMT'
+    'HTTP_IF_NONE_MATCH' => '\"169d9-53e5748158500\"'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510066782.3684
+    'REQUEST_TIME' => 1510066782
+]
+2017-11-07 23:10:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:10:15 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '56812'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067415.9044
+    'REQUEST_TIME' => 1510067415
+]
+2017-11-07 23:10:44 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:10:44 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '56825'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067444.2135
+    'REQUEST_TIME' => 1510067444
+]
+2017-11-07 23:10:48 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:10:48 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '56824'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067448.8236
+    'REQUEST_TIME' => 1510067448
+]
+2017-11-07 23:11:03 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:11:03 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '56920'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067463.9024
+    'REQUEST_TIME' => 1510067463
+]
+2017-11-07 23:11:07 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:11:07 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '56919'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067467.7095
+    'REQUEST_TIME' => 1510067467
+]
+2017-11-07 23:11:54 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery-3.2.1.min".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery-3.2.1...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:11:54 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery-3.2.1.min'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery-3.2.1.min'
+    'REMOTE_PORT' => '57123'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067514.4305
+    'REQUEST_TIME' => 1510067514
+]
+2017-11-07 23:11:59 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery-3.2.1.min".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery-3.2.1...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-07 23:11:59 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"!ÕGÂ¼îYrr ï6ðûÀÂÁ»ƒ[è±E.µõ¯£ž\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2140'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery-3.2.1.min'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery-3.2.1.min'
+    'REMOTE_PORT' => '57122'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=4130ffe83a3e23d689d4db3f637e5ca369bbaa435a01c99ec5637dae2873eaa6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%21%D5G%C2%BC%EEYrr+%EF6%F0%FB%C0%C2%C1%BB%04%83%5B%E8%B1E%15.%B5%F5%AF%A3%8F%9E%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510067519.4226
+    'REQUEST_TIME' => 1510067519
+]
+2017-11-18 16:12:06 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: info/site/detail' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php:127
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('detail', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('info/site/detai...', Array)
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-18 16:12:06 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2008'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/info/site/detail'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/info/site/detail'
+    'REMOTE_PORT' => '55599'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510992726.7271
+    'REQUEST_TIME' => 1510992726
+]
+2017-11-18 16:54:54 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'yongzhengdb'' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php:646
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(646): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(579): yii\db\Connection->createPdoInstance()
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(928): yii\db\Connection->open()
+#3 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(915): yii\db\Connection->getMasterPdo()
+#4 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(910): yii\db\Command->prepare('<span class="ke...')
+#6 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Query.php(213): yii\db\Command->queryAll()
+#8 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\ActiveQuery.php(135): yii\db\Query->all('<span class="ke...')
+#9 E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php(42): yii\db\ActiveQuery->all()
+#10 [internal function]: pc\modules\member\controllers\OperationController->actionRegister()
+#11 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#12 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('[]')
+#13 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('<span class="st...', '[]')
+#14 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('<span class="st...', '[]')
+#15 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#17 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'yongzhengdb'' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php:584
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(928): yii\db\Connection->open()
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Connection.php(915): yii\db\Connection->getMasterPdo()
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(910): yii\db\Command->prepare('<span class="ke...')
+#4 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Query.php(213): yii\db\Command->queryAll()
+#6 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\ActiveQuery.php(135): yii\db\Query->all('<span class="ke...')
+#7 E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php(42): yii\db\ActiveQuery->all()
+#8 [internal function]: pc\modules\member\controllers\OperationController->actionRegister()
+#9 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#10 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('[]')
+#11 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('<span class="st...', '[]')
+#12 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('<span class="st...', '[]')
+#13 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#15 {main}
+Additional Information:
+
+2017-11-18 16:54:53 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2144'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '57034'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510995293.2616
+    'REQUEST_TIME' => 1510995293
+]
+2017-11-18 16:55:35 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yongzheng.user' doesn't exist' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php:915
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(915): PDOStatement->execute()
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Query.php(213): yii\db\Command->queryAll()
+#3 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\ActiveQuery.php(135): yii\db\Query->all('<span class="ke...')
+#4 E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php(42): yii\db\ActiveQuery->all()
+#5 [internal function]: pc\modules\member\controllers\OperationController->actionRegister()
+#6 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#7 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('[]')
+#8 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('<span class="st...', '[]')
+#10 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yongzheng.user' doesn't exist
+The SQL being executed was: SELECT * FROM `user`' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Schema.php:636
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(930): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\Query.php(213): yii\db\Command->queryAll()
+#3 E:\rootwork\yongzheng\vendor\yiisoft\yii2\db\ActiveQuery.php(135): yii\db\Query->all('<span class="ke...')
+#4 E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php(42): yii\db\ActiveQuery->all()
+#5 [internal function]: pc\modules\member\controllers\OperationController->actionRegister()
+#6 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#7 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('[]')
+#8 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('<span class="st...', '[]')
+#9 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('<span class="st...', '[]')
+#10 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'yongzheng.user' doesn't exist
+)
+
+2017-11-18 16:55:34 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2144'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '57044'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510995334.0551
+    'REQUEST_TIME' => 1510995334
+]
+2017-11-18 16:55:56 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'pc\modules\member\controllers\yz_user' not found' in E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php:42
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-11-18 16:55:56 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2144'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '57052'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1510995356.1334
+    'REQUEST_TIME' => 1510995356
+]
+2017-11-18 21:47:09 [127.0.0.1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use pc\models\User as User because the name is already in use' in E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php:12
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-11-18 21:47:09 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '724'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '59214'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511012829.6148
+    'REQUEST_TIME' => 1511012829
+]
+2017-11-18 21:47:18 [127.0.0.1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use pc\models\User as User because the name is already in use' in E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php:12
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-11-18 21:47:18 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '724'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '59217'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511012838.0815
+    'REQUEST_TIME' => 1511012838
+]
+2017-11-18 21:47:37 [127.0.0.1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use pc\models\User as User because the name is already in use' in E:\rootwork\yongzheng\pc\modules\member\controllers\OperationController.php:12
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-11-18 21:47:37 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '724'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '59221'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511012857.6004
+    'REQUEST_TIME' => 1511012857
+]
+2017-11-18 21:58:55 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Setting unknown property: yii\db\Connection::enableParamLogging' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Component.php:201
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\BaseYii.php(529): yii\base\Component->__set('enableParamLogg...', true)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Object.php(105): yii\BaseYii::configure(Object(yii\db\Connection), Array)
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 E:\rootwork\yongzheng\vendor\yiisoft\yii2\di\Container.php(381): ReflectionClass->newInstanceArgs(Array)
+#4 E:\rootwork\yongzheng\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\db\\Connecti...', Array, Array)
+#5 E:\rootwork\yongzheng\vendor\yiisoft\yii2\BaseYii.php(348): yii\di\Container->get('yii\\db\\Connecti...', Array, Array)
+#6 E:\rootwork\yongzheng\vendor\yiisoft\yii2\di\ServiceLocator.php(135): yii\BaseYii::createObject(Array)
+#7 E:\rootwork\yongzheng\vendor\yiisoft\yii2-debug\panels\DbPanel.php(304): yii\di\ServiceLocator->get('db')
+#8 E:\rootwork\yongzheng\vendor\yiisoft\yii2-debug\panels\DbPanel.php(255): yii\debug\panels\DbPanel->getDb()
+#9 E:\rootwork\yongzheng\vendor\yiisoft\yii2-debug\Module.php(179): yii\debug\panels\DbPanel->isEnabled()
+#10 E:\rootwork\yongzheng\vendor\yiisoft\yii2-debug\Module.php(151): yii\debug\Module->initPanels()
+#11 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Object.php(107): yii\debug\Module->init()
+#12 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(158): yii\base\Object->__construct(Array)
+#13 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#14 E:\rootwork\yongzheng\vendor\yiisoft\yii2\di\Container.php(375): ReflectionClass->newInstanceArgs(Array)
+#15 E:\rootwork\yongzheng\vendor\yiisoft\yii2\di\Container.php(156): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#16 E:\rootwork\yongzheng\vendor\yiisoft\yii2\BaseYii.php(348): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#17 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(423): yii\BaseYii::createObject(Array, Array)
+#18 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(309): yii\base\Module->getModule('debug')
+#19 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#20 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(272): yii\web\Application->bootstrap()
+#21 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Object.php(107): yii\base\Application->init()
+#22 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(205): yii\base\Object->__construct(Array)
+#23 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->__construct(Array)
+#24 {main}
+2017-11-18 21:58:55 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"ú£] )ýù´DUòÍÅQg#Œ|2·u±þT›ç\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2124'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/member/operation/register'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/member/operation/register'
+    'REMOTE_PORT' => '59544'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=7369d031adaeb22bb8dc5caee030a08702e8a9a0ef6ac3a7941c71e11a790dd9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%FA%A3%5D%07%10+%29%FD%F9%07%B4D%03U%F2%CD%C5Qg%23%8C%7C2%B7u%B1%FET%9B%06%E7%03%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/member/operation/login'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511013535.6311
+    'REQUEST_TIME' => 1511013535
+]
+2017-11-19 10:28:47 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: info/site/detail' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Controller.php:127
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('detail', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('info/site/detai...', Array)
+#2 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-19 10:28:47 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'dde0e9f0e6c4eb059719f8fedf67ce3daa5ed98bcc13d4f160e7a55ba981f561a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"âÂnb|½0T4
+Ö~’¡*ˆ”*Éžáu÷&¡fM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2100'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/info/site/detail'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/info/site/detail'
+    'REMOTE_PORT' => '64326'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=dde0e9f0e6c4eb059719f8fedf67ce3daa5ed98bcc13d4f160e7a55ba981f561a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%E2%C2nb%7C%BD%080%9DT4%15%0A%D6%7E%92%A1%2A%88%94%2A%C9%9E%E1u%81%F7%26%02%A1fM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511058527.9153
+    'REQUEST_TIME' => 1511058527
+]
+2017-11-19 10:29:56 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "js/jquery.min.js".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('js/jquery.min.j...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-11-19 10:29:56 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => 'dde0e9f0e6c4eb059719f8fedf67ce3daa5ed98bcc13d4f160e7a55ba981f561a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"âÂnb|½0T4
+Ö~’¡*ˆ”*Éžáu÷&¡fM\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;D:\\Program Files\\mysql-5.6.24\\bin;C:\\Program Files\\TortoiseSVN\\bin;D:\\phpStudy\\php55n;'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2100'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/js/jquery.min.js'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/js/jquery.min.js'
+    'REMOTE_PORT' => '55143'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=dde0e9f0e6c4eb059719f8fedf67ce3daa5ed98bcc13d4f160e7a55ba981f561a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%E2%C2nb%7C%BD%080%9DT4%15%0A%D6%7E%92%A1%2A%88%94%2A%C9%9E%E1u%81%F7%26%02%A1fM%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.yongzheng.dev/info/site/detail'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1511058596.4953
+    'REQUEST_TIME' => 1511058596
+]

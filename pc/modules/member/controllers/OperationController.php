@@ -8,7 +8,7 @@
 namespace pc\modules\member\controllers;
 
 use pc\controllers\BaseController;
-use pc\models\Tesr;
+use pc\models\User;
 
 /** 会员操作控制器
  * Class OperationController
