@@ -19,5 +19,5 @@ info_num VARCHAR(20) not null COMMENT '身份证号码', -- ,
 info_img VARCHAR(50) not null COMMENT '身份证正面照', -- ,
 tel VARCHAR(11) not null COMMENT '电话号码', -- ,
 email VARCHAR(30) not null COMMENT '邮箱', --
-STATUS TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
+status TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
 )
