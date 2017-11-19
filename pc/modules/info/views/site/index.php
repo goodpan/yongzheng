@@ -260,10 +260,12 @@
     <!-- 热门代办平台 -->
     <div class="wrap_hot">
       <h1>热门代办平台</h1>
+      <div class="wrap_hot_img">
       <a href=""><img class="hot_img" src="./image/logo.jpg"></a>
       <a href=""><img class="hot_img" src="./image/logo.jpg"></a>
       <a href=""><img class="hot_img" src="./image/logo.jpg"></a>
       <a href=""><img class="hot_img" src="./image/logo.jpg"></a>
+      </div>
     </div>
     <div class="wrap_category_list">
       <div class="zj_type_1">

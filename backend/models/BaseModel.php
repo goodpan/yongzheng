@@ -11,6 +11,21 @@ namespace backend\models;
 use yii\db\ActiveRecord;
 use yii\data\Pagination;
 class BaseModel extends ActiveRecord{
+    /** 新增
+     * @param $data
+     * @return bool
+     */
+    public function add($data){
+        if($this->load($data,'')&&$this->validate()){
+            $this->create_time = time();//创建时间
+            if ($this->save(false)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
     /** 获取总数
      * @return int|string
      */

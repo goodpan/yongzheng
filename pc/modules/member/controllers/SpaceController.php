@@ -28,13 +28,13 @@ class SpaceController extends BaseController{
         return $this->render('lxfs');
     }
 
-    //基本资料
+    //修改密码
     public function actionXgmm(){
         $this->layout = '@app/views/layouts/main.php';
         return $this->render('xgmm');
     }
 
-    //基本资料
+    //账户管理
     public function actionZhgl(){
         $this->layout = '@app/views/layouts/main.php';
         return $this->render('zhgl');

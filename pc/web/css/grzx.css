@@ -1,4 +1,51 @@
-.left-nav{width: 150px;height: 600px;border-right:1px solid #D8D8D8;position:absolute;left: 0px;}
-.right-show{width: 800px;height: 600px;position: absolute;left: 160px;}
+/*********左侧导航栏********************/
+.left-nav{width: 150px;height: 500px;border-right:1px solid #D8D8D8;position:absolute;left: 0px;}
+.right-show{width: 800px;height: 500px;position: absolute;left: 160px;}
 .yz-grzl{display: block;margin-bottom: 2px;text-align: center;}
-.yz-grzl ul li{display: block;background-color: #C0C0C0;margin-bottom: 3px;height: 40px;line-height: 38px;}
+.yz-grzl ul li{display: block;margin-bottom: 3px;height: 40px;line-height: 38px;}
+.check{background-color:white}
+.checked{background-color:#DFDFDF}
+.fl{float: left;}
+/*********左侧导航栏********************/
+
+/*********个人中心********************/
+.xhx{border-bottom: 1px solid #9c9999;height: 40px;margin-top:0px;}
+.zwjs{text-align: left;color: #AAAAAA}
+.info_contain{width:500px;height: 400px;margin: 0px auto;margin-top: 20px;}
+.info_contain form{height: 350px;}
+.info_contain textarea{height: 120px;width: 200px;}
+.info_contain .jianjie{margin-top: 0px;}
+/*********个人中心********************/
+
+/*********联系方式********************/
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+.user_lxfs{height: 450px;}
+.lxfs_contain{height: 400px;margin-left: 20px;}
+.lxfs_contain a{color:#0B73BB;cursor: pointer;}
+.lxfs_contain p{text-align: left;color: #AAAAAA}
+/*********联系方式********************/
+
+/*********账户管理********************/
+.tixin{ background-color: #6699FF;}
+.user_zhgl{height: 440px;}
+.zhgl_contain{height: 420px;}
+.s_zh{height: 195px;}
+.x_zh{height: 240px;}
+.grkh,.qykh{height: 180px;width: 400px;}
+.gr-khlc,.qy-khlc{height: 110px;width: 800px;}
+.gr-khlc ul li,.qy-khlc ul li{list-style: none;display: block;margin-right: 50px;float: left;color: #ffa300;}
+.lc{display: block;border: 1px solid;background-color: #FCF8E3}
+.process-head{margin-bottom: 5px;}
+.type-title{margin-top: 5px;height: 20px;width:800px;}
+.s_zh .kh{margin-left: 80px;}
+.grkh .type-img{display: inline-block;width: 110px;height: 110px;
+	background: url(/image/member/grkh.png) no-repeat;margin-left: 70px;
+    cursor: pointer;}
+.qykh .type-img{display: inline-block;width: 110px;height: 110px;margin-left: 70px;
+	background: url(/image/member/qykh.png) no-repeat;
+    cursor: pointer;}
+/*********账户管理********************/
+
+
+

@@ -28,6 +28,8 @@ AppAsset::register($this);
     <title><?= Html::encode('雍正网') ?></title>
   <script src="./js/jquery-1.11.1.min.js"></script>
 <script src="./js/unslider.min.js"></script>
+<script src="./js/grzx.js"></script>
+
     <?php $this->head() ?>
 </head>
 <body>

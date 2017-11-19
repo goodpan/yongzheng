@@ -120,7 +120,6 @@ a:hover,a:active{text-decoration:underline;}
 .wrap_hot{width: 1190px;height: 300px;}
 .wrap_hot h1{text-align: center;color: blue;margin-top:0;}
 .wrap_hot .hot_img{width:20%;height:150px;float: left;margin-right:30px;margin-top:10px;}
-
 .wrap_category_list{margin-top: 10px;margin-bottom: 20px;}
 .wrap_category_list h3{background-color: #CEFFCE;}
 .wrap_category_list .zj_type_2{display: block;width: 100%;overflow:hidden;}
