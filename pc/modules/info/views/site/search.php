@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/css/search.css">
 <div class="container-main">
     <div class="container-main-top">
-        <a href="#">
+        <a href="<?echo Yii::$app->getHomeUrl();?>">
             <img class="container-logo" src="/image/logo.jpg">
         </a>
         <div class="container-main-search">
@@ -27,84 +27,26 @@
     <div class="container-main-foot">
         <div class="container-content">
             <div class="container-content-nav">
-                <div class="nav-content">雍正为您找到相关结果约53,700,000个</div>
+                <div class="nav-content">雍正为您找到相关结果约<?echo $countItem;?>个</div>
             </div>
             <ul class="list-box">
-                <li>
-                    <a href="#">
-                        <div class="item-inner">
-                            <img class="item-img" src="/image/item-img.jpg">
-                            <div class="item-content">
-                                <div class="item-title">
-                                    结婚证办理流程
-                                </div>
-                                <div class="item-nav">
-                                    办证流程：条件···············>材料···············>费用···············>周期···············>地址
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="item-inner">
-                            <img class="item-img" src="/image/item-img.jpg">
-                            <div class="item-content">
-                                <div class="item-title">
-                                    结婚证办理流程
-                                </div>
-                                <div class="item-nav">
-                                    办证流程：条件···············>材料···············>费用···············>周期···············>地址
+                <? foreach ($credentialsList as $item) { ?>
+                    <li>
+                        <a href="#">
+                            <div class="item-inner">
+                                <img class="item-img" src="<?echo $item->cover;?>">
+                                <div class="item-content">
+                                    <div class="item-title">
+                                        <?echo $item->cred_name?>
+                                    </div>
+                                    <div class="item-nav">
+                                        <?echo $item->descr?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="item-inner">
-                            <img class="item-img" src="/image/item-img.jpg">
-                            <div class="item-content">
-                                <div class="item-title">
-                                    结婚证办理流程
-                                </div>
-                                <div class="item-nav">
-                                    办证流程：条件···············>材料···············>费用···············>周期···············>地址
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="item-inner">
-                            <img class="item-img" src="/image/item-img.jpg">
-                            <div class="item-content">
-                                <div class="item-title">
-                                    结婚证办理流程
-                                </div>
-                                <div class="item-nav">
-                                    办证流程：条件···············>材料···············>费用···············>周期···············>地址
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="item-inner">
-                            <img class="item-img" src="/image/item-img.jpg">
-                            <div class="item-content">
-                                <div class="item-title">
-                                    结婚证办理流程
-                                </div>
-                                <div class="item-nav">
-                                    办证流程：条件···············>材料···············>费用···············>周期···············>地址
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
+                <? } ?>
             </ul>
             <div class="content-foot">
                 <div class="page">
@@ -124,3 +66,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?echo Yii::$app->getHomeUrl()?>js/pagnation/jqPaginator.js"></script>
