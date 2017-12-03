@@ -11,6 +11,19 @@ use yii\db\ActiveRecord;
 
 class User extends ActiveRecord
 {
+<<<<<<< .mine
+
+
+
+
+
+
+
+
+
+
+
+=======
     /**
      * 获取用户信息
      * @param $uid
@@ -22,6 +35,7 @@ class User extends ActiveRecord
         return self::find()->where(['user_id'=>$uid])->asArray()->one();
     }
 
+>>>>>>> .theirs
     /**
      * 修改用户密码
      * @param  [type] $uid  [description]
