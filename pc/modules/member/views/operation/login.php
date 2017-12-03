@@ -38,11 +38,11 @@
             <div class="signin">
                 <form action="" id="submit-form">
                     <div class="rlf-group">
-                        <input type="text" id="sMobile" class="ipt ipt-email" placeholder="请输入登录邮箱/手机号">
+                        <input type="text" name="sMobile" id="sMobile" class="ipt ipt-email" placeholder="请输入登录邮箱/手机号">
                         <p id="errorText" class="color-red rlf-tip-wrap " style="visibility: hidden">请输入正确的邮箱或手机号</p>
                     </div>
                     <div class="rlf-group">
-                        <input type="text" id="pwd" class="ipt ipt-email" placeholder="请输入6-16位密码，区分大小写，不能使用空格！">
+                        <input type="text" id="pwd" name="pwd" class="ipt ipt-email" placeholder="请输入6-16位密码，区分大小写，不能使用空格！">
                         <p id="errPwd" class="color-red rlf-tip-wrap" style="visibility: hidden">请输入6-16位密码，区分大小写，不能使用空格！</p>
                     </div>
                     <div class="rlf-group rlf-bottom">
@@ -99,8 +99,28 @@
     });
 
     $('#submit-button').click(function () {
-        alert(1243);
-    });
+        var sMobile = $('#sMobile').val();
+        var pwd = $('#pwd').val();
+
+        if(sMobile == ''){
+            $('#errorText').attr('style','visibility:visible');
+        }
+        if(pwd == ''){
+            $('#errPwd').attr('style','visibility:visible');
+        }
+
+        var url = 'http://'+window.location.host+"/member/operation/login";
+
+        var formdata = $('#submit-form').serialize();
+            if(data.status){
+                alert(data.msg);
+                location.href =  'http://'+window.location.host+"/member/space/index";
+            }else {
+                alert(data.msg);
+            }
+        },'json');
+    })
+    
 
 
 </script>
