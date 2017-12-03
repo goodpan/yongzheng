@@ -17,6 +17,10 @@ use pc\logics\BaseBlocks;
  */
 class BaseController extends Controller
 {
+    function beforeAction($action)
+    {
+        return parent::beforeAction($action);
+    }
 
     public function init()
     {
@@ -28,6 +32,13 @@ class BaseController extends Controller
      */
     public function checkLogin(){
 
+    }
+
+    /**
+     * 当前时间
+     */
+    public function getDateTime(){
+        return date("Y-m-d H:i:s",time());
     }
 
 }

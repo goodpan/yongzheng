@@ -210,7 +210,7 @@
 
       <div class="item">
 
-        <em><a href="">更多</a><em/>
+        <em><a href="">更多</a></em>
 
         <div class="item-list clearfix">
 

@@ -36,7 +36,7 @@
             <div class="loginWrap"></div>
 
             <div class="signin">
-                <form action="">
+                <form action="" id="submit-form">
                     <div class="rlf-group">
                         <input type="text" id="sMobile" class="ipt ipt-email" placeholder="请输入登录邮箱/手机号">
                         <p id="errorText" class="color-red rlf-tip-wrap " style="visibility: hidden">请输入正确的邮箱或手机号</p>
@@ -52,7 +52,7 @@
                         </label>
                     </div>
                     <div class="rlf-group">
-                        <input type="button" value="登录" hidefocus="true" class="btn-red btn-full xa-login">
+                        <input id="submit-button" type="button" value="登录" hidefocus="true" class="btn-red btn-full xa-login">
                     </div>
                 </form>
                 <div class="rl-model-footer">
@@ -96,6 +96,10 @@
     //去空格
     $('#pwd').keyup(function () {
         this.value=this.value.replace(" ", "");
+    });
+
+    $('#submit-button').click(function () {
+        alert(1243);
     });
 
 
