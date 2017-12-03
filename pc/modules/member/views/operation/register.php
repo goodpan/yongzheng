@@ -34,33 +34,37 @@
             </div>
 
             <div class="loginWrap"></div>
-
+            <input name="_csrf" class="csrf" type="hidden" id="_csrf" value="<?= Yii::$app->request->csrfToken ?>">
             <div class="signin">
-                <form action="" name="">
+                <form id="submit-reg">
                     <div class="rlf-group">
                         <input type="text" id="sMobile" name="sMobile" class="ipt ipt-email" placeholder="请输入注册邮箱/手机号">
                         <p id="errorText" class="color-red rlf-tip-wrap" style="visibility: hidden">请输入正确的邮箱或手机号</p>
                     </div>
                     <div class="rlf-group">
-                        <input id="verfy" type="text" name="verify" class="ipt ipt-email" placeholder="请输入短信验证码" maxlength="4" >
+                        <input id="verfy" type="text" name="verify" class="ipt ipt-email" placeholder="请输入短信验证码"
+                               maxlength="4">
                         <span class="re-send">重新发送</span>
                         <p id="errverfy" class="color-red rlf-tip-wrap" style="visibility: hidden">请输入正确的短信验证码</p>
                     </div>
-                    <div class="rlf-group " >
+                    <div class="rlf-group ">
                         <a href="/image/member/bpwd.png" class="is-pwd"></a>
-                        <input type="text" id="pwd" name="sPwd"  class="ipt ipt-email" placeholder="6-16位密码，区分大小写，不能用空格" maxlength="16">
-                        <p id="errPwd" class="color-red rlf-tip-wrap" style="visibility: hidden">6-16位密码，区分大小写，不能用空格！</p>
+                        <input type="text" id="pwd" name="sPwd" class="ipt ipt-email" placeholder="6-16位密码，区分大小写，不能用空格"
+                               maxlength="16">
+                        <p id="errPwd" class="color-red rlf-tip-wrap" style="visibility: hidden">
+                            6-16位密码，区分大小写，不能用空格！</p>
                     </div>
                     <div class="rlf-group">
-                        <input type="button" value="注册" hidefocus="true" class="btn-red btn-full xa-login">
+                        <input type="button" id="btnRegist" value="注册" hidefocus="true"
+                               class="btn-red btn-full xa-login">
                     </div>
                 </form>
                 <div class="rl-model-footer">
                     <div class="clearfix login-sns-wrap">
                         <span class="fl " style="color:#666">其他方式登录</span>
                         <a href="#" class="pop-sns-weibo fr mr60"><i class="icon-weibo"></i></a>
-                        <a href="#"  class="pop-sns-weixin fr mr60"><i class="icon-weixin"></i></a>
-                        <a href="#"  class="pop-sns-qq fr mr60"><i class="icon-qq"></i></a>
+                        <a href="#" class="pop-sns-weixin fr mr60"><i class="icon-weixin"></i></a>
+                        <a href="#" class="pop-sns-qq fr mr60"><i class="icon-qq"></i></a>
                     </div>
                 </div>
             </div>
@@ -76,38 +80,68 @@
     //验证手机号
     $('#sMobile').focusout(function (e) {
         var email = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-        var partten =  /^1[34578]\d{9}$/;
-        if(!(email.test(e.target.value)||partten.test(e.target.value))){
-            $('#errorText').attr('style','visibility:visible');
-        }else{
-            $('#errorText').attr('style','visibility:hidden');
+        var partten = /^1[34578]\d{9}$/;
+        if (!(email.test(e.target.value) || partten.test(e.target.value))) {
+            $('#errorText').attr('style', 'visibility:visible');
+        } else {
+            $('#errorText').attr('style', 'visibility:hidden');
         }
     });
 
     //验证验证码
     $('#verfy').focusout(function (e) {
-       if(e.target.value == ''){
-           $('#errverfy').attr('style','visibility:visible');
-       }else {
-           $('#errverfy').attr('style','visibility:hidden');
-       }
+        if (e.target.value == '') {
+            $('#errverfy').attr('style', 'visibility:visible');
+        } else {
+            $('#errverfy').attr('style', 'visibility:hidden');
+        }
     });
 
     //验证密码
     $('#pwd').focusout(function (e) {
         var pwd = e.target.value;
 
-        if(pwd.length >= 6 &&  pwd.length <= 16){
-            $('#errPwd').attr('style','visibility:hidden');
-        }else {
-            $('#errPwd').attr('style','visibility:visible');
+        if (pwd.length >= 6 && pwd.length <= 16) {
+            $('#errPwd').attr('style', 'visibility:hidden');
+        } else {
+            $('#errPwd').attr('style', 'visibility:visible');
         }
     });
     //去空格
     $('#pwd').keyup(function () {
-        this.value=this.value.replace(" ", "");
+        this.value = this.value.replace(" ", "");
     });
 
+    //注册
+    $('#btnRegist').click(function () {
+        var sMobile = $('#sMobile').val();
+        var verfy = $('#verfy').val();
+        var pwd = $('#pwd').val();
+        if (sMobile == '') {
+            $('#errorText').attr('style', 'visibility:visible');
+            return false;
+        }
+        if (verfy == '') {
+            $('#errverfy').attr('style', 'visibility:visible');
+            return false;
+        }
+        if (pwd == '') {
+            $('#errPwd').attr('style', 'visibility:visible');
+            return false;
+        }
+        var url = 'http://'+window.location.host+"/member/operation/register";
+
+        var formdata = $('#submit-reg').serialize();
+
+        $.post(url, formdata, function (data) {
+            if(data.status){
+                alert(data.msg);
+                location.href =  'http://'+window.location.host+"/member/operation/login";
+            }else {
+                alert(alert(data.msg));
+            }
+        },'json');
+    });
 
 </script>
 </body>

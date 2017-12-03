@@ -98,6 +98,42 @@ class OperationController extends BaseController{
         return $this->render('add',['cateList'=>$cateList]);
     }
 
+
+    public function actionEdit(){
+        if(\Yii::$app->request->isAjax){
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            $post = Yii::$app->request->post();
+            $model = new Credentials();
+            if($model->edit($post)){
+                return [
+                    'code'=>0,
+                    'msg'=>'添加成功',
+                    'data'=>[]
+                ];
+            }else{
+                $error = array_values($model->getFirstErrors())[0];
+                return [
+                    'code'=>0,
+                    'msg'=>'添加失败',
+                    'error'=>$error,
+                    'data'=>[]
+                ];
+            }
+        }
+        $cred_id = Yii::$app->request->get('id');
+        if(!isset($cred_id)){
+            echo '参数错误';
+            exit;
+        }
+        //获取分类options
+        $cateModel = new Category();
+        $cateList = $cateModel->getTree();
+        $credModel = new Credentials();
+        $cred = $credModel->getOneById(['cred_id'=>$cred_id]);
+
+        return $this->render('edit',['cateList'=>$cateList,'cred'=>$cred]);
+    }
+
     /** 上传图片
      * @return string
      */
