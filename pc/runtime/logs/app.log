@@ -51453,3 +51453,64 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1512273512.899
     'REQUEST_TIME' => 1512273512
 ]
+2017-12-03 12:46:36 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "debug/default/index".' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Module.php:532
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('debug/default/i...', Array)
+#1 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\rootwork\yongzheng\vendor\yiisoft\yii2\web\Application.php:114
+Stack trace:
+#0 E:\rootwork\yongzheng\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\rootwork\yongzheng\pc\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-12-03 12:46:36 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf-frontend' => '882602db13c2f4d4b854227b3d55ce766f25302baeda4a1e0aec6004d15bbbf0a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"¬P¨™¥ÂFéÔÚË“àó4Ëu”Å©Ò uü§ú;±\";}'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;d:\\Program Files\\Git\\cmd;D:\\Program Files\\mysql-5.6.24\\bin;D:\\phpStudy\\php55n;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2192'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/debug/default/index'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/debug/default/index'
+    'REMOTE_PORT' => '53041'
+    'SCRIPT_FILENAME' => 'E:/rootwork/yongzheng/pc/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'E:/rootwork/yongzheng/pc/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yongzheng.dev'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_COOKIE' => '_csrf-frontend=882602db13c2f4d4b854227b3d55ce766f25302baeda4a1e0aec6004d15bbbf0a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22%ACP%A8%99%A5%C2%02F%E9%D4%DA%CB%93%1D%E0%F3%0B4%CBu%94%13%C5%A9%D2%A0u%FC%A7%FA%3B%B1%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.yongzheng.dev'
+    'REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1512276396.6946
+    'REQUEST_TIME' => 1512276396
+]

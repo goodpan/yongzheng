@@ -19,7 +19,7 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.163.com',
                 'username' => 'suwen0603@163.com',//授权邮箱
-                'password' => 'yongzheng2017',//授权码，在163邮箱中设置--POP3/SMTP/IMAP，打开服务设置授权码
+                'password' => 'yongzheng2017',//授权码，在163邮箱中设置--POP3/SMTP/IMAP，av打开服务设置授权码
                 'port' => '465',
                 'encryption' => 'ssl',
             ],
