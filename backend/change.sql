@@ -19,5 +19,24 @@ info_num VARCHAR(20) not null COMMENT '身份证号码', -- ,
 info_img VARCHAR(50) not null COMMENT '身份证正面照', -- ,
 tel VARCHAR(11) not null COMMENT '电话号码', -- ,
 email VARCHAR(30) not null COMMENT '邮箱', --
+<<<<<<< HEAD
 status TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
 )
+=======
+STATUS TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商家表';
+
+/**
+lmk 2017年12月2日20:51:36
+ALTER TABLE yz_user add nickname varchar(30) not null default 0 comment '昵称';
+ALTER TABLE yz_user add update_time int(11) not null default 0 comment '更新时间';
+ALTER TABLE yz_user add profile varchar(50) not null default '' comment '简介';
+ALTER TABLE yz_user add birthday int not null default 0 comment '生日';
+ALTER TABLE yz_user add sex varchar(10) not null default '男' comment '性别';
+ALTER TABLE yz_user add detailaddress varchar(50) not null default '' comment '详细地址';
+ALTER TABLE yz_user add pca varchar(30) not null default '' comment '所在地省市区';
+ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comment '固定电话';
+ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
+
+ */
+>>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b

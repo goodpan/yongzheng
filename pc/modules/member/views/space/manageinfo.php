@@ -2,9 +2,9 @@
         <div class="yz-grzl">
             <ul >
                 <a href="/member/space/index" target="right"><li>基本资料</li></a>
-                <a href="/member/space/lxfs" target="right"><li>联系方式</li></a>
-                <a href="/member/space/xgmm" target="right"><li>修改密码</li></a>
-                <a href="/member/space/zhgl" target="right"><li>账户管理</li></a>
+                <a href="/member/space/contactway" target="right"><li>联系方式</li></a>
+                <a href="/member/space/changepwd" target="right"><li>修改密码</li></a>
+                <a href="/member/space/manageinfo" target="right"><li>账户管理</li></a>
             </ul>
         </div>
  </div>

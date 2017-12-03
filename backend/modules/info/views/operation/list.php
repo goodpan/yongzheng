@@ -55,17 +55,17 @@
 layui.use('table', function(){
   var table = layui.table;
     //监听工具条
-    table.on('tool(demo)', function(obj){
+    table.on('tool(cred_list)', function(obj){
     var data = obj.data;
     if(obj.event === 'detail'){
-      layer.msg('ID：'+ data.id + ' 的查看操作');
+      layer.msg('ID：'+ data.cred_id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
         obj.del();
         layer.close(index);
       });
     } else if(obj.event === 'edit'){
-      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+        location.href = '/info/operation/edit?id='+data.cred_id
     }
   });
 })

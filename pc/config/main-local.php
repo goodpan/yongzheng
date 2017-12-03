@@ -9,18 +9,10 @@ $config = [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=47.94.161.223;dbname=yongzheng',
             'username' => 'root',
-            'password' => 'liu5555',
+            'password' => 'study123456',
             'charset' => 'utf8',
             'tablePrefix' => 'yz_'
         ],
-        // 'db' => [
-        //     'class' => 'yii\db\Connection',
-        //     'dsn' => 'mysql:host=127.0.0.1;dbname=yongzheng',
-        //     'username' => 'root',
-        //     'password' => 'root',
-        //     'charset' => 'utf8',
-        //     'tablePrefix' =>'yz_',
-        // ],
     ],
 ];
 

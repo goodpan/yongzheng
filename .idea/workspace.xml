@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e013ad36-52a2-46c1-86b3-54e66b2f3ba6" name="Default" comment="">
 <<<<<<< HEAD
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/modules/info/views/operation/edit.php" />
+=======
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pc/models/User.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
@@ -43,15 +46,14 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/css/modules/layer/default/loading-2.gif" afterPath="$PROJECT_DIR$/backend/web/css/modules/layer/default/loading-2.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/favicon.ico" afterPath="$PROJECT_DIR$/backend/web/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/images/banner4-1.jpg" afterPath="$PROJECT_DIR$/backend/web/images/banner4-1.jpg" />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logics/UnLimitTree.php" afterPath="$PROJECT_DIR$/backend/logics/UnLimitTree.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Auth.php" afterPath="$PROJECT_DIR$/backend/models/Auth.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/BaseModel.php" afterPath="$PROJECT_DIR$/backend/models/BaseModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Category.php" afterPath="$PROJECT_DIR$/backend/models/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Role.php" afterPath="$PROJECT_DIR$/backend/models/Role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/RoleAuth.php" afterPath="$PROJECT_DIR$/backend/models/RoleAuth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Credentials.php" afterPath="$PROJECT_DIR$/backend/models/Credentials.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php" afterPath="$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/info/views/operation/list.php" afterPath="$PROJECT_DIR$/backend/modules/info/views/operation/list.php" />
+<<<<<<< HEAD
+=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" afterPath="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/.gitignore" afterPath="$PROJECT_DIR$/backend/web/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/assets/.gitignore" afterPath="$PROJECT_DIR$/backend/web/assets/.gitignore" />
@@ -130,6 +132,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/user.json" afterPath="$PROJECT_DIR$/backend/web/user.json" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
     </list>
     <ignored path="yongzheng.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -161,6 +164,18 @@
     <leaf />
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/modules/info/views/operation/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="47" column="60" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#1857#1865#1#HTML" expanded="true" />
+                <marker date="1511074153000" expanded="true" signature="4695:4900" ph="{...}" />
+                <marker date="1511074153000" expanded="true" signature="5827:5841" ph="..." />
+=======
 <<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pc/modules/info/views/site/index.php">
@@ -229,11 +244,15 @@
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#1555#1563#1#HTML" expanded="true" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="OperationController.php" pinned="false" current-in-tab="false">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="site.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pc/web/css/site.css">
@@ -243,10 +262,11 @@
               <folding />
 =======
       <file leaf-file-name="OperationController.php" pinned="false" current-in-tab="true">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         <entry file="file://$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+            <state relative-caret-position="505">
+              <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
               <folding>
                 <element signature="e#133#172#0#PHP" expanded="true" />
               </folding>
@@ -255,6 +275,16 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="BaseModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/models/BaseModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#116#136#0#PHP" expanded="true" />
+              </folding>
+=======
 <<<<<<< HEAD
       <file leaf-file-name="grzx.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pc/web/css/grzx.css">
@@ -269,10 +299,14 @@
               <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
               <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Credentials.php" pinned="false" current-in-tab="true">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="detail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pc/modules/info/views/site/detail.php">
@@ -282,10 +316,11 @@
               <folding />
 =======
       <file leaf-file-name="Credentials.php" pinned="false" current-in-tab="false">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         <entry file="file://$PROJECT_DIR$/backend/models/Credentials.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+            <state relative-caret-position="655">
+              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#115#143#0#PHP" expanded="true" />
@@ -294,6 +329,8 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
       <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/modules/info/views/operation/list.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -337,6 +374,7 @@
           </provider>
         </entry>
       </file>
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
     </leaf>
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
   </component>
@@ -359,7 +397,10 @@
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
         <option value="$PROJECT_DIR$/backend/modules/system/views/site/index.php" />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         <option value="$PROJECT_DIR$/backend/config/main.php" />
         <option value="$PROJECT_DIR$/backend/modules/console/Console.php" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
@@ -438,7 +479,6 @@
         <option value="$PROJECT_DIR$/backend/logics/UnLimitTree.php" />
         <option value="$PROJECT_DIR$/backend/models/UploadForm.php" />
         <option value="$PROJECT_DIR$/backend/modules/manager/controllers/OperationController.php" />
-        <option value="$PROJECT_DIR$/backend/models/BaseModel.php" />
         <option value="$PROJECT_DIR$/backend/models/Auth.php" />
         <option value="$PROJECT_DIR$/backend/models/Category.php" />
         <option value="$PROJECT_DIR$/backend/models/Role.php" />
@@ -446,6 +486,8 @@
         <option value="$PROJECT_DIR$/backend/modules/info/views/operation/add.php" />
         <option value="$PROJECT_DIR$/backend/modules/info/views/operation/list.php" />
         <option value="$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php" />
+        <option value="$PROJECT_DIR$/backend/models/BaseModel.php" />
+        <option value="$PROJECT_DIR$/backend/modules/info/views/operation/edit.php" />
         <option value="$PROJECT_DIR$/backend/models/Credentials.php" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
@@ -531,9 +573,27 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="common" />
+=======
               <option name="myItemId" value="pc" />
 <<<<<<< HEAD
 =======
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yongzheng" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yongzheng" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,24 +611,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yongzheng" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yongzheng" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="models" />
+=======
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -689,6 +734,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
 =======
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -706,6 +752,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="config" />
+=======
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -717,6 +766,7 @@
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
               <option name="myItemId" value="controllers" />
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -843,8 +893,13 @@
 =======
       <workItem from="1509953249807" duration="10534000" />
       <workItem from="1510397510369" duration="14164000" />
+<<<<<<< HEAD
+      <workItem from="1510930895615" duration="222000" />
+      <workItem from="1511057542758" duration="5520000" />
+=======
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
     </task>
     <task id="LOCAL-00001" summary="添加UnLimitTree">
       <created>1509636767956</created>
@@ -857,6 +912,9 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="211866000" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="207311000" />
   </component>
@@ -876,6 +934,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22358346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
     <option name="totallyTimeSpent" value="206124000" />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="971" extended-state="6" />
@@ -887,6 +946,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -897,7 +957,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -925,6 +984,15 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/backend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-600">
+            <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+          </first_editor>
+          <second_editor />
+=======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/backend/modules/info/controllers/ClassifyController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
@@ -939,6 +1007,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1007,6 +1076,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pc/modules/member/views/operation/forgetpwd.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="270">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+=======
         <state relative-caret-position="345">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
         </state>
@@ -1017,6 +1090,7 @@
         <state relative-caret-position="575">
           <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
           <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1048,6 +1122,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/backend/web/css/login.css">
+=======
     <entry file="file://$PROJECT_DIR$/backend/views/site/error.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1056,6 +1133,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/modules/manager/views/operation/baseinfo.php">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="49" column="36" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="36" />
@@ -1158,10 +1236,13 @@
 =======
         <state relative-caret-position="360">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+<<<<<<< HEAD
+=======
           <folding>
             <marker date="1509629763000" expanded="true" signature="5:11" ph="{...}" />
           </folding>
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1405,7 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
           <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1493,9 +1573,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+<<<<<<< HEAD
+=======
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
           <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1515,8 +1598,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+<<<<<<< HEAD
+=======
           <folding />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1528,8 +1614,11 @@
 =======
         <state relative-caret-position="360">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+<<<<<<< HEAD
+=======
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
           <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1550,8 +1639,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
           <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+<<<<<<< HEAD
+=======
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
           <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
@@ -1568,6 +1660,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/backend/modules/system/controllers/RbacController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="108" column="48" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Category.php">
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/backend/config/test-local.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1610,15 +1712,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
     <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+    <entry file="file://$PROJECT_DIR$/backend/modules/info/views/classify/list.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="490">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/UploadForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#116#135#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/info/views/classify/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="88" column="35" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
+=======
         <state relative-caret-position="225">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
@@ -1637,10 +1762,14 @@
         <state relative-caret-position="30">
           <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/backend/modules/info/controllers/ClassifyController.php">
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/pc/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1658,19 +1787,25 @@
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
 =======
     <entry file="file://$PROJECT_DIR$/backend/modules/system/controllers/RbacController.php">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="108" column="48" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+        <state relative-caret-position="570">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Category.php">
+    <entry file="file://$PROJECT_DIR$/backend/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+=======
         <state relative-caret-position="315">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
 >>>>>>> 08df862c000d3875e522d90c051aed030f1b38fe
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
           <folding />
         </state>
       </provider>
@@ -1710,15 +1845,27 @@
 =======
     <entry file="file://$PROJECT_DIR$/backend/modules/info/views/operation/list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="34" column="68" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="68" />
+        <state relative-caret-position="495">
+          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
           <folding>
             <element signature="e#685#693#1#HTML" expanded="true" />
+            <element signature="e#779#787#1#HTML" expanded="true" />
           </folding>
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="82" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+=======
     <entry file="file://$PROJECT_DIR$/pc/models/ContactForm.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1758,26 +1905,48 @@
             <element signature="e#28#36#0#PHP" expanded="true" />
 =======
     <entry file="file://$PROJECT_DIR$/backend/modules/info/views/classify/list.php">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/modules/info/views/operation/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+        <state relative-caret-position="109">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#1555#1563#1#HTML" expanded="true" />
+            <element signature="e#6#87#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/UploadForm.php">
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="465">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/info/views/operation/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="47" column="60" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#1857#1865#1#HTML" expanded="true" />
+            <marker date="1511074153000" expanded="true" signature="4695:4900" ph="{...}" />
+            <marker date="1511074153000" expanded="true" signature="5827:5841" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php">
+=======
         <state relative-caret-position="420">
           <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
@@ -1812,17 +1981,26 @@
           <folding />
 =======
     <entry file="file://$PROJECT_DIR$/backend/models/Credentials.php">
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        <state relative-caret-position="505">
+          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
           <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="e#115#143#0#PHP" expanded="true" />
+            <element signature="e#133#172#0#PHP" expanded="true" />
           </folding>
 >>>>>>> 801a6db265a658531201d8b62cdc0827a28f56d4
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/backend/models/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#116#136#0#PHP" expanded="true" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/pc/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1864,15 +2042,17 @@
         <state relative-caret-position="319">
           <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding />
+>>>>>>> 9e3d1f9d2dd0ae7efefe5ab802614a0b3363d4db
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modules/info/controllers/OperationController.php">
+    <entry file="file://$PROJECT_DIR$/backend/models/Credentials.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        <state relative-caret-position="655">
+          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
           <folding>
-            <element signature="e#133#172#0#PHP" expanded="true" />
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#115#143#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

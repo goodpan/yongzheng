@@ -9,7 +9,13 @@ namespace pc\modules\member\controllers;
 
 use pc\controllers\BaseController;
 use pc\models\User;
+<<<<<<< HEAD
 use Yii;
+=======
+use pc\models\Business;
+use pc\models\Tesr;
+
+>>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b
 /** 会员操作控制器
  * Class OperationController
  * @package pc\modules\member\controllers
@@ -168,6 +174,14 @@ class OperationController extends BaseController
     public function actionBusiness()
     {
         $this->layout = '@app/views/layouts/main.php';
+<<<<<<< HEAD
+=======
+        $user_id = 7;
+        $data = [];
+        $data['result'] = Business::getBusinessInfo($user_id);
+        // var_dump($data);exit;
+        return $this->render('business',$data);
+>>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b
         return $this->render('business');
     }
 
