@@ -24,8 +24,8 @@ return [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.163.com',
-                'username' => 'suwen0603@163.com',//æˆæƒé‚®ç®±
-                'password' => 'yongzheng2017',//æˆæƒç ï¼Œåœ¨163é‚®ç®±ä¸­è®¾ç½®--POP3/SMTP/IMAPï¼Œæ‰“å¼€æœåŠ¡è®¾ç½®æˆæƒç 
+                'username' => 'suwen0603@163.com',//ÊÚÈ¨ÓÊÏä
+                'password' => 'yongzheng2017',//ÊÚÈ¨Âë£¬ÔÚ163ÓÊÏäÖĞÉèÖÃ--POP3/SMTP/IMAP£¬´ò¿ª·şÎñÉèÖÃÊÚÈ¨Âë
                 'port' => '465',
                 'encryption' => 'ssl',
             ],

@@ -6,10 +6,8 @@
  * Time: 15:06
  */
 namespace pc\modules\member\controllers;
-
 use pc\controllers\BaseController;
 use pc\models\Business;
-use pc\models\User;
 
 /** 会员操作控制器
  * Class OperationController
@@ -56,20 +54,21 @@ class OperationController extends BaseController
                 $this->layout = false;
                 return $this->render('forgetpwd');
         }
-
-        /**
-         * 商家入驻
-         * @return string
-         * @author wenzhen-chen
-         */
-        public function actionBusiness()
-        {
-                $this->layout = '@app/views/layouts/main.php';
-                $user_id = 7;
-                $data = [];
-                $data['result'] = Business::getBusinessInfo($user_id);
-                return $this->render('business',$data);
-        }
+    /**
+     * 商家入驻
+     * @return string
+     * @author wenzhen-chen
+     */
+    public function actionBusiness()
+    {
+        $this->layout = '@app/views/layouts/main.php';
+        $user_id = 7;
+        $data = [];
+        $data['result'] = Business::getBusinessInfo($user_id);
+        // var_dump($data);exit;
+        return $this->render('business',$data);
+        return $this->render('business');
+    }
 
         /**
          * 保存商家入驻信息
