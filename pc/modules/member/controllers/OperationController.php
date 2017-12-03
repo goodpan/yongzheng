@@ -7,266 +7,40 @@
  */
 namespace pc\modules\member\controllers;
 use pc\controllers\BaseController;
-<<<<<<< HEAD
-use Yii;
-=======
 use pc\models\Business;
 
->>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b
 /** 会员操作控制器
  * Class OperationController
  * @package pc\modules\member\controllers
  */
 class OperationController extends BaseController
 {
-        public $enableCsrfValidation = false;
+    public $enableCsrfValidation = false;
 
-        public function actionIndex()
-        {
-                echo 'menber in dex';
-        }
+    public function actionIndex()
+    {
+        echo 'menber in dex';
+    }
 
-        /**
-         * 登录
-         * @return string
-         * @author ldz
-         */
-        public function actionLogin()
-        {
-                $this->layout = false;
-                return $this->render('login');
-        }
-
-        /**
-         * 注册
-         * @return string
-         * @author ldz
-         */
-        public function actionRegister()
-        {
-                $this->layout = false;
-                return $this->render('register');
-        }
-
-        /**
-         * 忘记密码
-         * @return string
-         * @author ldz
-         */
-        public function actionForgetpwd()
-        {
-                $this->layout = false;
-                return $this->render('forgetpwd');
-        }
     /**
-<<<<<<< .mine
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
      * 登录
      * @return string
      * @author ldz
      */
-    public function actionLogin(){
+    public function actionLogin()
+    {
         $this->layout = false;
-
         return $this->render('login');
     }
+
     /**
      * 注册
      * @return string
      * @author ldz
      */
-    public function actionRegister(){
+    public function actionRegister()
+    {
         $this->layout = false;
-
-        if(Yii::$app->request->post()){
-           $arrConfig =  \Yii::$app->request->post();
-           if(empty($arrConfig['sMobile'])|| empty($arrConfig['verify']) || empty($arrConfig['sPwd'])){
-               $result = [
-                   'status'=>false,
-                   'msg'=>'请输入注册完整信息。'
-               ];
-               return json_encode($result);
-           }
-
-           $oldUser = User::find()
-               ->where(['user_name'=>$arrConfig['sMobile']])
-               ->one();
-            //判断用户是否存在
-            if(!empty($oldUser)){
-                $result = [
-                    'status'=>true,
-                    'msg'=>'用户已存在，请登录。'
-                ];
-                return json_encode($result);
-            }
-
-            $veriFy = '';
-            //验证手机验证码是否正确
-//            if($arrConfig['verify']  != $veriFy){
-//
-//            }
-
-            //注册用户，保存用户信息
-            $user = new User();
-            $user->nickname  = $arrConfig['sMobile'];   //注册后昵称默认为登录账号
-            $user->user_name  = $arrConfig['sMobile'];  //登录账号
-            $user->user_phone  = $arrConfig['sMobile'];       //手机号默认为登录账号
-            $user->user_pass  = $arrConfig['sPwd'];           //登录密码
-            $user->create_time = time();        //注册时间
-            $user->save();
-            Yii::trace($user,'注册成功');
-            if($user){
-                $result = [
-                    'status'=>true,
-                    'msg'=>'注册成功'
-                ];
-                return json_encode($result);
-            }else{
-                $result = [
-                    'status'=>false,
-                    'msg'=>'注册失败，请联系客服'
-                ];
-                return json_encode($result);
-            }
-        }
         return $this->render('register');
     }
 
@@ -275,69 +49,12 @@ class OperationController extends BaseController
      * @return string
      * @author ldz
      */
-    public function actionForgetpwd(){
+    public function actionForgetpwd()
+    {
         $this->layout = false;
-
-        if(Yii::$app->request->post()){
-            $arrData =  \Yii::$app->request->post();
-            if(empty($arrData['sMobile'])){
-                $result = [
-                    'status'=>false,
-                    'msg'=>'手机号不能为空，请输入。'
-                ];
-                return json_encode($result);
-            }
-            if(empty($arrData['verify'])){
-                $result = [
-                    'status'=>false,
-                    'msg'=>'验证码不能为空，请输入。'
-                ];
-                return json_encode($result);
-            }
-            if(empty($arrData['sPwd'])){
-                $result = [
-                    'status'=>false,
-                    'msg'=>'密码不能为空，请输入。'
-                ];
-                return json_encode($result);
-            }
-
-            $user = User::find()
-                ->where(['user_name'=>$arrData['sMobile']])
-                ->one();
-
-            if(empty($user)){
-                $result = [
-                    'status'=>false,
-                    'msg'=>'该用户不存在，请先注册！。'
-                ];
-                return json_encode($result);
-            }
-
-            $veriFy = '';
-            //验证手机验证码是否正确
-//            if($arrData['verify']  != $veriFy){
-//                $result = [
-//                    'status'=>false,
-//                    'msg'=>'验证码不正确，请重新输入。'
-//                ];
-//                return json_encode($result);
-//            }
-            $user->user_pass = $arrData['sPwd'];
-            $user->save();
-
-            $result = [
-                'status'=>true,
-                'msg'=>'密码修改成功，请登录'
-            ];
-            return json_encode($result);
-
-        }
-
         return $this->render('forgetpwd');
     }
     /**
->>>>>>> .theirs
      * 商家入驻
      * @return string
      * @author wenzhen-chen
@@ -345,64 +62,61 @@ class OperationController extends BaseController
     public function actionBusiness()
     {
         $this->layout = '@app/views/layouts/main.php';
-<<<<<<< HEAD
-=======
         $user_id = 7;
         $data = [];
         $data['result'] = Business::getBusinessInfo($user_id);
         // var_dump($data);exit;
         return $this->render('business',$data);
->>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b
         return $this->render('business');
     }
 
-        /**
-         * 保存商家入驻信息
-         */
-        public function actionBusinessinfosave()
-        {
-                $data['comp_name'] = \Yii::$app->request->post('comp-name');//企业名称
-                $data['comp_img'] = \Yii::$app->request->post('comp-img');//企业营业执照扫描件
-                $data['comp_comf_img'] = \Yii::$app->request->post('comp-comf-img');//确认书扫描件
-                $data['info_name'] = \Yii::$app->request->post('user-name');//姓名
-                $data['info_num'] = \Yii::$app->request->post('info-num');//身份证号码
-                $data['info_img'] = \Yii::$app->request->post('info-img');//身份证正面照
-                $data['tel'] = \Yii::$app->request->post('tel');//联系电话
-                $data['email'] = \Yii::$app->request->post('email');//邮箱
-                //存储商家信息
-                $result = Business::addOrEditBusiness($data);
-                return json_encode([
-                    'status' => $result['status'],
-                    'msg' => $result['msg']
-                ]);
-        }
+    /**
+     * 保存商家入驻信息
+     */
+    public function actionBusinessinfosave()
+    {
+        $data['comp_name'] = \Yii::$app->request->post('comp-name');//企业名称
+        $data['comp_img'] = \Yii::$app->request->post('comp-img');//企业营业执照扫描件
+        $data['comp_comf_img'] = \Yii::$app->request->post('comp-comf-img');//确认书扫描件
+        $data['info_name'] = \Yii::$app->request->post('user-name');//姓名
+        $data['info_num'] = \Yii::$app->request->post('info-num');//身份证号码
+        $data['info_img'] = \Yii::$app->request->post('info-img');//身份证正面照
+        $data['tel'] = \Yii::$app->request->post('tel');//联系电话
+        $data['email'] = \Yii::$app->request->post('email');//邮箱
+        //存储商家信息
+        $result = Business::addOrEditBusiness($data);
+        return json_encode([
+            'status' => $result['status'],
+            'msg' => $result['msg']
+        ]);
+    }
 
-        /**
-         * 图片保存
-         */
-        public function actionImagesave()
-        {
-                $base64_image = \Yii::$app->request->post('image');//base64源码
-                if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image, $result)) {
-                        $type = $result[2];
-                        $new_file = __DIR__."/../../../web/image/business_img/";
-                        $tfile_name = time() . ".{$type}";
-                        $new_file = $new_file .$tfile_name ;
-                        $data = str_replace($result[1], '', $base64_image);//去除头部
-                        if (file_put_contents($new_file, base64_decode($data))) {
-                                $status = '1';
-                                $msg = '图片上传成功';
-                                $url = \Yii::$app->getHomeUrl()."image/business_img/".$tfile_name;
-                        } else {
-                                $status = '0';
-                                $msg = '图片上传失败';
-                                $url = '';
-                        }
-                        return json_encode([
-                            'status' => $status,
-                            'msg' => $msg,
-                            'url' => $url
-                        ]);
-                }
+    /**
+     * 图片保存
+     */
+    public function actionImagesave()
+    {
+        $base64_image = \Yii::$app->request->post('image');//base64源码
+        if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image, $result)) {
+            $type = $result[2];
+            $new_file = __DIR__."/../../../web/image/business_img/";
+            $tfile_name = time() . ".{$type}";
+            $new_file = $new_file .$tfile_name ;
+            $data = str_replace($result[1], '', $base64_image);//去除头部
+            if (file_put_contents($new_file, base64_decode($data))) {
+                $status = '1';
+                $msg = '图片上传成功';
+                $url = \Yii::$app->getHomeUrl()."image/business_img/".$tfile_name;
+            } else {
+                $status = '0';
+                $msg = '图片上传失败';
+                $url = '';
+            }
+            return json_encode([
+                'status' => $status,
+                'msg' => $msg,
+                'url' => $url
+            ]);
         }
+    }
 }
