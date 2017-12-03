@@ -33,23 +33,23 @@
                 <a class="right-back" href="/member/operation/login"> 返回立即登录</a>
             </div>
             <div class="signin">
-                <form action="">
+                <form id="form-submit">
                     <div class="rlf-group">
-                        <input type="text" id="sMobile" class="ipt ipt-email" placeholder="请输入登录手机号/邮箱">
+                        <input type="text" id="sMobile" class="ipt ipt-email" placeholder="请输入登录手机号/邮箱" name="sMobile">
                         <p id="errorText" class="color-red rlf-tip-wrap" style="visibility: hidden">请输入正确的邮箱或手机号</p>
                     </div>
                     <div class="rlf-group " >
-                        <input id="verfy" type="text"  class="ipt ipt-email" placeholder="请输入短信验证码" maxlength="4">
+                        <input id="verfy" type="text"  class="ipt ipt-email" placeholder="请输入短信验证码" maxlength="4" name="verify">
                         <span class="re-send">重新发送</span>
                         <p id="errverfy" class="color-red rlf-tip-wrap" style="visibility: hidden">请输入正确的短信验证码</p>
                     </div>
                     <div class="rlf-group " >
                         <a href="/image/member/bpwd.png" class="is-pwd"></a>
-                        <input id="pwd" type="text"  class="ipt ipt-email" placeholder="6-16位密码，区分大小写，不能用空格" maxlength="16">
+                        <input id="pwd" type="text"  name="pwd" class="ipt ipt-email" placeholder="6-16位密码，区分大小写，不能用空格" maxlength="16">
                         <p id="errPwd" class="color-red rlf-tip-wrap" style="visibility: hidden">6-16位密码，区分大小写，不能用空格！</p>
                     </div>
                     <div class="rlf-group">
-                        <input type="button" value="提交" hidefocus="true" class="btn-red btn-full xa-login">
+                        <input type="button" value="提交" onclick="subBtn()"  class="btn-red btn-full xa-login">
                     </div>
                 </form>
             </div>
@@ -96,6 +96,40 @@
     $('#pwd').keyup(function () {
         this.value=this.value.replace(" ", "");
     });
+    
+    function subBtn() {
+        var sMobile = $('#sMobile').val();
+        var verfy = $('#verfy').val();
+        var pwd = $('#pwd').val();
+
+        if(sMobile == ''){
+            $('#errorText').attr('style','visibility:visible');
+            return false;
+        }
+        if(verfy == ''){
+            $('#errverfy').attr('style','visibility:visible');
+            return false;
+        }
+        if(pwd == ''){
+            $('#errPwd').attr('style','visibility:visible');
+            return false;
+        }
+        var url = 'http://'+window.location.host+"/member/operation/forgetpwd";
+        var formData = $('#form-submit').serialize();
+        $.post(url,formData,function (data) {
+            if(data.status){
+                alert(data.msg);
+                location.href =  'http://'+window.location.host+"/member/operation/login";
+            }else{
+                alert(data.msg);
+            }
+        },'json');
+
+
+
+    }
+
+
 
 
 </script>

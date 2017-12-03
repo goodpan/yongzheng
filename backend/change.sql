@@ -19,6 +19,10 @@ info_num VARCHAR(20) not null COMMENT '身份证号码', -- ,
 info_img VARCHAR(50) not null COMMENT '身份证正面照', -- ,
 tel VARCHAR(11) not null COMMENT '电话号码', -- ,
 email VARCHAR(30) not null COMMENT '邮箱', --
+<<<<<<< HEAD
+status TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
+)
+=======
 STATUS TINYINT DEFAULT 0 COMMENT '0：审核中，1：拒绝：2锁定，3：审核通过'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商家表';
 
@@ -35,3 +39,4 @@ ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comme
 ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
  */
+>>>>>>> 63128667e72b3f7b41f06776f957bb6d9dfd725b

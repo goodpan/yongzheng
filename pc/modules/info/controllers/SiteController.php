@@ -1,6 +1,7 @@
 <?php
 namespace pc\modules\info\controllers;
 
+use pc\models\Credentials;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -222,7 +223,12 @@ class SiteController extends BaseController
     public function actionSearch()
     {
         $this->layout='@app/views/layouts/main.php';
-        return $this->render('search');
+        $limit =Yii::$app->request->post('limit');
+        $page =Yii::$app->request->post('page');
+        $name =Yii::$app->request->post('name');
+        $credentials = new Credentials();
+        $credentialsList = $credentials->getCredentialsByName($name,$limit = 5,$page);
+        return $this->render('search',$credentialsList);
     }
 
     /**
