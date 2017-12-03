@@ -48,4 +48,29 @@ class Credentials extends BaseModel
         ]);
         return self::find()->alias('cred')->joinWith('category As cate', true, 'LEFT JOIN')->select('cred_id,cred_name,descr,cover,is_hot,name,cred.create_time')->offset($pagination->offset)->limit($pagination->limit)->asArray()->all();
     }
+
+    /** 编辑证件
+     * @param $data
+     * @return bool
+     */
+    public function edit($data){
+        if($this->load($data,'')&&$this->validate()){
+            $id = $data['cred_id'];
+            $model = self::findOne($id);
+            $model->cate_id = $data['cate_id'];
+            $model->cred_name = $data['cred_name'];
+            $model->descr = $data['descr'];
+            $model->condition = $data['condition'];
+            $model->material = $data['material'];
+            $model->cost = $data['cost'];
+            $model->locale = $data['locale'];
+            $model->is_hot = $data['is_hot'];
+            $model->cover = $data['cover'];
+            if ($model->save(false)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }
