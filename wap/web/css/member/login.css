@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/**
+   * 左右排列
+   */
+/**
+   * 上下排列
+   */
+/**
+   * 垂直居中
+   */
+/**
+   * 水平居中
+   */
+/**
+   * 水平垂直居中
+   */
+/**
+   * 左右排列垂直居中
+   */
+.entry-main {
+  margin: 0 0.64rem;
+  overflow: hidden; }
+
+.form-body {
+  width: 100%;
+  height: auto; }
+  .form-body .bt {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    display: box;
+    box-direction: row;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    box-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    box-pack: space-between;
+    margin-top: 0.42667rem; }
+    [data-dpr="1"] .form-body .bt {
+      font-size: 12px; }
+    [data-dpr="2"] .form-body .bt {
+      font-size: 24px; }
+    [data-dpr="3"] .form-body .bt {
+      font-size: 36px; }
+    .form-body .bt .btn-reg {
+      color: #2d8cf8; }
+    .form-body .bt .btn-fogot {
+      color: #666; }
+
+.form-main {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 0.21333rem; }
+  .form-main .form-item {
+    width: 100%;
+    height: 2.13333rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    display: box;
+    box-direction: row;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    box-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative; }
+    .form-main .form-item .inp-icon {
+      width: 1.70667rem;
+      height: 100%;
+      margin-right: 0.42667rem; }
+    .form-main .form-item .mobile {
+      background: url(/img/member/mobile.png) no-repeat center right;
+      background-size: 30%; }
+    .form-main .form-item .pass {
+      background: url(/img/member/pass.png) no-repeat center right;
+      background-size: 30%; }
+    .form-main .form-item .inp {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      color: #999; }
+      [data-dpr="1"] .form-main .form-item .inp {
+        font-size: 14px; }
+      [data-dpr="2"] .form-main .form-item .inp {
+        font-size: 28px; }
+      [data-dpr="3"] .form-main .form-item .inp {
+        font-size: 42px; }
+  .form-main .form-item:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5; }
+
+.btn-wrap {
+  margin-top: 1.38667rem; }
+
+.btn-entry {
+  width: 100%;
+  height: 1.92rem;
+  background: #2d8cf8;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  display: box;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  box-align: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-pack: center;
+  color: #fff;
+  border-radius: 0.21333rem; }
+  [data-dpr="1"] .btn-entry {
+    font-size: 16px; }
+  [data-dpr="2"] .btn-entry {
+    font-size: 32px; }
+  [data-dpr="3"] .btn-entry {
+    font-size: 48px; }
