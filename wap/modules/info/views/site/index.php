@@ -265,6 +265,14 @@
         $('.s_close_wrap').on('click', function() {
             $('.search_wrap').hide();
         })
+		$(window).on('scroll', function () {
+            var top = $(this).scrollTop();
+            if (top > 600) {
+                $('.backTop').show();
+            } else {
+                $('.backTop').hide();
+            }
+        })
     })
    
     var local = localStorage.getItem('searchWordArr'),

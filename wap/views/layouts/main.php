@@ -48,9 +48,8 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="container">
-        <?= $content ?>
+    <?= $content ?>
 </div>
 <?php if($curModel=='info'||$rute=='/member/space/index'){?>
 <footer>
@@ -76,11 +75,16 @@ AppAsset::register($this);
 <div class="backTop"></div>
 <?}?>
 <?php $this->endBody() ?>
-<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/jquery-weui/1.1.1/js/jquery-weui.min.js"></script>
-<?php if(isset($this->blocks['jsblock']))
-    echo $this->blocks['jsblock'];
-?>
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.1.1/js/jquery-weui.min.js"></script>
+    <?php if(isset($this->blocks['jsblock']))
+        echo $this->blocks['jsblock'];
+    ?>
+   <script>
+        $('.backTop').on('click',function(){
+            $('body,html').animate({scrollTop:0},200);
+        })
+    </script>
 </body>
 </html>
 <?php $this->endPage() ?>

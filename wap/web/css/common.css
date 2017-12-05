@@ -404,7 +404,7 @@ footer {
       color: #999;
       position: relative;
       z-index: 20;
-      height: 1.28rem; }
+      height: 0.96rem; }
       [data-dpr="1"] footer .bottom_fixed span {
         font-size: 23px; }
       [data-dpr="2"] footer .bottom_fixed span {
@@ -421,8 +421,8 @@ footer {
         font-size: 36px; }
 
 .backTop {
-  width: 2.13333rem;
-  height: 2.13333rem;
+  width: 1.28rem;
+  height: 1.28rem;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background: url(/img/home/back_top.png) no-repeat;
