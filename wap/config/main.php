@@ -7,10 +7,10 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-wap',
+    'id' => 'app-pc',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'wap\controllers',
+    'controllerNamespace' => 'pc\controllers',
     'defaultRoute'=>'info/site/index',//默认路由，未匹配到模块指向
     'components' => [
         'request' => [
@@ -38,7 +38,7 @@ return [
             'errorAction' => 'site/error',
         ],
         'search'=>[
-            'class'=>'wap\services\search\SearchService'//服务定位器，依赖注入
+            'class'=>'pc\services\search\SearchService'//服务定位器，依赖注入
         ]
         /*
         'urlManager' => [
