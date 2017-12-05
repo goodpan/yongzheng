@@ -121,7 +121,7 @@
 			</li>
 		</ul>
 		<div class="look_more">
-			<a href="">查看更多</a>
+			<a href="/info/site/searchcomp">查看更多</a>
 		</div>
 	</section>
 	<section class="recom_personnel">
@@ -213,7 +213,7 @@
 			</li>
 		</ul>
 		<div class="look_more">
-			<a href="">查看更多</a>
+			<a href="/info/site/searchperson">查看更多</a>
 		</div>
 	</section>
 	<div class="search_wrap">
@@ -255,8 +255,8 @@
             </div>
         </div>
     </div>
-	
-	<script src="/js/zepto.min.js"></script>
+	<div class="fill-bottom"></div>
+<?php $this->beginBlock('jsblock')?>
 <script>
     $(function(){
         $('#search_box').on('click',function(){
@@ -343,3 +343,4 @@
         }
     }
 </script>
+<?php $this->endBlock('jsblock')?>
