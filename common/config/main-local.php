@@ -7,7 +7,7 @@ $config = [ 'components' => [
     'db' => [
         'class' => 'yii\db\Connection',
         'dsn' => 'mysql:host=47.94.161.223;dbname=yongzheng',
-        'username' => 'ldz',
+        'username' => 'cwz',
         'password' => 'study123456',
         'charset' => 'utf8',
         'tablePrefix'=>'yz_'
@@ -25,6 +25,13 @@ $config = [ 'components' => [
             'password' => 'yongzheng2017',//授权码，在163邮箱中设置--POP3/SMTP/IMAP，打开服务设置授权码
             'port' => '465',
             'encryption' => 'ssl',
+        ],
+    ],
+    'elasticsearch' => [
+        'class' => 'yii\elasticsearch\Connection',
+        'nodes' => [
+            ['http_address' => '127.0.0.1:9200'],
+            // configure more hosts if you have a cluster
         ],
     ],
 ],
