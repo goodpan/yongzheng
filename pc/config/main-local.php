@@ -7,7 +7,7 @@ $config = [ 'components' => [
     'db' => [
         'class' => 'yii\db\Connection',
         'dsn' => 'mysql:host=47.94.161.223;dbname=yongzheng',
-        'username' => 'root',
+        'username' => 'ldz',
         'password' => 'study123456',
         'charset' => 'utf8',
         'tablePrefix'=>'yz_'
@@ -21,8 +21,8 @@ $config = [ 'components' => [
         'transport' => [
             'class' => 'Swift_SmtpTransport',
             'host' => 'smtp.163.com',
-            'username' => 'suwen0603@163.com',//ÊÚÈ¨ÓÊÏä
-            'password' => 'yongzheng2017',//ÊÚÈ¨Âë£¬ÔÚ163ÓÊÏäÖĞÉèÖÃ--POP3/SMTP/IMAP£¬´ò¿ª·şÎñÉèÖÃÊÚÈ¨Âë
+            'username' => 'suwen0603@163.com',//ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½
+            'password' => 'yongzheng2017',//ï¿½ï¿½È¨ï¿½ë£¬ï¿½ï¿½163ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--POP3/SMTP/IMAPï¿½ï¿½ï¿½ò¿ª·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
             'port' => '465',
             'encryption' => 'ssl',
         ],
