@@ -108,10 +108,10 @@
         if(pwd == ''){
             $('#errPwd').attr('style','visibility:visible');
         }
-
         var url = 'http://'+window.location.host+"/member/operation/login";
-
         var formdata = $('#submit-form').serialize();
+
+        $.post(url,formdata,function (data) {
             if(data.status){
                 alert(data.msg);
                 location.href =  'http://'+window.location.host+"/member/space/index";
@@ -119,8 +119,8 @@
                 alert(data.msg);
             }
         },'json');
-    })
-    
+    });
+
 
 
 </script>

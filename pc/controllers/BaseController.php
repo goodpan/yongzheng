@@ -10,6 +10,7 @@ namespace pc\controllers;
 
 use yii\web\Controller;
 use pc\logics\BaseBlocks;
+use Yii;
 
 /** pc端控制器基类
  * Class BaseController
@@ -28,10 +29,10 @@ class BaseController extends Controller
     }
 
     /**
-     * 判断是否登录
+     * 判断用户是否登录
      */
-    public function checkLogin(){
-
+    public function isLogin(){
+        return isset(Yii::$app->session['User']['isLogin']);
     }
 
     /**
