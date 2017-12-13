@@ -36,4 +36,4 @@ ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
  */
  //更改证件分类表上级字段名
- alter table yz_category CHANGE parent parent_id int;
+ alter table yz_category CHANGE pid parent_id int;
