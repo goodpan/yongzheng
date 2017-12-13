@@ -1,6 +1,8 @@
 <?php
 namespace wap\modules\info\controllers;
 
+use wap\models\Category;
+use wap\models\Credentials;
 use Yii;
 use yii\filters\AccessControl;
 use pc\controllers\BaseController;
@@ -38,12 +40,23 @@ class SiteController extends BaseController
     }
     /**
      * 分类页
-     *
      * @return mixed
      */
     public function actionClassify()
     {
-        return $this->render('classify');
+        /** @var Category $category */
+        $category = new Category();
+        $classiFyList = $category->getClassiFyList(10);
+        $dataCredentials = [];//证件信息与分类
+        foreach ($classiFyList as $item){
+            /** @var Credentials $credentials */
+            $credentials = new Credentials();
+            $dataCredentials[$item->name][] = $credentials->getCredentialsByCateId($item->id);
+        }
+        return $this->render('classify',[
+            'classiFyList' => $classiFyList,
+            'dataCredentials' => $dataCredentials
+        ]);
     }
 
     /**
