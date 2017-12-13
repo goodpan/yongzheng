@@ -35,5 +35,5 @@ ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comme
 ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
  */
- //更改证件分类表上级字段名
- alter table yz_category CHANGE pid parent_id int;
+ //更改证件分类表主键字段（id）为自动递增
+ alter table yz_category CHANGE id id int UNSIGNED auto_increment;

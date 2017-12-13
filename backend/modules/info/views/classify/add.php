@@ -48,7 +48,7 @@ $this->title = '新增商品分类';
         <div class="layui-form-item">
             <label class="layui-form-label">上级分类<em>*</em></label>
             <div class="layui-input-block">
-                <select name="parent_id" lay-verify="required">
+                <select name="pid" lay-verify="required">
                     <option value="">请选择上级分类</option>';
                     <option value="0">添加顶级分类</option>';
                     <?php foreach ($cates as $k => $cate): ?>
