@@ -1,6 +1,9 @@
 <?php $this->beginBlock('cssblock')?>
 <link rel="stylesheet" href="/css/home/classify.css?">
 <?php $this->endBlock('cssblock')?>
+<?php $this->beginBlock('classify_title')?>
+<title>分类</title>
+<?php $this->endBlock('classify_title')?>
     <div class="category_wrap">
         <div class="header">
             <div class="top_search flex">
