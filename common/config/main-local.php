@@ -6,9 +6,9 @@ $config = ['components' => [
     ],
     'db' => [
         'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=47.94.161.223;dbname=yongzheng',
-        'username' => 'cwz',
-        'password' => 'study123456',
+        'dsn' => 'mysql:host=120.78.168.175;dbname=yongzheng',
+        'username' => 'root',
+        'password' => '123456',
         'charset' => 'utf8',
         'tablePrefix' => 'yz_'
     ],
