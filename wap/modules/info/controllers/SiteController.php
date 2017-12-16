@@ -3,6 +3,8 @@ namespace wap\modules\info\controllers;
 
 use wap\models\Category;
 use wap\models\Credentials;
+use wap\models\Business;
+
 use Yii;
 use yii\filters\AccessControl;
 use pc\controllers\BaseController;
@@ -36,7 +38,12 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        //获取首页证件
+        $credentials = Credentials::find()->asArray()->all();
+        //获取商家信息
+        $business = Business::find()->asArray()->all();
+//        var_dump($business);exit;
+        return $this->render('index',array('data'=>$credentials,'business'=>$business));
     }
     /**
      * 分类页

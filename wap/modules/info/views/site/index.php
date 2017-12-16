@@ -42,30 +42,16 @@
 			<p class="tt-m">近7天搜索最多的证件</p>
 		</div>
 		<ul class="flex">
-			<li class="finding_item">
-				<a href="/info/site/cred?id=1">
-					<img src="/img/home/pic1.png">
-					<p>健康证</p>
-				</a>
-			</li>
-			<li class="finding_item">
-				<a href="/info/site/cred?id=2">
-					<img src="/img/home/pic2.png">
-					<p>暂住证</p>
-				</a>
-			</li>
-			<li class="finding_item">
-				<a href="/info/site/cred?id=3">
-					<img src="/img/home/pic3.png">
-					<p>驾驶证</p>
-				</a>
-			</li>
-			<li class="finding_item">
-				<a href="/info/site/cred?id=4">
-					<img src="/img/home/pic4.png">
-					<p>港澳台通行证</p>
-				</a>
-			</li>
+			<?php foreach ($data as $item){?>
+				<?php if($item['is_hot'] == 1){?>
+					<li class="finding_item">
+						<a href="/info/site/cred?id=<?=$item['cred_id']?>">
+							<img src="<?=$item['cover']?>">
+							<p><?=$item['cred_name']?></p>
+						</a>
+					</li>
+				<?php }?>
+			<?php }?>
 		</ul>
 	</section>
 	<section class="recom_company">
@@ -74,51 +60,25 @@
 			<p class="tt-m">好评率最好的企业</p>
 		</div>
 		<ul>
-			<li>
-				<a href="/info/site/company?id=1" class="company_link flex">
-					<div class="company_pic">
-						<img src="/img/home/pic5.png">
-					</div>
-					<div class="company_info">
-						<h3 class="singleEllipsis">厦门网上居住证办理系统</h3>
-						<p>在线申请厦门居住证办理</p>
-						<div class="company_position">
-							<i class="icon">&#xe754;</i>
-							<span>福建 厦门</span>
-						</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="/info/site/company?id=1" class="company_link flex">
-					<div class="company_pic">
-						<img src="/img/home/pic5.png">
-					</div>
-					<div class="company_info">
-						<h3 class="singleEllipsis">厦门鑫达驾驶证</h3>
-						<p>擅长领域：C1、C2驾驶培训</p>
-						<div class="company_position">
-							<i class="icon">&#xe754;</i>
-							<span>福建 厦门</span>
-						</div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="/info/site/company?id=1" class="company_link flex">
-					<div class="company_pic">
-						<img src="/img/home/pic5.png">
-					</div>
-					<div class="company_info">
-						<h3 class="singleEllipsis">厦门交警大队</h3>
-						<p>告诉你如何在线预约处理违章及车辆年检等业务</p>
-						<div class="company_position">
-							<i class="icon">&#xe754;</i>
-							<span>福建 厦门</span>
-						</div>
-					</div>
-				</a>
-			</li>
+			<?php foreach ($business as $item){ ?>
+				<?php if($item['is_hot'] == 1 && $item['type'] == 1){?>
+					<li>
+						<a href="/info/site/company?id=<?=$item['id']?>" class="company_link flex">
+							<div class="company_pic">
+								<img src="<?=$item['comp_img']?>">
+							</div>
+							<div class="company_info">
+								<h3 class="singleEllipsis"><?=$item['comp_name']?></h3>
+								<p><?=$item['desc']?></p>
+								<div class="company_position">
+									<i class="icon">&#xe754;</i>
+									<span><?=$item['address']?></span>
+								</div>
+							</div>
+						</a>
+					</li>
+				<?php }?>
+			<?php }?>
 		</ul>
 		<div class="look_more">
 			<a href="/info/site/searchcomp">查看更多</a>
@@ -130,87 +90,25 @@
 			<p class="tt-m">综合服务质量最高的个人代办</p>
 		</div>
 		<ul>
-			<li>
-				<a href="/info/site/personal?id=1">
-					<div class="personnel_info flex">
-						<div class="company_pic">
-							<img src="/img/home/pic6.png">
-						</div>
-						<div class="company_info">
-							<h3 class="singleEllipsis">王军</h3>
-							<p>连续1周日均帮助18位驾驶员处理违章</p>
-							<div class="company_position">
-								<i class="icon">&#xe754;</i>
-								<span>福建 厦门</span>
+			<?php foreach ($business as $item){ ?>
+				<?php if($item['is_hot'] == 1 && $item['type'] == 2){?>
+					<li>
+						<a href="/info/site/company?id=<?=$item['id']?>" class="company_link flex">
+							<div class="company_pic">
+								<img src="<?=$item['info_img']?>">
 							</div>
-						</div>
-					</div>
-				</a>
-				<div class="personnel_skill">
-					<div class="skill_item flex">
-						<span class="good_at">擅长</span>
-						<p>交管业务、车辆年审、车辆过户及保险服务</p>
-					</div>
-<!--					<div class="skill_item flex">-->
-<!--						<span class="good_at">技能</span>-->
-<!--						<p>PHP、Javascript</p>-->
-<!--					</div>-->
-				</div>
-			</li>
-			<li>
-				<a href="/info/site/personal?id=1">
-					<div class="personnel_info flex">
-						<div class="company_pic">
-							<img src="/img/home/pic6.png">
-						</div>
-						<div class="company_info">
-							<h3 class="singleEllipsis">黄家起</h3>
-							<p>连续1周日均协助3位客户办理港澳台通行证</p>
-							<div class="company_position">
-								<i class="icon">&#xe754;</i>
-								<span>福建 厦门</span>
+							<div class="company_info">
+								<h3 class="singleEllipsis"><?=$item['info_name']?></h3>
+								<p><?=$item['desc']?></p>
+								<div class="company_position">
+									<i class="icon">&#xe754;</i>
+									<span><?=$item['address']?></span>
+								</div>
 							</div>
-						</div>
-					</div>
-				</a>
-				<div class="personnel_skill">
-					<div class="skill_item flex">
-						<span class="good_at">擅长</span>
-						<p>出入境证件、海关业务</p>
-					</div>
-<!--					<div class="skill_item flex">-->
-<!--						<span class="good_at">技能</span>-->
-<!--						<p>PHP、Javascript</p>-->
-<!--					</div>-->
-				</div>
-			</li>
-			<li>
-				<a href="/info/site/personal?id=1">
-					<div class="personnel_info flex">
-						<div class="company_pic">
-							<img src="/img/home/pic6.png">
-						</div>
-						<div class="company_info">
-							<h3 class="singleEllipsis">苏阳</h3>
-							<p>连续一月日均协助9位客户，完成店铺营业执照申请</p>
-							<div class="company_position">
-								<i class="icon">&#xe754;</i>
-								<span>福建 厦门</span>
-							</div>
-						</div>
-					</div>
-				</a>
-				<div class="personnel_skill">
-					<div class="skill_item flex">
-						<span class="good_at">擅长</span>
-						<p>企业营业执照、大型企业授权书</p>
-					</div>
-<!--					<div class="skill_item flex">-->
-<!--						<span class="good_at">技能</span>-->
-<!--						<p>PHP、Javascript</p>-->
-<!--					</div>-->
-				</div>
-			</li>
+						</a>
+					</li>
+				<?php }?>
+			<?php }?>
 		</ul>
 		<div class="look_more">
 			<a href="/info/site/searchperson">查看更多</a>
