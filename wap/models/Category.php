@@ -16,11 +16,24 @@ class Category extends BaseModel{
      * @author wenzhen-chen
      * @time 2017-12-13 22:34:31
      */
-    public function getClassiFyList($limit = 10){
+    public function getFirstClassifyList($limit = 10){
         $List = self::find()
             ->select('name,id')
+            ->where(['pid' => '0'])
             ->limit($limit)
             ->all();
         return $List;
+    }
+
+    /**
+     * 根据pid获取子分类
+     * @param int $pid
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public function getClassifyListByPid($pid = 0){
+        return self::find()
+            ->select('id,name')
+            ->where(['pid' => $pid])
+            ->all();
     }
 }

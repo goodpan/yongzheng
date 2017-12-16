@@ -46,16 +46,29 @@ class SiteController extends BaseController
     {
         /** @var Category $category */
         $category = new Category();
-        $classiFyList = $category->getClassiFyList(10);
-        $dataCredentials = [];//证件信息与分类
-        foreach ($classiFyList as $item){
-            /** @var Credentials $credentials */
-            $credentials = new Credentials();
-            $dataCredentials[$item->name][] = $credentials->getCredentialsByCateId($item->id);
+        $firstClassifyList = $category->getfirstClassifyList(10);
+        $dataClassifyList = [];//组装数据
+        $e = 0;
+        $checkFirstKey = '';//判断第一个分类，供页面首次加载判断样式用
+        foreach ($firstClassifyList as $firstClassifyName => $item){
+            $e ++;
+            if($e == 1){
+                $checkFirstKey = $item->name;
+            }
+            $dataClassifyList[$item->name] = [];
+            $secondClasifyList = $category->getClassifyListByPid($item->id);
+            foreach ($secondClasifyList as $key => $value){
+                $dataClassifyList[$item->name][$value->name] = [];
+                $dataClassifyList[$item->name][$value->name] = $category->getClassifyListByPid($value->id);
+                //二级分类id
+                $dataClassifyList[$item->name][$value->name]['secondClassifyId'] = $value->id;
+            }
+            //一级分类id
+            $dataClassifyList[$item->name]['firstClassifyId'] = $item->id;
         }
         return $this->render('classify',[
-            'classiFyList' => $classiFyList,
-            'dataCredentials' => $dataCredentials
+            'dataClassifyList' => $dataClassifyList,
+            'checkFirstKey' => $checkFirstKey
         ]);
     }
 
@@ -76,12 +89,12 @@ class SiteController extends BaseController
      */
     public function actionContact()
     {
-        $model = new ContactForm();
+        $model = new Contactform();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setflash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->session->setflash('error', 'There was an error sending your message.');
             }
 
             return $this->refresh();
