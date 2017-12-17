@@ -3,3 +3,7 @@ pc/.DS_Store
 pc/web/.DS_Store
 pc/.DS_Store
 pc/web/.DS_Store
+*.data
+*.bin
+*.ser
+*.log
