@@ -3,6 +3,9 @@ namespace wap\modules\info\controllers;
 
 use wap\models\Category;
 use wap\models\Credentials;
+use wap\models\Business;
+
+use wap\models\Requirements;
 use Yii;
 use yii\filters\AccessControl;
 use pc\controllers\BaseController;
@@ -13,6 +16,8 @@ use pc\controllers\BaseController;
  */
 class SiteController extends BaseController
 {
+    public $enableCsrfValidation = false;
+
     /**
      * @inheritdoc
      */
@@ -36,7 +41,12 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        //获取首页证件
+        $credentials = Credentials::find()->asArray()->all();
+        //获取商家信息
+        $business = Business::find()->asArray()->all();
+//        var_dump($business);exit;
+        return $this->render('index',array('data'=>$credentials,'business'=>$business));
     }
     /**
      * 分类页
@@ -74,11 +84,63 @@ class SiteController extends BaseController
 
     /**
      * 发布需求post-your-want
-     *
+     * @author lmk
      * @return mixed
      */
     public function actionPostyourwant()
     {
+        $uid = 1;
+        if(Yii::$app->request->isAjax){
+            $post = Yii::$app->request->post();
+            if($post['TypeID'] == 'company'){$post['TypeID'] = 1;}
+            elseif ($post['TypeID'] == 'personal'){$post['TypeID'] = 2;}
+            elseif ($post['TypeID'] == 'unlimited'){$post['TypeID'] = 3;}
+
+            if($post['requ_id']){  //更新
+                $requObj = Requirements::find()
+                    ->select('*')
+                    ->where(['user_id'=>$uid,'requ_id'=>$post['requ_id']])
+                    ->one();
+                if($requObj){
+                    $requObj->sName = trim($post['sName']);
+                    $requObj->sContent = trim($post['sContent']);
+                    $requObj->TypeID = trim($post['TypeID']);
+                    $requObj->sBudget = trim($post['sBudget']);
+                    $requObj->sPhone = trim($post['sPhone']);
+                    $requObj->dDeliverDate = $post['dDeliverDate'];
+                    $requObj->update_time = time();
+                    $requObj->user_id = $uid;
+                    if ($requObj->save()) {
+                        $data['status'] = 1;
+                        $data['msg'] = '修改成功';
+                        return json_encode($data);
+                    } else {
+                        $data['status'] = 0;
+                        $data['msg'] = '修改失败';
+                        return json_encode($data);
+                    }
+                }
+            }else{ //插入
+                $requObj = new Requirements();
+                $requObj->sName = trim($post['sName']);
+                $requObj->sContent = trim($post['sContent']);
+                $requObj->TypeID = trim($post['TypeID']);
+                $requObj->sBudget = trim($post['sBudget']);
+                $requObj->sPhone = trim($post['sPhone']);
+                $requObj->dDeliverDate = $post['dDeliverDate'];
+                $requObj->create_time = time();
+                $requObj->user_id = $uid;
+                if ($requObj->save()) {
+                    $data['status'] = 1;
+                    $data['msg'] = '修改成功';
+                    return json_encode($data);
+                } else {
+                    $data['status'] = 0;
+                    $data['msg'] = '修改失败';
+                    return json_encode($data);
+                }
+            }
+        }
         return $this->render('postyourwant');
     }
 

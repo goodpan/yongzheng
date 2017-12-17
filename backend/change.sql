@@ -34,6 +34,25 @@ ALTER TABLE yz_user add pca varchar(30) not null default '' comment '所在地�
 ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comment '固定电话';
 ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
+######用户需求表#########
+DROP TABLE IF EXISTS `yz_requirements`;
+CREATE TABLE IF NOT EXISTS `yz_requirements`(
+    `requ_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+    `sName` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '需求标题',
+    `sContent` TEXT COMMENT '需求描述',
+    `type` tinyint(4)  NOT NULL DEFAULT '1' COMMENT '委托类型 1 企业 2 个人 3 其他',
+    `sBudget` INT NOT NULL DEFAULT '0' COMMENT '预算金额',
+    `sPhone` VARCHAR(11) NOT NULL DEFAULT '0' COMMENT '手机号码',
+    `is_hot` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否热门',
+    `is_del` ENUM('0','1') NOT NULL DEFAULT '0' COMMENT '是否删除',
+    `create_time` INT NOT NULL DEFAULT '0' COMMENT '创建时间',
+    `update_time` INT NOT NULL DEFAULT '0' COMMENT '更新时间',
+    `dDeliverDate` INT NOT NULL DEFAULT '0' COMMENT '需求完成时间',
+    PRIMARY KEY (`requ_id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户需求表';
+ALTER TABLE `yz_requirements` add  `user_id` BIGINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户ID',
+
+alter table `yz_requirements` change type TypeID  tinyint(4)  NOT NULL DEFAULT '1' COMMENT '委托类型 1 企业 2 个人 3 其他',
  */
  //更改证件分类表主键字段（id）为自动递增
  alter table yz_category CHANGE id id int UNSIGNED auto_increment;
