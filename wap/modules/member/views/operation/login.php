@@ -63,9 +63,16 @@ $this->title = "登录";
                 $.toast('密码不能为空', "text");
                 return false;
             }
-            $.post('/member/loginpost',$(this).serialize(),function(res){
-                console.log(res)
-            })
+            var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/loginpost";
+
+            $.post(url,$(this).serialize(),function(data){
+               if(data.status){
+                   $.toast(data.msg, "text");
+                   location.href = '<?=\Yii::$app->request->hostInfo?>/member/space/index';
+               }else {
+                   $.toast(data.msg, "text");
+               }
+            },'json');
             return false;
         })
     })

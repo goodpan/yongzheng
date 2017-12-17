@@ -6,6 +6,7 @@
  * Time: 下午 15:00
  */
 $this->title = "注册";
+
 ?>
 <?php $this->beginBlock('cssblock')?>
     <link rel="stylesheet" type="text/css" href="/css/member/regist.css">
@@ -16,6 +17,7 @@ $this->title = "注册";
         <div class="tt-m">靠谱的技术众包平台</div>
     </div>
     <form class="form-body" id="reg-form">
+        <input type="hidden" name="_csrf" value="<?= Yii::$app->request->getCsrfToken() ?>">
         <div class="form-main">
             <div class="form-item">
                 <i class="inp-icon mobile"></i>
@@ -38,7 +40,7 @@ $this->title = "注册";
             </div>
         </div>
         <div class="btn-wrap">
-            <button type="submit" class="btn-entry" id="regist">注册</button>
+            <div class="btn-entry" id="regist">注册</div>
         </div>
         <div class="form-intr">
         点击注册表示阅读并同意<a href="/member/operation/protocol" class="link">《IT空间注册协议》</a>
@@ -62,44 +64,92 @@ $this->title = "注册";
             }
         });
         //发送验证码
-        
         $('#send').on('click',function(){
-            var sMobile = $('#reg-form').find('input[name="sMobile"]').val();
-            var that = $(this);
-            $.post('/member/registcode',{sMobile:sMobile},function(res){
-                console.log(111)
-            })
-        })
-        $('#reg-form').on('submit',function(){
-            var phoneVal = this.sMobile.value;
-            var codeVal = this.sCode.value;
-            var passVal = this.sPassWord.value;
-            var rePassVal = this.sRePassWord.value;
+            var text = $(this).text(),
+                tOut, that = this,
+                sMobile = $('#reg-form').find('input[name="sMobile"]').val();
+
+            if(sMobile == ''){
+                $.toast("请输入手机号", "text");
+                return false;
+            }
+            if(!/^1\d{10}$/.test(sMobile)){
+                $.toast("手机号有误", "text");
+                return false;
+            }
+            if(text == '发送验证码'){
+                var time = 30;
+                $(that).text(time + 's后重发').css('color', '#999');
+                tOut = setInterval(function () {
+                    --time;
+                    $(that).text(time + 's后重发');
+                    if(time <= 0){
+                        $(that).text('发送验证码').css('color','#2d8cf8');
+                        clearInterval(tOut);
+                    }
+                },1000);
+                var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/registcode";
+                var _csrf = '<?= Yii::$app->request->getCsrfToken()?>';
+                $.post(url,{sMobile:sMobile,_csrf:_csrf},function (data) {
+                    if(data&&data.status>0){
+                        $.toast(data.msg, "text");
+                    }else{
+                        $.toast(data.msg, "text");
+                    }
+                },'json');
+            }else {
+                return false;
+            }
+
+        });
+
+        $('#regist').on('click',function(){
+            var form = $('#reg-form')[0];
+            var phoneVal = form.sMobile.value;
+            var codeVal = form.sCode.value;
+            var passVal = form.sPassWord.value;
+            var rePassVal = form.sRePassWord.value;
             if(phoneVal==''){
-                alert('手机号不能为空');
+                $.toast("手机号不能为空", "text");
+                return false;
+            }
+            if(!/^1\d{10}$/.test(phoneVal)){
+                $.toast("手机号有误", "text");
                 return false;
             }
             if(codeVal==''){
-                alert('验证码不能为空');
+                $.toast("验证码不能为空", "text");
                 return false;
             }
             if(passVal==''){
-                alert('密码不能为空');
+                $.toast("密码不能为空", "text");
+                return false;
+            }
+            if(passVal.length<6){
+                $.toast('密码至少6位', "text");
                 return false;
             }
             if(rePassVal==''){
-                alert('请再次输入密码');
+                $.toast("请再次输入密码", "text");
                 return false;
             }
             if(passVal!==rePassVal){
-                alert('两次密码不一致');
+                $.toast("两次密码不一致", "text");
                 return false;
             }
-            $.post('/member/registpost',$(this).serialize(),function(res){
-                console.log(res)
-            })
-            return false;
-        })
+            var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/registpost";
+
+            $.post(url,$(form).serialize(),function(data){
+                if(data.status){
+                    $.toast(data.msg, "text");
+                    location.href = '<?=\Yii::$app->request->hostInfo?>/member/operation/login';
+                }else {
+                    $.toast(data.msg, "text");
+                }
+
+            },'json');
+
+        });
     })
 </script>
 <?php $this->endBlock('jsblock')?>
