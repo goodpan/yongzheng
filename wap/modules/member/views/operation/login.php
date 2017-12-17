@@ -68,6 +68,7 @@ $this->title = "登录";
             $.post(url,$(this).serialize(),function(data){
                if(data.status){
                    $.toast(data.msg, "text");
+                   location.href = '<?=\Yii::$app->request->hostInfo?>/member/space/index';
                }else {
                    $.toast(data.msg, "text");
                }

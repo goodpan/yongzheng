@@ -1,2 +1,6 @@
 
 wap/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin
+*.data
+backend/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin
+*.ser
+*.log
