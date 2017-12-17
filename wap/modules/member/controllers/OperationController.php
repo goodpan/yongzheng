@@ -55,6 +55,7 @@ class OperationController extends BaseController
         if($this->bLogin()){
             return $this->redirect(\Yii::$app->request->hostInfo.'/member/space/index');
         }
+//        sdds
         return $this->render('login');
     }
 
