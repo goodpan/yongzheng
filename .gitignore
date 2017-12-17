@@ -1,6 +1,12 @@
 
+<<<<<<< HEAD
 wap/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin
 *.data
 backend/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin
 *.ser
 *.log
+=======
+.idea/workspace.xml
+*.xml
+*.xml
+>>>>>>> 47d21073db1deb3c9f516146804494df2cbfd0b8

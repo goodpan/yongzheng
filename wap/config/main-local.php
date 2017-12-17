@@ -7,9 +7,9 @@ $config = [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=47.94.161.223;dbname=yongzheng',
+            'dsn' => 'mysql:host=120.78.168.175;dbname=yongzheng',
             'username' => 'root',
-            'password' => 'liu5555',
+            'password' => '123456',
             'charset' => 'utf8',
             'tablePrefix' => 'yz_'
         ],

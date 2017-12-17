@@ -1,5 +1,5 @@
 <?php
-namespace pc\models;
+namespace wap\models;
 
 use yii\db\ActiveRecord;
 

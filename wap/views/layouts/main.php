@@ -24,6 +24,11 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->head() ?>
+    <? if(isset($this->blocks['classify_title'])) {?>
+        <?= $this->blocks['classify_title']?>
+    <?}else{?>
+        <title>雍正网</title>
+    <?}?>
     <link rel="stylesheet" href="/css/lib/weui.css">
     <link rel="stylesheet" href="/css/lib/jquery_weui.css">
     <?php if(isset($this->blocks['cssblock']))
@@ -57,16 +62,16 @@ AppAsset::register($this);
         <a href="/" <?=$rute=='/info/site/index'?'class="on"':''?>>
             <span class="icon">&#xe61d;</span>
             <p>首页</p>
-        </a> 
+        </a>
         <a href="/info/site/postyourwant" <?=$rute=='/info/site/postyourwant'?'class="on"':''?>>
             <span class="icon">&#xe609;</span>
             <p>发需求</p>
-        </a> 
+        </a>
         <a href="/info/site/classify" <?=$rute=='/info/site/classify'?'class="on"':''?>>
             <span class="icon">&#xe651;</span>
             <p>分类</p>
-        </a> 
-        <a href="/member/space/index" <?=$rute=='/member/space/index'?'class="on"':''?>> 
+        </a>
+        <a href="/member/space/index" <?=$rute=='/member/space/index'?'class="on"':''?>>
             <span class="icon">&#xe636;</span>
             <p>我的</p>
         </a>
