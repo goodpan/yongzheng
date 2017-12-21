@@ -41,10 +41,23 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        //获取cookie中的地址
+//        $position = $_COOKIE['position'];
+        $position = "福建省 厦门市 湖里区";
+        list($provance,$city,$area) = explode(" ",$position);
+
         //获取首页证件
-        $credentials = Credentials::find()->asArray()->all();
+        $credentials = Credentials::find()
+                ->where(['provance'=>$provance,'city'=>$city,'area'=>$area])
+                ->limit(5)
+                ->asArray()
+                ->all();
         //获取商家信息
-        $business = Business::find()->asArray()->all();
+        $business = Business::find()
+                ->where(['provance'=>$provance,'city'=>$city,'area'=>$area])
+                ->limit(5)
+                ->asArray()
+                ->all();
 //        var_dump($business);exit;
         return $this->render('index',array('data'=>$credentials,'business'=>$business));
     }

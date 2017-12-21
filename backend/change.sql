@@ -34,6 +34,16 @@ ALTER TABLE yz_user add pca varchar(30) not null default '' comment '所在地�
 ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comment '固定电话';
 ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
+
+ALTER TABLE yz_business add  provance  varchar(30) not null default '' comment '省';
+ALTER TABLE yz_business add  city  varchar(30) not null default '' comment '市';
+ALTER TABLE yz_business add  area  varchar(30) not null default '' comment '区';
+
+
+ALTER TABLE yz_credentials add  provance  varchar(30) not null default '' comment '省';
+ALTER TABLE yz_credentials add  city  varchar(30) not null default '' comment '市';
+ALTER TABLE yz_credentials add  area  varchar(30) not null default '' comment '区';
+
 ######用户需求表#########
 DROP TABLE IF EXISTS `yz_requirements`;
 CREATE TABLE IF NOT EXISTS `yz_requirements`(
