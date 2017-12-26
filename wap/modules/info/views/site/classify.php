@@ -35,7 +35,7 @@
             <div class="con-item">
             <? } ?>
                     <h2 class="item-title">
-                        <a class="t-text" href="http://m.shop.myerm.cn/shop0/product/list?catid=17">
+                        <a class="t-text" href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $secondClassifyList['firstClassifyId']?>">
                             全部<?= $firstClassifyName ?>类 </a>
                     </h2>
                     <!--二级分类-->
@@ -44,7 +44,7 @@
                     foreach ($secondClassifyList as $secondClassifyName => $thirdClassfyList) {
                         ?>
                         <div class="item-list">
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=26">
+                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $thirdClassfyList['secondClassifyId']?>">
                                 <h3 class="list-title">
                                     <span class="l-title-text"><?= $secondClassifyName ?></span>
                                 </h3>
@@ -54,7 +54,7 @@
                                 <?
                                 array_pop($thirdClassfyList);
                                 foreach ($thirdClassfyList as $value) { ?>
-                                    <a href="http://m.shop.myerm.cn/shop0/product/list?catid=28">
+                                    <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $value->id;?>">
                                         <li class="pro-item">
                                             <div class="img-box">
                                                 <img
