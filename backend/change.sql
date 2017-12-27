@@ -66,3 +66,8 @@ alter table `yz_requirements` change type TypeID  tinyint(4)  NOT NULL DEFAULT '
  */
  //更改证件分类表主键字段（id）为自动递增
  alter table yz_category CHANGE id id int UNSIGNED auto_increment;
+ //分类表增加字段
+ ALTER TABLE yz_category add (
+is_hot bit default 0 COMMENT '是否热门',
+degree int(3) not null DEFAULT 0 COMMENT '等级'
+)
