@@ -31,11 +31,12 @@
             <? foreach ($dataClassifyList as $firstClassifyName => $secondClassifyList) { ?>
             <? if ($checkFirstKey == $firstClassifyName) { ?>
             <div class="con-item item-cur">
-            <? } else { ?>
-            <div class="con-item">
-            <? } ?>
+                <? } else { ?>
+                <div class="con-item">
+                    <? } ?>
                     <h2 class="item-title">
-                        <a class="t-text" href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $secondClassifyList['firstClassifyId']?>">
+                        <a class="t-text"
+                           href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $secondClassifyList['firstClassifyId'] ?>">
                             全部<?= $firstClassifyName ?>类 </a>
                     </h2>
                     <!--二级分类-->
@@ -44,7 +45,7 @@
                     foreach ($secondClassifyList as $secondClassifyName => $thirdClassfyList) {
                         ?>
                         <div class="item-list">
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $thirdClassfyList['secondClassifyId']?>">
+                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $thirdClassfyList['secondClassifyId'] ?>">
                                 <h3 class="list-title">
                                     <span class="l-title-text"><?= $secondClassifyName ?></span>
                                 </h3>
@@ -54,7 +55,7 @@
                                 <?
                                 array_pop($thirdClassfyList);
                                 foreach ($thirdClassfyList as $value) { ?>
-                                    <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $value->id;?>">
+                                    <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $value->id; ?>">
                                         <li class="pro-item">
                                             <div class="img-box">
                                                 <img
@@ -72,127 +73,29 @@
                 <? } ?>
                 <div class="con-item ">
                     <h2 class="item-title">
-                        <a class="t-text" href="http://m.shop.myerm.cn/shop0/product/list?catid=86"> 全部热门分类 </a>
+                        <a href="javascript:;"> 全部热门分类 </a>
                     </h2>
                     <!--二级分类-->
                     <div class="item-list">
-                        <a href="http://m.shop.myerm.cn/shop0/product/list?catid=87">
-                            <h3 class="list-title">
-                                <span class="l-title-text">本月热销</span>
-                            </h3>
-                        </a>
+                        <!--                        <a href="http://m.shop.myerm.cn/shop0/product/list?catid=87">-->
+                        <h3 class="list-title">
+                            <span class="l-title-text">本月热搜</span>
+                        </h3>
+                        <!--                        </a>-->
                         <ul class="pro-group">
                             <!--三级分类-->
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=89">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075427350032044600726987415318.jpg"
-                                            alt="纸尿裤">
-                                    </div>
-                                    <div class="img-tt">纸尿裤</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=90">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075427770045094700110192298385.jpg"
-                                            alt="奶粉">
-                                    </div>
-                                    <div class="img-tt">奶粉</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=91">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075428950059610700107833872872.jpg"
-                                            alt="辅食">
-                                    </div>
-                                    <div class="img-tt">辅食</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=92">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075430870041530700381926441900.jpg"
-                                            alt="安全座椅">
-                                    </div>
-                                    <div class="img-tt">安全座椅</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=93">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075431340021201700211629317419.jpg"
-                                            alt="洗护用品">
-                                    </div>
-                                    <div class="img-tt">洗护用品</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=94">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075431760087869800813447336337.jpg"
-                                            alt="奶瓶套装">
-                                    </div>
-                                    <div class="img-tt">奶瓶套装</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=95">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075432440051998600197618317149.jpg"
-                                            alt="宝宝零食">
-                                    </div>
-                                    <div class="img-tt">宝宝零食</div>
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                    <div class="item-list">
-                        <a href="http://m.shop.myerm.cn/shop0/product/list?catid=88">
-                            <h3 class="list-title">
-                                <span class="l-title-text">宝妈最爱</span>
-                            </h3>
-                        </a>
-                        <ul class="pro-group">
-                            <!--三级分类-->
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=96">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075433180036783100190757452864.jpg"
-                                            alt="棉柔巾">
-                                    </div>
-                                    <div class="img-tt">棉柔巾</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=97">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075433780078748300111832060218.jpg"
-                                            alt="纸尿裤">
-                                    </div>
-                                    <div class="img-tt">纸尿裤</div>
-                                </li>
-                            </a>
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=98">
-                                <li class="pro-item">
-                                    <div class="img-box">
-                                        <img
-                                            src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075434230023906000646459443704.jpg"
-                                            alt="安抚玩具">
-                                    </div>
-                                    <div class="img-tt">安抚玩具</div>
-                                </li>
-                            </a>
+                            <?php foreach ($hotClassifyList as $value) { ?>
+                                <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $value->id;?>">
+                                    <li class="pro-item">
+                                        <div class="img-box">
+                                            <img
+                                                src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075427350032044600726987415318.jpg"
+                                                alt="纸尿裤">
+                                        </div>
+                                        <div class="img-tt"><?php echo $value->name;?></div>
+                                    </li>
+                                </a>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>

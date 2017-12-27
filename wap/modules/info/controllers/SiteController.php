@@ -69,7 +69,7 @@ class SiteController extends BaseController
     {
         /** @var Category $category */
         $category = new Category();
-        $firstClassifyList = $category->getfirstClassifyList(10);
+        $firstClassifyList = $category->getClassifyListByDegree(10,0);
         $dataClassifyList = [];//组装数据
         $e = 0;
         $checkFirstKey = '';//判断第一个分类，供页面首次加载判断样式用
@@ -89,9 +89,13 @@ class SiteController extends BaseController
             //一级分类id
             $dataClassifyList[$item->name]['firstClassifyId'] = $item->id;
         }
+        //附加查询条件
+        $where = "'is_hot => 1'";
+        $hotClassifyList = $category->getClassifyListByDegree(10,3,$where);
         return $this->render('classify',[
             'dataClassifyList' => $dataClassifyList,
-            'checkFirstKey' => $checkFirstKey
+            'checkFirstKey' => $checkFirstKey,
+            'hotClassifyList' => $hotClassifyList
         ]);
     }
 

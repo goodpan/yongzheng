@@ -10,16 +10,18 @@ use backend\models\BaseModel;
 
 class Category extends BaseModel{
     /**
-     * 获取分类列表
+     * 根据分类等级获取分类列表
      * @param int $limit
+     * @param int $degree
+     * @param string $where
      * @return array|\yii\db\ActiveRecord[]
      * @author wenzhen-chen
      * @time 2017-12-13 22:34:31
      */
-    public function getFirstClassifyList($limit = 10){
+    public function getClassifyListByDegree($limit = 10,$degree = 0,$where = ''){
         $List = self::find()
             ->select('name,id')
-            ->where(['pid' => '0'])
+            ->where(['degree' => $degree])
             ->limit($limit)
             ->all();
         return $List;
