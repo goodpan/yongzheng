@@ -15,7 +15,7 @@ $this->title = "找回密码";
         <h2 class="tt-con">IT空间</h2>
         <div class="tt-m">靠谱的技术众包平台</div>
     </div>
-    <form class="form-body" id="reg-form">
+    <form class="form-body" id="reg-form" >
         <div class="form-main">
             <div class="form-item">
                 <i class="inp-icon mobile"></i>
@@ -59,42 +59,87 @@ $this->title = "找回密码";
             }
         });
         //发送验证码
-        
         $('#send').on('click',function(){
-            var sMobile = $('#reg-form').find('input[name="sMobile"]').val();
-            var that = $(this);
-            $.post('/member/forgotcode',{sMobile:sMobile},function(res){
-                console.log(111)
-            })
-        })
+            var text = $(this).text(),
+                tOut, that = this,
+                sMobile = $('#reg-form').find('input[name="sMobile"]').val();
+
+            if(sMobile == ''){
+                $.toast("请输入手机号", "text");
+                return false;
+            }
+            if(!/^1\d{10}$/.test(sMobile)){
+                $.toast("手机号有误", "text");
+                return false;
+            }
+            if(text == '发送验证码'){
+                var time = 30;
+                $(that).text(time + 's后重发').css('color', '#999');
+                tOut = setInterval(function () {
+                    --time;
+                    $(that).text(time + 's后重发');
+                    if(time <= 0){
+                        $(that).text('发送验证码').css('color','#2d8cf8');
+                        clearInterval(tOut);
+                    }
+                },1000);
+                var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/sendstcode";
+                var _csrf = '<?= Yii::$app->request->getCsrfToken()?>';
+                var sType = 'RetrievePwd';
+                $.post(url,{sMobile:sMobile,sType:sType,_csrf:_csrf},function (data) {
+                    if(data&&data.status>0){
+                        $.toast(data.msg, "text");
+                    }else{
+                        $.toast(data.msg, "text");
+                    }
+                },'json');
+            }else {
+                return false;
+            }
+        });
+        //提交
         $('#reg-form').on('submit',function(){
             var phoneVal = this.sMobile.value;
             var codeVal = this.sCode.value;
             var passVal = this.sPassWord.value;
             var rePassVal = this.sRePassWord.value;
             if(phoneVal==''){
-                alert('手机号不能为空');
+                $.toast("手机号不能为空", "text");
+                return false;
+            }
+            if(!/^1\d{10}$/.test(phoneVal)){
+                $.toast("手机号有误", "text");
                 return false;
             }
             if(codeVal==''){
-                alert('验证码不能为空');
+                $.toast("验证码不能为空", "text");
                 return false;
             }
             if(passVal==''){
-                alert('密码不能为空');
+                $.toast("密码不能为空", "text");
                 return false;
             }
             if(rePassVal==''){
-                alert('请再次输入密码');
+                $.toast("请再次输入密码", "text");
                 return false;
             }
             if(passVal!==rePassVal){
-                alert('两次密码不一致');
+                $.toast("两次密码不一致", "text");
                 return false;
             }
-            $.post('/member/forgotpost',$(this).serialize(),function(res){
-                console.log(res)
-            })
+
+            var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/forgetpost";
+            $.post(url,$(this).serialize(),function(res){
+                if(res.status){
+                    $.toast(res.msg, "text");
+                    setTimeout(function () {
+                        location.href = '<?=\Yii::$app->request->hostInfo?>/member/operation/login';
+                    },500);
+
+                }else {
+                    $.toast(res.msg, "text");
+                }
+            },'json');
             return false;
         })
     })

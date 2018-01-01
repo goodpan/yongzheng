@@ -8,8 +8,14 @@
 
 namespace wap\controllers;
 
+
+use SebastianBergmann\CodeCoverage\Report\Html\Facade;
+use wap\models\Smscode;
+use wap\models\User;
+use \yii\web\Response;
 use yii\web\Controller;
 use wap\logics\BaseBlocks;
+use Yii;
 
 /** pc端控制器基类
  * Class BaseController
@@ -30,8 +36,9 @@ class BaseController extends Controller
      */
     public function bLogin()
     {
-        if (array_key_exists('lifetime', $_SESSION)) {
-            if ($_SESSION['lifetime'] && $_SESSION['lifetime'] > time()) {
+        $lifetime = isset(Yii::$app->session['lifetime']);
+        if ($lifetime) {
+            if (Yii::$app->session['lifetime'] && Yii::$app->session['lifetime'] > time()) {
                 return true;
             } else {
                 return false;
@@ -39,6 +46,69 @@ class BaseController extends Controller
         }else{
             return false;
         }
+    }
+
+    /**
+     * 创建session
+     * @param $userID
+     * @author ldz
+     * @time 2017-12-30 14:46:38
+     */
+    public function createSession($userID){
+        $session = \Yii::$app->session;
+        $session->set('user_id',$userID);
+        $session->set('lifetime',time() + 3600);
+        Yii::trace($session,'用户SESSION');
+    }
+
+    /**
+     * 获取短信验证码
+     * @param string $sMobile  手机号
+     * @param string $sType    短信验证类型
+     * @return \yii\console\Response|Response
+     * @author ldz
+     * @time 2017-12-16 1:42:45
+     */
+    public function getSmscode($sMobile,$sType = ''){
+        if($sMobile == ''){
+            return $this->asJson(['status' => false, 'msg'=>'手机号不能为空']);
+        }
+        //查询用户
+        $user = User::findData('user_id',['user_name' => $sMobile]);
+
+        if (!empty($user)) {
+            if($sType == 'regist'){//注册
+                return $this->asJson(['status' => false, 'msg'=>'手机号已经被注册了']);
+            }
+        }else{
+            if($sType == 'RetrievePwd'){//找回密码
+                return $this->asJson(['status' => false, 'msg'=>'该用户还未注册']);
+            }
+        }
+
+        //发送短信
+        $smscode = new Smscode();
+        $re_send =  $smscode->sendCode($sMobile,$sType);
+        if($re_send['status']){
+            return $this->asJson(['status' => false, 'msg'=>$re_send['msg']]);
+        }else{
+            return $this->asJson(['status' => false, 'msg'=>'发送失败，请重新发送']);
+        }
+    }
+
+    /**
+     * 返回json数据
+     * @param mixed $data
+     * @return \yii\console\Response|Response
+     * @author ldz
+     * @time 2017-12-28 22:09:50
+     */
+    public function asJson($data)
+    {
+        $response = Yii::$app->getResponse();
+        $response->format = Response::FORMAT_JSON;
+        $response->data = $data;
+        return $response;
     }
 
 

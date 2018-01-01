@@ -190,6 +190,7 @@
     $('.search_btn').on('click', function() {
         //设置缓存
         var value = $.trim($('#keyWord').val());
+
         if (value !== '') {
             var sWords = localStorage.getItem('searchWordArr'), //获取缓存值
                 searchWordArr = [];
@@ -200,22 +201,23 @@
                 searchWordArr = sWords.split(',');
                 var isEqual = searchWordArr.every(function(item, index) {
                     return item !== value;
-                })
+                });
                 if (isEqual) {
                     searchWordArr.unshift(value);
                     localStorage.setItem("searchWordArr", searchWordArr);
                 }
             }
         } else {
-            value = $('#keyWord').attr('placeholder');
+			$.toast('请输入搜索内容','text');
+			return;
         }
-        $('#keyWord').val('');
+
         $('.search_wrap').hide();
         $('.searchList_wrap').show();
         setTimeout(function(args) {
-            location.href = "/info/site/search" //跳转模拟
+            location.href = "/info/site/search?sName="+ value; //跳转模拟
         }, 500);
-    })
+    });
 
     $('.del_icon').on('click', function() {
         $('.select_mask').show();

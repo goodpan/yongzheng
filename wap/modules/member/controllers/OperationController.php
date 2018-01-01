@@ -7,13 +7,12 @@
  */
 namespace wap\modules\member\controllers;
 
-use Symfony\Component\CssSelector\Parser\Handler\StringHandler;
 use wap\controllers\BaseController;
 use wap\models\SmsCode;
 use wap\models\User;
-use wap\models\Business;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
+use  Yii;
 
 /** 会员操作控制器
  * Class OperationController
@@ -28,7 +27,7 @@ class OperationController extends BaseController
     {
        if(parent::beforeAction($action)){
             $arrAction = ['login','register','forgetpwd','business','mydemand','protocol','setting'];
-           if(!$this->bLogin() && !in_array($action->id,$arrAction)){
+           if(!in_array($action->id,$arrAction) && $this->bLogin()){
                $this->redirect(Url::toRoute([
                    \Yii::$app->request->hostInfo . '/member/space/index',
                    'sReturnUrl' => \Yii::$app->request->url
@@ -49,31 +48,32 @@ class OperationController extends BaseController
      * 登录
      * @return string
      * @author ldz
+     * @time 2017-12-13 22:13:18
      */
     public function actionLogin()
     {
+//        Yii::$app->session->destroy();
         if($this->bLogin()){
             return $this->redirect(\Yii::$app->request->hostInfo.'/member/space/index');
         }
         return $this->render('login');
     }
 
+    /**
+     * 提交登录信息
+     * @return string
+     * @author ldz
+     */
     public function actionLoginpost(){
         $arrPost = \Yii::$app->request->post();
-
         $User = User::findData('user_id',['user_name'=>$arrPost['sMobile'],'user_pass'=>md5(md5($arrPost['sPassWord']))]);
 
         if(empty($User)){
-            $data = ['status'=>false, 'msg'=>'账户名与密码不匹配，请重新输入'];
-            return json_encode($data);
+            return $this->asJson(['status'=>false, 'msg'=>'账户名与密码不匹配，请重新输入']);
         }
 
-        $session = \Yii::$app->session;
-        $session->set('user_id',$User->user_id);
-        $session->set('lifetime',time() + 3600);
-
-        $data = ['status'=>true, 'msg'=>'登录成功'];
-        return json_encode($data);
+        $this->createSession($User->user_id);
+        return $this->asJson(['status'=>true, 'msg'=>'登录成功']);
     }
 
 
@@ -89,46 +89,6 @@ class OperationController extends BaseController
     }
 
     /**
-     * 发送注册短信验证码
-     * @return string
-     * @author ldz
-     * @time 2017-12-16 12:42:45
-     */
-    public function actionRegistcode()
-    {
-        $sMobile = \Yii::$app->request->post('sMobile');
-        $user = User::find()
-            ->where(['user_name' => $sMobile])
-            ->one();
-        if (!empty($user)) {
-            \Yii::trace($sMobile.'该手机号已被注册');
-            $data = [
-                'status' => false,
-                'msg'=>'手机号已经被注册了'
-            ];
-            return json_encode($data);
-        }
-        $sType = 'regist';
-        //发送短信
-        $smscode = new Smscode();
-        $re_send =  $smscode->sendCode($sMobile,$sType);
-        if($re_send['status']){
-            $data = [
-                'status' => true,
-                'msg'=>$re_send['msg']
-            ];
-            return json_encode($data);
-        }else{
-            $data = [
-                'status' => false,
-                'msg'=>$re_send['msg']
-            ];
-            return json_encode($data);
-        }
-
-    }
-
-    /**
      * 注册提交
      * @return string
      * @author ldz
@@ -138,27 +98,15 @@ class OperationController extends BaseController
        $arrPost = \Yii::$app->request->post();
 
       if($arrPost['sPassWord'] != $arrPost['sRePassWord']){
-          $data = [
-              'status' => false,
-              'msg'=>'两次密码不一致'
-          ];
-          return json_encode($data);
+          return $this->asJson(['status' => false, 'msg'=>'两次密码不一致']);
       }elseif(StringHelper::byteLength($arrPost['sPassWord'] < 6)){
-          $data = [
-              'status' => false,
-              'msg'=>'密码至少要6位数'
-          ];
-          return json_encode($data);
+         return $this->asJson(['status' => false, 'msg'=>'密码至少要6位数']);
       }
 
       $smsCode = Smscode::find()->select('sCode')->where(['sMobile'=>$arrPost['sMobile']])->orderBy('sCreateDate DESC')->one();
 
        if(!$smsCode || $arrPost['sCode'] != $smsCode['sCode'] ){
-           $data = [
-               'status' => false,
-               'msg'=>'验证码不正确'
-           ];
-           return json_encode($data);
+           return $this->asJson(['status' => false, 'msg'=>'验证码不正确']);
        }
 
        //创建用户
@@ -171,13 +119,7 @@ class OperationController extends BaseController
 
         //删除相关验证
         Smscode::deleteAll(['sMobile'=>$arrPost['sMobile'],'sType'=>'regist']);
-
-        $data = [
-            'status' => true,
-            'msg'=>'注册成功'
-        ];
-        return json_encode($data);
-
+        return $this->asJson($data = ['status' => true, 'msg'=>'注册成功']);
     }
 
     /**
@@ -222,6 +164,43 @@ class OperationController extends BaseController
     }
 
     /**
+     * @return \yii\console\Response|\yii\web\Response
+     * @author ldz
+     * @time 2017-12-17 20:40:13
+     */
+    public function actionForgetpost(){
+
+        $arrPost = Yii::$app->request->post();
+
+        if($arrPost['sPassWord'] != $arrPost['sRePassWord']){
+            return $this->asJson(['status' => false, 'msg'=>'两次密码不一致']);
+        }elseif(StringHelper::byteLength($arrPost['sPassWord'] < 6)){
+            return $this->asJson(['status' => false, 'msg'=>'密码至少要6位数']);
+        }
+        //查询验证码
+        $smsCode = Smscode::find()->select('sCode')->where(['sMobile'=>$arrPost['sMobile'],'sType'=>'RetrievePwd'])->orderBy('sCreateDate DESC')->one();
+
+        if(!$smsCode || $arrPost['sCode'] != $smsCode['sCode'] ){
+            return $this->asJson(['status' => false, 'msg'=>'验证码不正确']);
+        }
+
+        $user = User::findData('user_id',['user_name'=>$arrPost['sMobile']]);
+        if(!$user){
+            return $this->asJson(['status'=>false,'msg'=>'手机号不存在']);
+        }
+        //判断密码是否一致
+        if ($arrPost['sPassWord'] != $arrPost['sRePassWord']) {
+            return $this->asJson(['status'=>false,'msg'=>'两次密码不一致']);
+        }
+        $user->user_pass = md5(md5($arrPost['sPassWord']));
+        $user->save();
+
+        //删除相关验证
+        Smscode::deleteAll(['sMobile'=>$arrPost['sMobile'],'sType'=>'RetrievePwd']);
+        return $this->asJson(['status' => true, 'msg'=>'修改成功']);
+    }
+
+    /**
      * 商家入驻
      * @return string
      * @author wenzhen-chen
@@ -253,5 +232,18 @@ class OperationController extends BaseController
 //        $img = '/image/business_img/' . $_FILES['file']['name'];
 //        $file = file_get_contents($_FILES['file']);
 //        file_put_contents($img,$file);
+    }
+
+    /**
+     * 发送注册短信验证码
+     * @return string
+     * @author ldz
+     * @time 2017-12-16 12:42:45
+     */
+    public function actionSendstcode()
+    {
+        $sMobile = Yii::$app->request->post('sMobile');   //手机号
+        $sType  = Yii::$app->request->post('sType');      //类型
+        return $this->getSmscode($sMobile,$sType);
     }
 }
