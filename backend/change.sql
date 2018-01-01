@@ -34,6 +34,16 @@ ALTER TABLE yz_user add pca varchar(30) not null default '' comment '所在地�
 ALTER TABLE yz_user add  immobilize_phone  varchar(30) not null default '' comment '固定电话';
 ALTER TABLE yz_user add  qq  varchar(30) not null default '' comment 'qq';
 
+
+ALTER TABLE yz_business add  provance  varchar(30) not null default '' comment '省';
+ALTER TABLE yz_business add  city  varchar(30) not null default '' comment '市';
+ALTER TABLE yz_business add  area  varchar(30) not null default '' comment '区';
+
+
+ALTER TABLE yz_credentials add  provance  varchar(30) not null default '' comment '省';
+ALTER TABLE yz_credentials add  city  varchar(30) not null default '' comment '市';
+ALTER TABLE yz_credentials add  area  varchar(30) not null default '' comment '区';
+
 ######用户需求表#########
 DROP TABLE IF EXISTS `yz_requirements`;
 CREATE TABLE IF NOT EXISTS `yz_requirements`(
@@ -56,3 +66,8 @@ alter table `yz_requirements` change type TypeID  tinyint(4)  NOT NULL DEFAULT '
  */
  //更改证件分类表主键字段（id）为自动递增
  alter table yz_category CHANGE id id int UNSIGNED auto_increment;
+ //分类表增加字段
+ ALTER TABLE yz_category add (
+is_hot bit default 0 COMMENT '是否热门',
+degree int(3) not null DEFAULT 0 COMMENT '等级'
+)

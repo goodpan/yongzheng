@@ -38,10 +38,23 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        //获取cookie中的地址
+//        $position = $_COOKIE['position'];
+        $position = "福建省 厦门市 湖里区";
+        list($provance,$city,$area) = explode(" ",$position);
+
         //获取首页证件
-        $credentials = Credentials::find()->asArray()->all();
+        $credentials = Credentials::find()
+                ->where(['provance'=>$provance,'city'=>$city,'area'=>$area])
+                ->limit(5)
+                ->asArray()
+                ->all();
         //获取商家信息
-        $business = Business::find()->asArray()->all();
+        $business = Business::find()
+                ->where(['provance'=>$provance,'city'=>$city,'area'=>$area])
+                ->limit(5)
+                ->asArray()
+                ->all();
 //        var_dump($business);exit;
         return $this->render('index',array('data'=>$credentials,'business'=>$business));
     }
@@ -53,7 +66,7 @@ class SiteController extends BaseController
     {
         /** @var Category $category */
         $category = new Category();
-        $firstClassifyList = $category->getfirstClassifyList(10);
+        $firstClassifyList = $category->getClassifyListByDegree(10,0);
         $dataClassifyList = [];//组装数据
         $e = 0;
         $checkFirstKey = '';//判断第一个分类，供页面首次加载判断样式用
@@ -73,9 +86,13 @@ class SiteController extends BaseController
             //一级分类id
             $dataClassifyList[$item->name]['firstClassifyId'] = $item->id;
         }
+        //附加查询条件
+        $where = "'is_hot => 1'";
+        $hotClassifyList = $category->getClassifyListByDegree(10,3,$where);
         return $this->render('classify',[
             'dataClassifyList' => $dataClassifyList,
-            'checkFirstKey' => $checkFirstKey
+            'checkFirstKey' => $checkFirstKey,
+            'hotClassifyList' => $hotClassifyList
         ]);
     }
 
