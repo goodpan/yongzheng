@@ -46,7 +46,7 @@ class Credentials extends BaseModel
             'defaultPageSize' => 5,
             'totalCount' => self::getCount(),
         ]);
-        return self::find()->alias('cred')->joinWith('category As cate', true, 'LEFT JOIN')->select('cred_id,cred_name,descr,cover,is_hot,name,cred.create_time')->offset($pagination->offset)->limit($pagination->limit)->asArray()->all();
+        return self::find()->alias('cred')->joinWith('category As cate', true, 'LEFT JOIN')->select('cred_id,cred_name,descr,cover,cred.is_hot,cred.create_time,cate.name')->offset($pagination->offset)->limit($pagination->limit)->asArray()->all();
     }
 
     /** 编辑证件
