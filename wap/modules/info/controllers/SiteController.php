@@ -6,8 +6,6 @@ use wap\models\Credentials;
 use wap\models\Business;
 
 use wap\models\Requirements;
-use Yii;
-use yii\filters\AccessControl;
 use pc\controllers\BaseController;
 
 
@@ -230,7 +228,12 @@ class SiteController extends BaseController
      */
     public function actionCred(){
         $this->layout = '@app/views/layouts/home.php';
-        return $this->renderPartial('cred');
+        $cred_id = \Yii::$app->request->get('id');
+        $credential = new Credentials();
+        $credentialDetail = $credential->getCredentialsById($cred_id);
+        return $this->renderPartial('cred',[
+            'credentialDetail' => $credentialDetail
+        ]);
     }
 
     /**

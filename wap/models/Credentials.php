@@ -18,8 +18,22 @@ class Credentials extends BaseModel{
      */
     public function getCredentialsByCateId($cate_id=''){
        return self::find()
-           ->select('cred_name,cover')
+           ->select('cred_name,descr')
            ->where(['cate_id' => $cate_id])
            ->all();
+    }
+
+    /**
+     * 根据id获取证件信息
+     * @param string $cred_id
+     * @return array|null|\yii\db\ActiveRecord
+     * @author wenzhen-chen
+     * @time 2017-12-28 00:14:21
+     */
+    public function getCredentialsById($cred_id=''){
+       return self::find()
+           ->select('cred_name,descr,cover,condition,material,cost,locale,cover')
+           ->where(['cred_id' => $cred_id])
+           ->one();
     }
 }
