@@ -23,7 +23,7 @@
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
 	}
-	
+
 </style>
 	<script src="/js/hotcss.js"></script>
 </head>
@@ -58,18 +58,18 @@
 	        </div>
 	        <div class="select_area">
 				<div class="select_item flex">
-					<a href='/search/goods' class="active">搜证件</a>
+					<a href='/info/site/search' class="active">搜证件</a>
 					<a href='/search/company'>搜企业</a>
 					<a href='/search/personal'>搜个人</a>
 				</div>
 	            <div class="area_list flex" v-if="nowItem == 'service'">
-	                <span :class="{ on: condition === 'default' }" @click="doDefaultSort">默认排序</span> 
+	                <span :class="{ on: condition === 'default' }" @click="doDefaultSort">默认排序</span>
 	                <span class="arrow_wrap" :class="{ on: condition === 'price' }" @click="doPriceSort">
 							费用
 	        			<i class="arrow_top" :class="{ 'up':isPriceDesc }"></i>
 	        			<i class="arrow_bottom" :class="{ 'down':!isPriceDesc }"></i>
 	        		</span>
-	        		<span class="s_price position" :class="{ on: condition === 'position' }" @click="switchLocation">		
+	        		<span class="s_price position" :class="{ on: condition === 'position' }" @click="switchLocation">
 						所在地
 						<i class="position_bottom"></i>
 	        		</span>
@@ -79,7 +79,7 @@
 	                </div>
 	            </div>
 	            <div class="area_list_other flex" v-else>
-	                <span :class="{ on: condition=== 'default' }" @click="doDefaultSort">默认排序</span> 
+	                <span :class="{ on: condition=== 'default' }" @click="doDefaultSort">默认排序</span>
 	                <span class="arrow_wrap position" :class="{ on: condition === 'position' }" @click="switchLocation">
 							所在地
 	        			<i class="arrow_bottom"></i>
@@ -107,7 +107,7 @@
 										<i class="icon">&#xe754;</i>
 										<span v-text="item.sAddress">福建 厦门</span>
 									</div>
-								</div>  
+								</div>
 							</a>
 						</li>
 					</ul>
@@ -354,7 +354,7 @@
 			currentProvText:'全国',//当前省份名
 			currentCityText:'',//当前城市名
 			seletedTags:[],//已选标签
-			typeList:typeList		
+			typeList:typeList
 		},
 		mounted: function() {
 			this.dropFunc();
@@ -401,13 +401,13 @@
 							_self.isEmpty = false;
 							//非滚动，先置空
 							scroller||(_self.dataList = []);
-							setTimeout(() => {
+							setTimeout(function(){
 								_self.dataList = _self.dataList.concat(res.arrList);
 								_self.isMore = res.bMoreData;
 								_self.mescroll.endSuccess();
 							}, 200);
 						}else{
-							setTimeout(() => {
+							setTimeout(function(){
 								scroller||(_self.isEmpty = true);
 								scroller||(_self.dataList = [],$('.mescroll-upwarp').hide());
 								_self.mescroll.endSuccess();
@@ -432,7 +432,7 @@
 			doPriceSort:function(){
 				this.isPriceDesc = !this.isPriceDesc;
 				this.reqData.page = 1;
-				this.reqData.sortby = 'fPrice';
+				this.reqData.sortby = 'cost';
 				this.isPriceDesc?this.reqData.ascdesc='desc':this.reqData.ascdesc='asc';
 				this.isMore = true;
 				this.getData();
@@ -546,7 +546,7 @@
             }
         })
     })
-   
+
     var local = localStorage.getItem('searchWordArr'),
         spanHtml = '';
     if (local) {
@@ -564,7 +564,7 @@
     $('.search_btn').on('click', function() {
         //设置缓存
         var value = $.trim($('#keyWord').val());
-        if (value == '') { 
+        if (value == '') {
             $.toast('请输入搜索内容','text');
             return;
         }
@@ -585,7 +585,7 @@
         }
         $('.search_wrap').hide();
         $('.searchList_wrap').show();
-        location.href = '/search/goods?sName='+value;
+        location.href = '/info/site/search?sName='+value;
     })
 
     $('.del_icon').on('click', function() {
@@ -618,7 +618,7 @@
             $('.search_wrap').hide();
             $('.searchList_wrap').show();
         }
-        location.href = '/search/goods?sName='+sName;
+        location.href = '/info/site/search?sName='+sName;
     }
 </script>
 </html>

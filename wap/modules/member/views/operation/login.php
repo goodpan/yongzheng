@@ -64,7 +64,6 @@ $this->title = "登录";
                 return false;
             }
             var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/loginpost";
-
             $.post(url,$(this).serialize(),function(data){
                if(data.status){
                    $.toast(data.msg, "text");

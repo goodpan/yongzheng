@@ -88,9 +88,10 @@ $this->title = "注册";
                         clearInterval(tOut);
                     }
                 },1000);
-                var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/registcode";
+                var url = '<?=\Yii::$app->request->hostInfo?>'+"/member/operation/sendstcode";
                 var _csrf = '<?= Yii::$app->request->getCsrfToken()?>';
-                $.post(url,{sMobile:sMobile,_csrf:_csrf},function (data) {
+                var sType = 'regist';
+                $.post(url,{sMobile:sMobile,sType:sType,_csrf:_csrf},function (data) {
                     if(data&&data.status>0){
                         $.toast(data.msg, "text");
                     }else{
@@ -100,9 +101,8 @@ $this->title = "注册";
             }else {
                 return false;
             }
-
         });
-
+        //提交信息
         $('#regist').on('click',function(){
             var form = $('#reg-form')[0];
             var phoneVal = form.sMobile.value;

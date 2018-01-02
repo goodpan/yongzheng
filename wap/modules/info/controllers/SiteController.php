@@ -4,10 +4,10 @@ namespace wap\modules\info\controllers;
 use wap\models\Category;
 use wap\models\Credentials;
 use wap\models\Business;
-
 use wap\models\Requirements;
-use pc\controllers\BaseController;
 
+use wap\controllers\BaseController;
+use Yii;
 
 /** 网站信息控制器
  * Site controller
@@ -193,12 +193,22 @@ class SiteController extends BaseController
     }
 
     /**
+     * 搜索页
+     * @param int $page   页数
+     * @param int $limit  每页条数
      * @return string
-     * @author suwen
+     * @author ldz
+     * @time 2017-12-31 19:20:16
      */
-    public function actionSearch()
+    public function actionSearch($page = 1,$limit =10)
     {
-        $this->layout = '@app/views/layouts/search.php';
+//        $this->layout = '@app/views/layouts/search.php';
+        $data = [];
+        if(Yii::$app->request->isAjax){
+            $request = \Yii::$app->request;
+            print_r($request);exit();
+        }
+
         return $this->render('search');
     }
 

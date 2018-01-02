@@ -15,9 +15,9 @@ class Smscode extends ActiveRecord
 
     /**
      * 短信发送
-     * @param string $sMobile
-     * @param string $sType
-     * @param string $text
+     * @param string $sMobile  手机号
+     * @param string $sType    验证类型
+     * @param string $text     发送内容
      * @author ldz
      * @time 2017-12-16 12:02:11
      */
