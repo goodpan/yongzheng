@@ -87,4 +87,25 @@ class ClassifyController extends BaseController{
         $cates = $cate->getTree();
         return $this->render('add',['cates'=>$cates]);
     }
+
+    /**
+     * 删除数据
+     * @return mixed
+     * @author wenzhen-chen
+     * @time 2018-1-3 02:47:30
+     */
+    public function actionDel(){
+        $data_id[] = Yii::$app->request->get('id');
+        $cate = new Category();
+        $result = $cate->deleteById($data_id);
+        if($result){
+            $msg = '删除成功';
+        }else{
+            $msg = '删除失败';
+        }
+        return json_encode([
+            'code' => $result,
+            'msg' => $msg
+        ]);
+    }
 }

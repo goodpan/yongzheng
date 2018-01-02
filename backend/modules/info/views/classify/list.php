@@ -46,7 +46,14 @@ layui.use('table', function(){
       layer.msg('ID：'+ data.id + ' 的查看操作');
     } else if(obj.event === 'del'){
       layer.confirm('真的删除行么', function(index){
-        obj.del();
+          $.get('/info/classify/del',{id:data.id},function (res) {
+              if(res.code>0){
+                  obj.del();
+                  layer.alert(res.msg);
+              }else{
+                  layer.alert(res.error);
+              }
+          },'json')
         layer.close(index);
       });
     } else if(obj.event === 'edit'){
