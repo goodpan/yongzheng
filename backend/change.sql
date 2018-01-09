@@ -62,6 +62,9 @@ CREATE TABLE IF NOT EXISTS `yz_requirements`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户需求表';
 ALTER TABLE `yz_requirements` add  `user_id` BIGINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户ID',
 
+alter table yz_requirements add `status` tinyint(4) not null default '1' comment '需求状态 1 需求发布 2 需求已被认领 3.需求已完成',
+alter table yz_requirements add `grade` tinyint(4) not null default '5' comment '评分 最高5星 最低1星',
+
 alter table `yz_requirements` change type TypeID  tinyint(4)  NOT NULL DEFAULT '1' COMMENT '委托类型 1 企业 2 个人 3 其他',
  */
  //更改证件分类表主键字段（id）为自动递增

@@ -157,7 +157,7 @@ $(function(){
         if(!validate()){
             return false;
         }
-        $.post('/requirement/formsave',$('#req-form').serialize(),function(res){
+        $.post('postyourwant',$('#req-form').serialize(),function(res){
             console.log(res);
         })
         return false;

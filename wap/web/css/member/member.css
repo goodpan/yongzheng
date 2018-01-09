@@ -321,7 +321,8 @@ header {
   justify-content: space-between;
   -webkit-align-items: center;
   align-items: center;
-  border: 1px solid #eeeeee; }
+  /*border: 1px solid #eeeeee; */
+}
   [data-dpr="1"] .my_demand .demand_info, [data-dpr="1"] .my_task .demand_info {
     font-size: 15px; }
   [data-dpr="2"] .my_demand .demand_info, [data-dpr="2"] .my_task .demand_info {

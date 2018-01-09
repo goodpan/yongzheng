@@ -8,6 +8,7 @@
 namespace wap\modules\member\controllers;
 
 use wap\controllers\BaseController;
+use wap\models\Requirements;
 use wap\models\SmsCode;
 use wap\models\User;
 use yii\helpers\StringHelper;
@@ -52,7 +53,6 @@ class OperationController extends BaseController
      */
     public function actionLogin()
     {
-//        Yii::$app->session->destroy();
         if($this->bLogin()){
             return $this->redirect(\Yii::$app->request->hostInfo.'/member/space/index');
         }
@@ -139,7 +139,8 @@ class OperationController extends BaseController
      */
     public function actionSetting()
     {
-        return $this->render('setting');
+        $userid = Yii::$app->session->get('user_id');
+        return $this->render('setting',array('user_id'=>$userid));
     }
 
     /**
@@ -149,7 +150,12 @@ class OperationController extends BaseController
      */
     public function actionMydemand()
     {
-        return $this->render('mydemand');
+        $userid = Yii::$app->session->get('user_id');
+        $userRequiredata = Requirements::find()
+                ->where(['user_id'=>$userid])
+                ->asArray()
+                ->all();
+        return $this->render('mydemand',array('requiredata'=>$userRequiredata,'user_id'=>$userid));
     }
 
 
@@ -245,5 +251,17 @@ class OperationController extends BaseController
         $sMobile = Yii::$app->request->post('sMobile');   //手机号
         $sType  = Yii::$app->request->post('sType');      //类型
         return $this->getSmscode($sMobile,$sType);
+    }
+
+    /**
+     * 退出登录
+     * @author lmk
+     * @date 2018年1月9日21:22:54
+     */
+    public function actionLogout()
+    {
+         Yii::$app->session->set('user_id','');
+         Yii::$app->session->set('lifetime','');
+        return $this->asJson(['status' => 1, 'msg'=>'退出成功']);
     }
 }

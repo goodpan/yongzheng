@@ -33,9 +33,11 @@ $this->title = "账户管理";
 				</li>
 			</ul>
 		</section>
+		<?php if($user_id){?>
 		<div class="sign_out">
 			<a href="javascript:;" id="logout">退出登录</a>
 		</div>
+		<?php }?>
 	</div>
 </body>
 
@@ -45,10 +47,11 @@ $this->title = "账户管理";
 	var _csrf = "";
 	$(function() {
 		$('#logout').on('click',function(){
-			$.get('/member/logout',function(res){
+			$.get('/member/operation/logout',function(res){
+				alert(1);
 				if(res&&res.status>0){
 					$.toast("退出成功", function() {
-						location.href = '/';
+						location.href = '<?=\Yii::$app->request->hostInfo?>/member/space/index';
 					});
 				}else{
 					$.toast(res.msg,'text');
