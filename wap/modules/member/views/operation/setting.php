@@ -21,13 +21,13 @@ $this->title = "账户管理";
 					</div>
 				</li>
 				<li>
-					<a href="/member/changename" class="flex">
+					<a href="/member/operation/changename" class="flex">
 						<span>昵称</span>
 						<p class="nickname">昵称</p>
 					</a>
 				</li>
 				<li>
-					<a href="/member/forgot" class="flex">
+					<a href="/member/operation/changepass" class="flex">
 						<span>修改密码</span>
 					</a>
 				</li>
@@ -48,7 +48,6 @@ $this->title = "账户管理";
 	$(function() {
 		$('#logout').on('click',function(){
 			$.get('/member/operation/logout',function(res){
-				alert(1);
 				if(res&&res.status>0){
 					$.toast("退出成功", function() {
 						location.href = '<?=\Yii::$app->request->hostInfo?>/member/space/index';

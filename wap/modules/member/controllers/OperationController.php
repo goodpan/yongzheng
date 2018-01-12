@@ -27,7 +27,7 @@ class OperationController extends BaseController
     public function beforeAction($action)
     {
        if(parent::beforeAction($action)){
-            $arrAction = ['login','register','forgetpwd','business','mydemand','protocol','setting'];
+            $arrAction = ['login','register','forgetpwd','business','mydemand','protocol','setting','logout','changename','changepass'];
            if(!in_array($action->id,$arrAction) && $this->bLogin()){
                $this->redirect(Url::toRoute([
                    \Yii::$app->request->hostInfo . '/member/space/index',
@@ -66,7 +66,7 @@ class OperationController extends BaseController
      */
     public function actionLoginpost(){
         $arrPost = \Yii::$app->request->post();
-        $User = User::findData('user_id',['user_name'=>$arrPost['sMobile'],'user_pass'=>md5(md5($arrPost['sPassWord']))]);
+        $User = User::findData('user_id',['user_phone'=>$arrPost['sMobile'],'user_pass'=>md5(md5($arrPost['sPassWord']))]);
 
         if(empty($User)){
             return $this->asJson(['status'=>false, 'msg'=>'账户名与密码不匹配，请重新输入']);
@@ -263,5 +263,62 @@ class OperationController extends BaseController
          Yii::$app->session->set('user_id','');
          Yii::$app->session->set('lifetime','');
         return $this->asJson(['status' => 1, 'msg'=>'退出成功']);
+    }
+
+    /**
+     * 修改昵称
+     * @author lmk
+     * @return string|\yii\console\Response|\yii\web\Response
+     */
+    public function actionChangename()
+    {
+        $userid = Yii::$app->session->get('user_id');
+        $nickname = '';
+
+        if(\Yii::$app->request->post('nickname')){
+            $user = User::findData('user_id',['user_id'=>$userid]);
+            if($user){
+                $user->nickname = \Yii::$app->request->post('nickname');
+                $user->save();
+            }
+            return $this->asJson(['status'=>1,'msg'=>'保存成功']);
+        }
+        if($userid){
+            $data = User::find()
+                ->select('nickname')
+                ->where(['user_id'=>$userid])
+                ->one();
+            $nickname = $data->nickname;
+        }
+
+        return $this->render('changename',array('nickname'=>$nickname,'user_id'=>$userid));
+    }
+
+    /**
+     * 修改密码
+     * @author lmk
+     */
+    public function actionChangepass(){
+        $userid = Yii::$app->session->get('user_id');
+        $_POST = \Yii::$app->request->post();
+        if($_POST){
+            if($_POST['passVal'] != $_POST['rePassVal']){
+                return $this->asJson(['status' => false, 'msg'=>'两次密码不一致']);
+            }elseif(StringHelper::byteLength($_POST['passVal'] < 6)){
+                return $this->asJson(['status' => false, 'msg'=>'密码至少要6位数']);
+            }
+            $user = User::findData('user_pass',['user_id'=>$userid]);
+            if($user){
+                if($user->user_pass == md5(md5($_POST['lastpassVal']))){
+                    $user->user_pass = md5(md5($_POST['passVal']));
+                    $user->save();
+                    return $this->asJson(['status'=>1,'msg'=>'修改成功']);
+                }else{
+                    return $this->asJson(['status'=>false,'msg'=>'原密码错误']);
+                }
+            }
+        }
+        return $this->render('changepass',array('user_id'=>$userid));
+
     }
 }
