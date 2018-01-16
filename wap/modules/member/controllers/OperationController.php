@@ -220,8 +220,7 @@ class OperationController extends BaseController
     /**
      * 保存商家入驻信息
      */
-    public function actionBusinessinfo
-    ()
+    public function actionBusinessinfo()
     {
         echo '<pre>';
         print_r(\Yii::$app->request->post());
