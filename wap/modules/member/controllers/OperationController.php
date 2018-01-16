@@ -220,7 +220,8 @@ class OperationController extends BaseController
     /**
      * 保存商家入驻信息
      */
-    public function actionBusinessinfosave()
+    public function actionBusinessinfo
+    ()
     {
         echo '<pre>';
         print_r(\Yii::$app->request->post());
@@ -276,7 +277,7 @@ class OperationController extends BaseController
         $nickname = '';
 
         if(\Yii::$app->request->post('nickname')){
-            $user = User::findData('user_id',['user_id'=>$userid]);
+            $user = User::findData('user_id,nickname',['user_id'=>$userid]);
             if($user){
                 $user->nickname = \Yii::$app->request->post('nickname');
                 $user->save();
@@ -307,7 +308,7 @@ class OperationController extends BaseController
             }elseif(StringHelper::byteLength($_POST['passVal'] < 6)){
                 return $this->asJson(['status' => false, 'msg'=>'密码至少要6位数']);
             }
-            $user = User::findData('user_pass',['user_id'=>$userid]);
+            $user = User::findData('user_id,user_pass',['user_id'=>$userid]);
             if($user){
                 if($user->user_pass == md5(md5($_POST['lastpassVal']))){
                     $user->user_pass = md5(md5($_POST['passVal']));

@@ -29,7 +29,7 @@
 				<?php if (empty($userdata['user_id'])){?>
 					<a href="/member/operation/login">请登录/注册</a>
 				<?php }else{?>
-					<a href=""><?=$userdata['user_name']?></a>
+					<a href=""><?=$userdata['nickname']?></a>
 				<?php }?>
 			</p>
 		</div>
