@@ -22,7 +22,7 @@
 		<div class="member_portrait">
 			<div class="portrait">
 				<a href="">
-					<img src="/img/member/portrait.png">
+					<img src="<?="/".$userdata['avatar']?>">
 				</a>
 			</div>
 			<p>

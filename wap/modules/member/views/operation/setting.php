@@ -13,13 +13,15 @@ $this->title = "账户管理";
 	<div class="member_manage">
 		<section class="manage">
 			<ul>
+				<?php if($user['user_id']){?>
 				<li class="up_portrait flex">
 					<span>头像</span>
 					<div class="portrait_wrap flex">
-						<img src="" class="portrait_img">
+						<img src="<?="/".$user['avatar']?>" class="portrait_img">
 						<input type="file" class="file" name="">
 					</div>
 				</li>
+				<?php }?>
 				<li>
 					<a href="/member/operation/changename" class="flex">
 						<span>昵称</span>
@@ -33,7 +35,7 @@ $this->title = "账户管理";
 				</li>
 			</ul>
 		</section>
-		<?php if($user_id){?>
+		<?php if($user['user_id']){?>
 		<div class="sign_out">
 			<a href="javascript:;" id="logout">退出登录</a>
 		</div>
@@ -67,7 +69,8 @@ $this->title = "账户管理";
 						_csrf:_csrf
 					};
 					$('.portrait_img').attr('src',rst.base64);
-					$.post('',reqData,function(res){
+					var url = '<?=\Yii::$app->request->hostInfo?>/member/operation/imagesave';
+					$.post(url,reqData,function(res){
 						if(res&&res.status>0){
 							$.toast(res.msg, "text");
 						}else{

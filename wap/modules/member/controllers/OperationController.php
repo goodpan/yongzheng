@@ -27,7 +27,7 @@ class OperationController extends BaseController
     public function beforeAction($action)
     {
        if(parent::beforeAction($action)){
-            $arrAction = ['login','register','forgetpwd','business','mydemand','protocol','setting','logout','changename','changepass'];
+            $arrAction = ['login','register','forgetpwd','business','mydemand','protocol','setting','logout','changename','changepass','imagesave'];
            if(!in_array($action->id,$arrAction) && $this->bLogin()){
                $this->redirect(Url::toRoute([
                    \Yii::$app->request->hostInfo . '/member/space/index',
@@ -140,7 +140,8 @@ class OperationController extends BaseController
     public function actionSetting()
     {
         $userid = Yii::$app->session->get('user_id');
-        return $this->render('setting',array('user_id'=>$userid));
+        $user = User::findData('user_id,avatar',['user_id'=>$userid]);
+        return $this->render('setting',array('user'=>$user));
     }
 
     /**
@@ -232,12 +233,39 @@ class OperationController extends BaseController
      */
     public function actionImagesave()
     {
-        echo '<pre>';
-        echo 123;
-        print_r(\Yii::$app->request->post());
-//        $img = '/image/business_img/' . $_FILES['file']['name'];
-//        $file = file_get_contents($_FILES['file']);
-//        file_put_contents($img,$file);
+        $userid = Yii::$app->session->get('user_id');
+        $data = \Yii::$app->request->post();
+        $sAvatar = '';
+        $img = $data['sAvatar'];
+        //设置生成的图片名字
+        $imageName = date("His",time())."_".rand(1111,9999).'.png';
+        //判断是否有逗号，如果有就截取后半部分
+        if(strstr($img,',')){
+            $images = explode(',',$img);
+            $sAvatar = $images[1]; //图片的数据
+        }
+        //设置图片保存路径
+        $path = "img/upload/".date("Ymd",time());
+        //判断文件目录是否存在 不存在就创建 并赋予777权限
+        if(!is_dir($path)){  //如果文件不存在
+            mkdir($path,0777,true); //默认最大权限
+        }
+        //拼接文件路径和图片名称
+        $imageSrc = $path."/".$imageName;
+        //生成图片 返回的是字节数
+        $s = file_put_contents($imageSrc,base64_decode($sAvatar));
+        //r㘝字节数存在 说明生成成功
+        if($s){
+            //图片生成成功 保存到数据库中该用户的头像路径中
+            $user = User::findData('user_id',['user_id'=>$userid]);
+            if($user){
+                $user->avatar = $imageSrc;
+                $user->save();
+            }
+            return $this->asJson(['status' => 1, 'msg'=>'头像保存成功']);
+        }else{
+            return $this->asJson(['status' => 2, 'msg'=>'头像保存失败']);
+        }
     }
 
     /**
