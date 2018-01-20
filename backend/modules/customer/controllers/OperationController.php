@@ -5,14 +5,11 @@
  * Date: 2017/10/14
  * Time: 15:47
  */
-namespace backend\modules\human\controllers;
+namespace backend\modules\customer\controllers;
 
 use backend\controllers\BaseController;
 use backend\models\Category;
 use backend\models\Credentials;
-use backend\models\UploadForm;
-use yii\web\UploadedFile;
-use yii\helpers\FileHelper;
 use Yii;
 
 /** 信息管理控制器
@@ -20,12 +17,13 @@ use Yii;
  * @package backend\modules\info\controllers
  */
 class OperationController extends BaseController{
-    public $enableCsrfValidation = false;
-    public function init(){
-        $this->layout='@app/views/layouts/info.php';  
-    }
+//    public $enableCsrfValidation = false;
+//    public function init(){
+//        $this->layout='@app/views/layouts/customer.php';
+//    }
 
     public function actionIndex(){
+        echo 123;exit;
         echo 'backend info Operation index';
     }   
     
@@ -33,7 +31,7 @@ class OperationController extends BaseController{
      * 
      */
     public function actionList(){
-        echo 111;exit;
+        echo 123;exit;
         if(Yii::$app->request->isAjax){
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $model = new Credentials();
@@ -135,32 +133,4 @@ class OperationController extends BaseController{
         return $this->render('edit',['cateList'=>$cateList,'cred'=>$cred]);
     }
 
-    /** 上传图片
-     * @return string
-     */
-    public function actionUpload()
-    {
-        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $model = new UploadForm();
-        if (Yii::$app->request->isAjax) {
-            $model->credFile = UploadedFile::getInstance($model, 'credFile');
-            if ($model->credFile && $model->validate()) {
-                $dir = '/uploads/cred/';
-                //如果文件夹不存在，则新建文件夹
-                if (!file_exists(Yii::getAlias('@webroot') .'/'. $dir)) {
-                    FileHelper::createDirectory(Yii::getAlias('@webroot') .'/'. $dir, 777);
-                }
-                $path =$dir. $model->credFile->baseName . '.' . $model->credFile->extension;
-                if($model->credFile->saveAs(Yii::getAlias("@webroot").'/'.$path) === true){
-                    return [
-                        'code'=>0,
-                        'msg'=>'上传成功',
-                        'data' => [
-                            'src'=>$path
-                        ]
-                    ];
-                }
-            }
-        }
-    }
 }

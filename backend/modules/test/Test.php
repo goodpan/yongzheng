@@ -1,17 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: suwen
- * Date: 2017/10/14
- * Time: 15:41
+ * User: zsmds
+ * Date: 2018/1/20
+ * Time: 21:55
  */
-namespace backend\modules\human;
+namespace backend\modules\test;
 
 /** 信息模块
  * Class Info
  * @package backend\modules\info
  */
-class Human extends \yii\base\Module {
+class Test extends \yii\base\Module {
     public function init() {
         parent::init();
     }
