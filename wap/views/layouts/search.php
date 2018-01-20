@@ -474,13 +474,13 @@ $action = $this->context->action->id;
 							_self.isEmpty = false;
 							//非滚动，先置空
 							scroller||(_self.dataList = []);
-							setTimeout(() => {
+							setTimeout(function(){
 								_self.dataList = _self.dataList.concat(res.arrList);
 								_self.isMore = res.bMoreData;
 								_self.mescroll.endSuccess();
 							}, 200);
 						}else{
-							setTimeout(() => {
+							setTimeout(function() {
 								scroller||(_self.isEmpty = true);
 								scroller||(_self.dataList = [],$('.mescroll-upwarp').hide());
 								_self.mescroll.endSuccess();
