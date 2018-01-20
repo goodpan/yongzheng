@@ -5,6 +5,8 @@ use wap\models\Category;
 use wap\models\Credentials;
 use wap\models\Business;
 use wap\models\Requirements;
+use wap\models\SmsCode;
+
 
 use wap\controllers\BaseController;
 use Yii;
@@ -104,59 +106,55 @@ class SiteController extends BaseController
      */
     public function actionPostyourwant()
     {
-        $uid = 1;
+        $userid = Yii::$app->session->get('user_id');
+
         if(Yii::$app->request->isAjax){
             $post = Yii::$app->request->post();
+
+            $smsCode = Smscode::find()->select('sCode')->where(['sMobile'=>$post['sPhone']])->orderBy('sCreateDate DESC')->one();
+
+            if(!$smsCode || $post['sCode'] != $smsCode['sCode'] ){
+                return $this->asJson(['status' => 0, 'msg'=>'验证码不正确']);
+            }
+
             if($post['TypeID'] == 'company'){$post['TypeID'] = 1;}
             elseif ($post['TypeID'] == 'personal'){$post['TypeID'] = 2;}
             elseif ($post['TypeID'] == 'unlimited'){$post['TypeID'] = 3;}
 
-            if($post['requ_id']){  //更新
-                $requObj = Requirements::find()
-                    ->select('*')
-                    ->where(['user_id'=>$uid,'requ_id'=>$post['requ_id']])
-                    ->one();
-                if($requObj){
-                    $requObj->sName = trim($post['sName']);
-                    $requObj->sContent = trim($post['sContent']);
-                    $requObj->TypeID = trim($post['TypeID']);
-                    $requObj->sBudget = trim($post['sBudget']);
-                    $requObj->sPhone = trim($post['sPhone']);
-                    $requObj->dDeliverDate = $post['dDeliverDate'];
-                    $requObj->update_time = time();
-                    $requObj->user_id = $uid;
-                    if ($requObj->save()) {
-                        $data['status'] = 1;
-                        $data['msg'] = '修改成功';
-                        return json_encode($data);
-                    } else {
-                        $data['status'] = 0;
-                        $data['msg'] = '修改失败';
-                        return json_encode($data);
-                    }
-                }
-            }else{ //插入
-                $requObj = new Requirements();
-                $requObj->sName = trim($post['sName']);
-                $requObj->sContent = trim($post['sContent']);
-                $requObj->TypeID = trim($post['TypeID']);
-                $requObj->sBudget = trim($post['sBudget']);
-                $requObj->sPhone = trim($post['sPhone']);
-                $requObj->dDeliverDate = $post['dDeliverDate'];
-                $requObj->create_time = time();
-                $requObj->user_id = $uid;
-                if ($requObj->save()) {
-                    $data['status'] = 1;
-                    $data['msg'] = '修改成功';
-                    return json_encode($data);
-                } else {
-                    $data['status'] = 0;
-                    $data['msg'] = '修改失败';
-                    return json_encode($data);
-                }
+            $requObj = new Requirements();
+            $requObj->sName = trim($post['sName']);
+            $requObj->sContent = trim($post['sContent']);
+            $requObj->TypeID = trim($post['TypeID']);
+            $requObj->sBudget = trim($post['sBudget']);
+            $requObj->sPhone = trim($post['sPhone']);
+            $requObj->dDeliverDate = $post['dDeliverDate'];
+            $requObj->update_time = time();
+            $requObj->user_id = $userid;
+            if ($requObj->save()) {
+                $data['status'] = 1;
+                $data['msg'] = '添加成功';
+                return json_encode($data);
+            } else {
+                $data['status'] = 0;
+                $data['msg'] = '添加失败';
+                return json_encode($data);
             }
         }
+
         return $this->render('postyourwant');
+    }
+
+    /**
+     * 发送发布需求短信验证码
+     * @return string
+     * @author ldz
+     * @time 2017-12-16 12:42:45
+     */
+    public function actionSendstcode()
+    {
+        $sMobile = Yii::$app->request->post('sMobile');   //手机号
+        $sType  = Yii::$app->request->post('sType');      //类型
+        return $this->getSmscode($sMobile,$sType);
     }
 
     /**

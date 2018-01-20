@@ -154,6 +154,7 @@ class OperationController extends BaseController
         $userid = Yii::$app->session->get('user_id');
         $userRequiredata = Requirements::find()
                 ->where(['user_id'=>$userid])
+                ->orderBy('create_time DESC')
                 ->asArray()
                 ->all();
         return $this->render('mydemand',array('requiredata'=>$userRequiredata,'user_id'=>$userid));
@@ -171,12 +172,12 @@ class OperationController extends BaseController
     }
 
     /**
+     * 忘记密码
      * @return \yii\console\Response|\yii\web\Response
      * @author ldz
      * @time 2017-12-17 20:40:13
      */
     public function actionForgetpost(){
-
         $arrPost = Yii::$app->request->post();
 
         if($arrPost['sPassWord'] != $arrPost['sRePassWord']){
@@ -230,6 +231,7 @@ class OperationController extends BaseController
 
     /**
      * 图片保存
+     * @author lmk
      */
     public function actionImagesave()
     {
