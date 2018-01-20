@@ -6,7 +6,7 @@
     <div class="category_wrap">
     <div class="header">
         <div class="top_search flex">
-            <span class="mirror"></span> <span class="word">婴儿配方奶粉</span>
+            <span class="mirror"></span> <span class="word">搜索你要的证件</span>
         </div>
     </div>
     <div class="cat-viewport">
@@ -109,7 +109,7 @@
             </div>
             <div class="search_input flex">
                 <span></span>
-                <input type="text" placeholder="婴儿配方奶粉" id="keyWord">
+                <input type="text" placeholder="搜索你要的证件" id="keyWord">
             </div>
             <div class="search_btn">搜索</div>
         </div>
@@ -124,7 +124,7 @@
                 <div class="h_s_content">
                 </div>
             </div>
-            <div class="hot_search">
+            <div class="hot_search" style="display: none">
                 <div class="hot_header">
                     <span>热门搜索</span>
                 </div>

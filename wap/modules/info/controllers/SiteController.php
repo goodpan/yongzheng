@@ -109,62 +109,6 @@ class SiteController extends BaseController
      */
     public function actionPostyourwant()
     {
-<<<<<<< HEAD
-        $uid = 1;
-        if (Yii::$app->request->isAjax) {
-            $post = Yii::$app->request->post();
-            if ($post['TypeID'] == 'company') {
-                $post['TypeID'] = 1;
-            } elseif ($post['TypeID'] == 'personal') {
-                $post['TypeID'] = 2;
-            } elseif ($post['TypeID'] == 'unlimited') {
-                $post['TypeID'] = 3;
-            }
-
-            if ($post['requ_id']) {  //更新
-                $requObj = Requirements::find()
-                    ->select('*')
-                    ->where(['user_id' => $uid, 'requ_id' => $post['requ_id']])
-                    ->one();
-                if ($requObj) {
-                    $requObj->sName = trim($post['sName']);
-                    $requObj->sContent = trim($post['sContent']);
-                    $requObj->TypeID = trim($post['TypeID']);
-                    $requObj->sBudget = trim($post['sBudget']);
-                    $requObj->sPhone = trim($post['sPhone']);
-                    $requObj->dDeliverDate = $post['dDeliverDate'];
-                    $requObj->update_time = time();
-                    $requObj->user_id = $uid;
-                    if ($requObj->save()) {
-                        $data['status'] = 1;
-                        $data['msg'] = '修改成功';
-                        return json_encode($data);
-                    } else {
-                        $data['status'] = 0;
-                        $data['msg'] = '修改失败';
-                        return json_encode($data);
-                    }
-                }
-            } else { //插入
-                $requObj = new Requirements();
-                $requObj->sName = trim($post['sName']);
-                $requObj->sContent = trim($post['sContent']);
-                $requObj->TypeID = trim($post['TypeID']);
-                $requObj->sBudget = trim($post['sBudget']);
-                $requObj->sPhone = trim($post['sPhone']);
-                $requObj->dDeliverDate = $post['dDeliverDate'];
-                $requObj->create_time = time();
-                $requObj->user_id = $uid;
-                if ($requObj->save()) {
-                    $data['status'] = 1;
-                    $data['msg'] = '修改成功';
-                    return json_encode($data);
-                } else {
-                    $data['status'] = 0;
-                    $data['msg'] = '修改失败';
-                    return json_encode($data);
-                }
-=======
         $userid = Yii::$app->session->get('user_id');
 
         if(Yii::$app->request->isAjax){
@@ -197,7 +141,6 @@ class SiteController extends BaseController
                 $data['status'] = 0;
                 $data['msg'] = '添加失败';
                 return json_encode($data);
->>>>>>> 5222a90d05945b4b09647845ed20dd6df4e0a8db
             }
         }
 
