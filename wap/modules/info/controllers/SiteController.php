@@ -6,6 +6,9 @@ use wap\models\Category;
 use wap\models\Credentials;
 use wap\models\Business;
 use wap\models\Requirements;
+use wap\models\SmsCode;
+
+
 use wap\controllers\BaseController;
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -106,6 +109,7 @@ class SiteController extends BaseController
      */
     public function actionPostyourwant()
     {
+<<<<<<< HEAD
         $uid = 1;
         if (Yii::$app->request->isAjax) {
             $post = Yii::$app->request->post();
@@ -160,9 +164,57 @@ class SiteController extends BaseController
                     $data['msg'] = '修改失败';
                     return json_encode($data);
                 }
+=======
+        $userid = Yii::$app->session->get('user_id');
+
+        if(Yii::$app->request->isAjax){
+            $post = Yii::$app->request->post();
+
+            $smsCode = Smscode::find()->select('sCode')->where(['sMobile'=>$post['sPhone']])->orderBy('sCreateDate DESC')->one();
+
+            if(!$smsCode || $post['sCode'] != $smsCode['sCode'] ){
+                return $this->asJson(['status' => 0, 'msg'=>'验证码不正确']);
+            }
+
+            if($post['TypeID'] == 'company'){$post['TypeID'] = 1;}
+            elseif ($post['TypeID'] == 'personal'){$post['TypeID'] = 2;}
+            elseif ($post['TypeID'] == 'unlimited'){$post['TypeID'] = 3;}
+
+            $requObj = new Requirements();
+            $requObj->sName = trim($post['sName']);
+            $requObj->sContent = trim($post['sContent']);
+            $requObj->TypeID = trim($post['TypeID']);
+            $requObj->sBudget = trim($post['sBudget']);
+            $requObj->sPhone = trim($post['sPhone']);
+            $requObj->dDeliverDate = $post['dDeliverDate'];
+            $requObj->update_time = time();
+            $requObj->user_id = $userid;
+            if ($requObj->save()) {
+                $data['status'] = 1;
+                $data['msg'] = '添加成功';
+                return json_encode($data);
+            } else {
+                $data['status'] = 0;
+                $data['msg'] = '添加失败';
+                return json_encode($data);
+>>>>>>> 5222a90d05945b4b09647845ed20dd6df4e0a8db
             }
         }
+
         return $this->render('postyourwant');
+    }
+
+    /**
+     * 发送发布需求短信验证码
+     * @return string
+     * @author ldz
+     * @time 2017-12-16 12:42:45
+     */
+    public function actionSendstcode()
+    {
+        $sMobile = Yii::$app->request->post('sMobile');   //手机号
+        $sType  = Yii::$app->request->post('sType');      //类型
+        return $this->getSmscode($sMobile,$sType);
     }
 
     /**
@@ -315,7 +367,12 @@ class SiteController extends BaseController
     public function actionCred()
     {
         $this->layout = '@app/views/layouts/home.php';
-        return $this->renderPartial('cred');
+        $cred_id = \Yii::$app->request->get('id');
+        $credential = new Credentials();
+        $credentialDetail = $credential->getCredentialsById($cred_id);
+        return $this->renderPartial('cred',[
+            'credentialDetail' => $credentialDetail
+        ]);
     }
 
     /**

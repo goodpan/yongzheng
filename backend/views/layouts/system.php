@@ -34,13 +34,13 @@ AppAsset::register($this);
             <li class="layui-nav-item <?=$this->context->module->id == 'console'?'layui-this':''?>"><a href="/console/overview/index">控制台</a></li>
             <li class="layui-nav-item <?=$this->context->module->id == 'system'||$this->context->module->id == 'manager'?'layui-this':''?>"><a href="/system/site/index">系统</a></li>
             <li class="layui-nav-item <?=$this->context->module->id == 'info'?'layui-this':''?>"><a href="/info/operation/list">证件库</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item <?=$this->context->module->id == 'human'?'layui-this':''?>"><a href="/human/operation/list">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">其它系统</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">邮件管理</a></dd>
                     <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
+                    <dd><a href="">授权管理</a></dd> 
                 </dl>
             </li>
         </ul>

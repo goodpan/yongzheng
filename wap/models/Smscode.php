@@ -11,7 +11,7 @@ use yii\db\ActiveRecord;
 class Smscode extends ActiveRecord
 {
     //云片网短信apikey   不可泄露
-    public $apikey  = "df1a842ffafc593b46badcc962664bcd";
+    public $apikey  = "0591f8100552cbb606c22df1ed6954ea";
 
     /**
      * 短信发送
@@ -62,7 +62,7 @@ class Smscode extends ActiveRecord
         /* 设置返回结果为流 */
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         /* 设置超时时间*/
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
         /* 设置通信方式 */
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -76,6 +76,8 @@ class Smscode extends ActiveRecord
     function send($ch,$data){
         $url = 'https://sms.yunpian.com/v2/sms/single_send.json';//单条短信发送
         curl_setopt ($ch, CURLOPT_URL, $url);
+        /* 设置超时时间*/
+        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         $result = curl_exec($ch);
         $error = curl_error($ch);

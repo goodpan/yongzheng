@@ -13,29 +13,33 @@ $this->title = "账户管理";
 	<div class="member_manage">
 		<section class="manage">
 			<ul>
+				<?php if($user['user_id']){?>
 				<li class="up_portrait flex">
 					<span>头像</span>
 					<div class="portrait_wrap flex">
-						<img src="" class="portrait_img">
+						<img src="<?="/".$user['avatar']?>" class="portrait_img">
 						<input type="file" class="file" name="">
 					</div>
 				</li>
+				<?php }?>
 				<li>
-					<a href="/member/changename" class="flex">
+					<a href="/member/operation/changename" class="flex">
 						<span>昵称</span>
 						<p class="nickname">昵称</p>
 					</a>
 				</li>
 				<li>
-					<a href="/member/forgot" class="flex">
+					<a href="/member/operation/changepass" class="flex">
 						<span>修改密码</span>
 					</a>
 				</li>
 			</ul>
 		</section>
+		<?php if($user['user_id']){?>
 		<div class="sign_out">
 			<a href="javascript:;" id="logout">退出登录</a>
 		</div>
+		<?php }?>
 	</div>
 </body>
 
@@ -45,10 +49,10 @@ $this->title = "账户管理";
 	var _csrf = "";
 	$(function() {
 		$('#logout').on('click',function(){
-			$.get('/member/logout',function(res){
+			$.get('/member/operation/logout',function(res){
 				if(res&&res.status>0){
 					$.toast("退出成功", function() {
-						location.href = '/';
+						location.href = '<?=\Yii::$app->request->hostInfo?>/member/space/index';
 					});
 				}else{
 					$.toast(res.msg,'text');
@@ -65,7 +69,8 @@ $this->title = "账户管理";
 						_csrf:_csrf
 					};
 					$('.portrait_img').attr('src',rst.base64);
-					$.post('',reqData,function(res){
+					var url = '<?=\Yii::$app->request->hostInfo?>/member/operation/imagesave';
+					$.post(url,reqData,function(res){
 						if(res&&res.status>0){
 							$.toast(res.msg, "text");
 						}else{

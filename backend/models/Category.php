@@ -22,6 +22,7 @@ class Category extends BaseModel
             ['id','safe'],
             ['name', 'required', 'message' => '分类名不能为空'],
             ['pid', 'required', 'message' => '请选择上级分类'],
+            ['degree', 'integer'],
         ];
     }
 }

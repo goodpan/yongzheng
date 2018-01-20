@@ -157,9 +157,16 @@ $(function(){
         if(!validate()){
             return false;
         }
-        $.post('/requirement/formsave',$('#req-form').serialize(),function(res){
-            console.log(res);
-        })
+        var url = '<?=\Yii::$app->request->hostInfo?>/info/site/postyourwant';
+        $.post(url,$('#req-form').serialize(),function(res){
+            if(res && res.status > 0){
+                $.toast("提交成功",function () {
+                    location.href = '<?=\Yii::$app->request->hostInfo?>/member/operation/mydemand';
+                });
+            }else{
+                $.toast(res.msg,'text');
+            }
+        },'json')
         return false;
     })
     $('#send-code').on('click',function(){
@@ -179,7 +186,11 @@ $(function(){
                     clearInterval(tOut);
                 }
             },1000)
-            $.post('/requirement/smscode',{sMobile:sPhone},function(res){
+            var url = '<?=\Yii::$app->request->hostInfo?>'+"/info/site/sendstcode";
+            var _csrf = '<?= Yii::$app->request->getCsrfToken()?>';
+            var sType = 'requirements';
+
+            $.post(url,{sMobile:sPhone,sType:sType,_csrf:_csrf},function(res){
                 if(res){
                     $.toast(res.msg, "text");
                 }else{

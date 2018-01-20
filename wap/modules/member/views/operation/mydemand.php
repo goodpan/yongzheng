@@ -12,40 +12,33 @@ $this->title = "我提交的需求";
 <?php $this->endBlock('cssblock')?>
 <div class="my_demand">
 		<section class="demand_list">
+			<?php if($user_id){?>
+
 			<ul>
+				<?php foreach ($requiredata as $item){?>
 				<li>
 					<a href="">
 						<div class="demand_info flex">
-							<span class="time">2017-11-09</span>
-							<span class="wait">等待处理</span>
+							<span class="time"><?=$item['sName']?>&nbsp;&nbsp;&nbsp;&nbsp;<?=date("Y-m-d H:i:s",$item['create_time'])?><?php if($item['status'] == 3){?>&nbsp;&nbsp;&nbsp;&nbsp;<?=$item['grade'].'星'?><?php }?></span>
+							<span class="wait">
+								<?php if($item['status'] == 1){?>
+									需求发布中
+								<?php }elseif($item['status'] == 2){?>
+									需求已被认领
+								<?php }else{?>
+									需求已完结
+								<?php }?>
+							</span>
 						</div>
 						<div class="demand_content">
-							<p>需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述</p>
+							<p><?=$item['sContent']?></p>
 						</div>
 					</a>
 				</li>
-				<li>
-					<a href="">
-						<div class="demand_info flex">
-							<span class="time">2017-11-09</span>
-							<span class="deal">处理中</span>
-						</div>
-						<div class="demand_content">
-							<p>需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<div class="demand_info flex">
-							<span class="time">2017-11-09</span>
-							<span class="already">已完成</span>
-						</div>
-						<div class="demand_content">
-							<p>需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述需求概述</p>
-						</div>
-					</a>
-				</li>
+				<?php }?>
 			</ul>
 		</section>
+	<?php }else{?>
+		<p style="position: relative;margin-left: 40%;margin-top: 30px;">请先<a href="login" style="color: #04BE02">登录</a></p>
+	<?php }?>
 	</div>
