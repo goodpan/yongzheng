@@ -36,7 +36,7 @@
 	            </div>
 	            <div id="search_box" class="s_input flex">
 	                <span></span>
-	                <h2 style='color:#999'>搜索证件/企业/人才</h2>
+	                <h2 style='color:#999'><?=$_GET['sName'] ? $_GET['sName']: '请输入搜索证件/企业/人才'?></h2>
 	            </div>
 	            <!-- <div class="s_l_more flexOne">
 	                <span class="icon">&#xe602;</span>
@@ -59,8 +59,8 @@
 	        <div class="select_area">
 				<div class="select_item flex">
 					<a href='/info/site/search' class="active">搜证件</a>
-					<a href='/search/company'>搜企业</a>
-					<a href='/search/personal'>搜个人</a>
+					<a href='/info/site/searchcomp'>搜企业</a>
+					<a href='/info/site/searchperson'>搜个人</a>
 				</div>
 	            <div class="area_list flex" v-if="nowItem == 'service'">
 	                <span :class="{ on: condition === 'default' }" @click="doDefaultSort">默认排序</span>
@@ -96,7 +96,7 @@
 	   			<div class="mescroll-bounce" v-if="!isEmpty">
 				   	<ul id="s-def" class="data-list">
 					   <li v-for="item in dataList">
-							<a href="" class="flex">
+							<a :href="item.sUrl" class="flex">
 								<div class="list_img">
 									<img :src="item.sImageUrl" alt="">
 								</div>
@@ -136,11 +136,12 @@
 				</div>
 				<div class="f_l_content">
 					<span :class="{'all':true,'on':type['isAll']}" @click="changeAll(index)">全部</span> <!--第一个要特殊处理 class all其他span不能有 -->
-					<span :class="{'on':tag['seleted']}" v-for="(tag,index2) in type['tags']" @click="seletedTag(index,index2)">{{tag['tagName']}}</span>
+					<span :class="{'on':tag['seleted']}" v-for="(tag,index2) in type['tags'].slice(0,5)" @click="seletedTag(index,index2)">{{tag['tagName']}}</span>
 					<div class="f_l_more">
-						<span>安全椅</span>
-						<span>安全椅</span>
-						<span>安全椅</span>
+<!--						<span>安全椅</span>-->
+<!--						<span>安全椅</span>-->
+<!--						<span>安全椅</span>-->
+						<span :class="{'on':tag['seleted']}" v-for="(tag,index3) in type['tags'].slice(5)" @click="seletedTag(index,index3+5)">{{tag['tagName']}}</span>
 					</div>
 				</div>
 			</div>
@@ -213,125 +214,20 @@
 <script src="/js/vue.min.js"></script>
 <script>
 	 var reqData = {
-		sName:'',//初始化后端填
-		sAddress:'',
+		sName:'<?=$_GET['sName']?>',//初始化后端填
 		TypeID:'',
+		sAddress:'',
 		page:0,
 		limit:10,
 		sortby:'',
-		ascdesc:'',
+		ascdesc:''
 	 };
-	var provID = '5';//初始省份ID
-	var cityID = '4';//初始城市ID
+	var provID = '16';//初始省份ID  默认福建
+	var cityID = '1';//初始城市ID   默认厦门
 	var cityList = Citys[provID]['c'];
-	var typeList = [
-		{
-			typeName:'分类1',
-			typeID:1,
-			isAll:true,
-			tags:[
-				{
-					tagName:'标签11',
-					tagId:1,
-					seleted:false
-				},
-				{
-					tagName:'标签12',
-					tagId:1,
-					seleted:false
-				},
-				{
-					tagName:'标签13',
-					tagId:1,
-					seleted:false
-				},
-			]
-		},
-		{
-			typeName:'分类2',
-			typeID:1,
-			isAll:true,
-			tags:[
-				{
-					tagName:'标签21',
-					tagId:1,
-					seleted:false
-				},
-				{
-					tagName:'标签22',
-					tagId:1,
-					seleted:false
-				},
-				{
-					tagName:'标签3',
-					tagId:1,
-					seleted:false
-				},
-			]
-		},
-	];
-	var dataList = [
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "微网站建设微信公众号定制开发仿手机官网制作企业商城做设计全包",
-            "fPrice": 22221,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110410043388100872719679715.jpg",
-            "sAddress": "福建 厦门市"
-        },
-        {
-            "sName": "企业标准型建站网站建设网站设计授权防伪建官网深圳网站定制仿站",
-            "fPrice": 1112,
-            "sImageUrl": "http://myerm.yizhanshi.com/userfile/upload/2017/11-24/15115110050048370900516101580142.jpg",
-            "sAddress": "福建 厦门市"
-        }
-    ];
+	 //筛选
+	var typeList =JSON.parse('<?=$arrTypeList?>');
+
 	new Vue({
 		el: '#app',
 		data: {
@@ -344,14 +240,14 @@
 			isMore: true, //是否更多
 			isPriceDesc: false, //价格排序上下 开关
 			isShowFilter:false,
-			dataList: dataList,//数据列表
-			reqUrl: '',//请求地址
+			dataList: [],//数据列表
+			reqUrl: '/info/site/search',//请求地址
 			citys:Citys,//省市列表
 			cityList:cityList,//城市列表
 			isShowLocation:false,//是否显示地区下拉
 			currentProv:provID,//当前省份
 			currentCity:cityID,//当前城市
-			currentProvText:'全国',//当前省份名
+			currentProvText:'厦门',//当前省份名
 			currentCityText:'',//当前城市名
 			seletedTags:[],//已选标签
 			typeList:typeList
@@ -383,7 +279,7 @@
 				$('.mescroll-upwarp').show();
 				if(!this.isMore){
 					this.mescroll.endSuccess();
-					$('.mescroll-upwarp').text('暂无数据')
+					$('.mescroll-upwarp').text('暂无数据');
 					return;
 				}
 				this.getData(true);
@@ -469,15 +365,33 @@
 			},
 			//确认
 			cofirmFilter:function(){
-				this.isShowFilter = false;
+//				this.isShowFilter = false;
 				this.reqData.page = 1;
-				var seletedArr = [];
+				var seletedArr = [],list = this.typeList;
 				//获取选中的标签
-				for(var item in this.classify){
-					if(this.classify[item]['seleted']){
-						seletedArr.push(this.classify[item]['TypeID']);
+//				for(var item in this.classify){
+//					if(this.classify[item]['seleted']){
+//						seletedArr.push(this.classify[item]['TypeID']);
+//					}
+//				}
+				for(var i = 0,len = list.length; i<len;++i){
+					var item = {}, tagsTmp = [],tagsSrc = list[i]['tags'];
+					item['typeID'] = list[i]['typeID'];
+					//全选
+					if(list[i]['isAll']){
+						item['tags'] = 'all';
+						seletedArr.push(item);
+						continue;
 					}
+					for(var j = 0,len1 = tagsSrc.length;j<len1;j++){
+						if(tagsSrc[j]['seleted']){
+							tagsTmp.push(tagsSrc[j]['tagId']);
+						}
+					}
+					item['tags'] = tagsTmp.toString();
+					seletedArr.push(item);
 				}
+				this.reqData.tableList = seletedArr;
 				this.reqData.TypeID = seletedArr.toString();
 				this.getData();
 			},
@@ -519,23 +433,34 @@
 </script>
 <script>
         $(function(){
+			//展开全部
+			$('body').delegate('.l_t_all','click',function(){
+				var more = $(this).closest('.f_label').find('.f_l_more');
+				if(more.is(':hidden')){
+					more.show();
+					$(this).addClass('on');
+				}else{
+					more.hide();
+					$(this).removeClass('on');
+				}
+			});
             $('#nav-more').on('click',function(){
                 if($("#nav-drop").is(":hidden")){
                      $("#nav-drop").show();    //如果元素为隐藏,则将它显现
                 }else{
                     $("#nav-drop").hide();     //如果元素为显现,则将其隐藏
                 }
-            })
+            });
         })
 </script>
 <script>
     $(function(){
         $('#search_box').on('click',function(){
             $('.search_wrap').show();
-        })
+        });
         $('.s_close_wrap').on('click', function() {
             $('.search_wrap').hide();
-        })
+        });
 
         $(window).on('scroll', function () {
             var top = $(this).scrollTop();
@@ -545,7 +470,7 @@
                 $('.backTop').hide();
             }
         })
-    })
+    });
 
     var local = localStorage.getItem('searchWordArr'),
         spanHtml = '';
@@ -577,7 +502,7 @@
             searchWordArr = sWords.split(',');
             var isEqual = searchWordArr.every(function(item, index) {
                 return item !== value;
-            })
+            });
             if (isEqual) {
                 searchWordArr.unshift(value);
                 localStorage.setItem("searchWordArr", searchWordArr);
@@ -586,7 +511,7 @@
         $('.search_wrap').hide();
         $('.searchList_wrap').show();
         location.href = '/info/site/search?sName='+value;
-    })
+    });
 
     $('.del_icon').on('click', function() {
         $('.select_mask').show();
@@ -598,12 +523,12 @@
                 $('.history_search').hide();
             }
         });
-    })
+    });
 
     $('.select_cancel').on('click', function() {
         $('.selection_bar').hide();
         $('.select_mask').hide();
-    })
+    });
 
     //以下为处理IOS返回时 记录之前操作遗留的弹框的问题
     function isIOS() {
