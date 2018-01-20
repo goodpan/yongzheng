@@ -24,6 +24,12 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        'user' => [
+            'identityClass' => 'common\models\User', // User must implement the IdentityInterface
+            'enableAutoLogin' => true,
+            // 'loginUrl' => ['user/login'],
+            // ...
+        ],
         // 'user' => [
         //     'identityClass' => 'common\models\User',
         //     'enableAutoLogin' => true,
