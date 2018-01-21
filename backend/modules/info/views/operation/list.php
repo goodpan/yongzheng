@@ -24,7 +24,7 @@
             <a class="layui-btn" data-type="" href="/info/operation/add"><i class="layui-icon">&#xe608;</i>添加证件</a>
             <button class="layui-btn" data-type=""><i class="layui-icon">&#xe640;</i>删除选中</button>
         </div>
-        <table class="layui-table" lay-data="{url:'/info/operation/list', page:true, id:'cred_list'}" lay-filter="cred_list">
+        <table class="layui-table" lay-data="{url:'/info/operation/list', page:false, id:'cred_list'}" lay-filter="cred_list">
             <thead>
                 <tr>
                 <th lay-data="{checkbox:true}"></th>

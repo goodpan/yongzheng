@@ -45,7 +45,7 @@ class ClassifyController extends BaseController{
                 return [
                     'code'=>0,
                     'msg'=>'成功',
-                    'count'=>$count,
+                    'count'=>(int)$count,
                     'data'=>$roles
                 ];
             };

@@ -113,7 +113,6 @@ class SiteController extends BaseController
 
         if(Yii::$app->request->isAjax){
             $post = Yii::$app->request->post();
-
             $smsCode = Smscode::find()->select('sCode')->where(['sMobile'=>$post['sPhone']])->orderBy('sCreateDate DESC')->one();
 
             if(!$smsCode || $post['sCode'] != $smsCode['sCode'] ){
@@ -130,8 +129,8 @@ class SiteController extends BaseController
             $requObj->TypeID = trim($post['TypeID']);
             $requObj->sBudget = trim($post['sBudget']);
             $requObj->sPhone = trim($post['sPhone']);
-            $requObj->dDeliverDate = $post['dDeliverDate'];
-            $requObj->update_time = time();
+            $requObj->dDeliverDate = strtotime($post['dDeliverDate']);
+            $requObj->create_time = time();
             $requObj->user_id = $userid;
             if ($requObj->save()) {
                 $data['status'] = 1;

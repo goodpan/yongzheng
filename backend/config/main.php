@@ -19,6 +19,7 @@ return [
         'manager'=>['class'=>'backend\modules\manager\Manager'],//管理员模块
         'system'=>['class'=>'backend\modules\system\System'],//系统模块
         'console'=>['class'=>'backend\modules\console\Console'],//系统模块
+        'customer'=>['class'=>'backend\modules\customer\Customer'],//用户模块
     ],
     'components' => [
         'request' => [

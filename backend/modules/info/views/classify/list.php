@@ -15,7 +15,7 @@
     <a class="layui-btn" data-type="" href="/info/classify/add"><i class="layui-icon">&#xe608;</i>新增分类</a>
   <button class="layui-btn" data-type=""><i class="layui-icon">&#xe640;</i>删除选中</button>
 </div>
-<table class="layui-table" lay-data="{url:'/info/classify/list', page:true, id:'cate'}" lay-filter="tools">
+<table class="layui-table" lay-data="{url:'/info/classify/list', page:true, id:'cate'}" lay-filter="cate">
     <thead>
         <tr>
         <th lay-data="{checkbox:true}"></th>
