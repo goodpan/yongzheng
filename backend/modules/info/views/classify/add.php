@@ -52,7 +52,7 @@ $this->title = '新增商品分类';
                     <option value="">请选择上级分类</option>';
                     <option value="0_0">添加顶级分类</option>';
                     <?php foreach ($cates as $k => $cate): ?>
-                        <option value="<?php echo $cate['id']."_".$cate['degree']; ?>" data-level="<?php echo $cate['level']?>"><?php echo str_repeat('-', 4*$cate['level']).$cate['name']; ?></option>
+                        <option value="<?php echo $cate->id."_".$cate->degree; ?>" data-level="<?php echo $cate->degree?>"><?php echo str_repeat('-', 4*$cate->degree).$cate->name; ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -88,7 +88,7 @@ $this->title = '新增商品分类';
                 $.post('/info/classify/add',data.field,function (res) {
                     if(res.code>0){
                         layer.alert(res.msg);
-//                        window.location.reload();
+                        window.location.href='/info/classify/list';
                     }else{
                         layer.alert(res.error);
                     }

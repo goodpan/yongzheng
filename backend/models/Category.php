@@ -25,4 +25,15 @@ class Category extends BaseModel
             ['degree', 'integer'],
         ];
     }
+
+    /**
+     * 返回1、2级分类
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public function getParents(){
+        return self::find()
+            ->select('id,name,degree')
+            ->where(['<','degree','3'])
+            ->all();
+    }
 }
