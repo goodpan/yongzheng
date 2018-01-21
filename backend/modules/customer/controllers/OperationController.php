@@ -10,6 +10,7 @@ namespace backend\modules\customer\controllers;
 use backend\controllers\BaseController;
 use backend\models\Category;
 use backend\models\Credentials;
+use backend\modules\User;
 use Yii;
 
 /** 信息管理控制器
@@ -27,14 +28,13 @@ class OperationController extends BaseController{
         echo 'backend info Operation index';
     }   
     
-    /** 证件列表
+    /** 用户列表
      * 
      */
     public function actionList(){
-        echo 123;exit;
         if(Yii::$app->request->isAjax){
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-            $model = new Credentials();
+            $model = new User();
             $get = Yii::$app->request->get();
             if(!$get){
                 return [
@@ -44,7 +44,7 @@ class OperationController extends BaseController{
                 ];
             }
             $count = $model->getCount();
-            $list = $model->getCredJoinCateByPager($get['page'],$get['limit']);
+            $list = $model->getUserByPager($get['page'],$get['limit']);
             if($list){
                 //日期转换
                 foreach($list as $item){
@@ -67,14 +67,14 @@ class OperationController extends BaseController{
         return $this->render('list');
     }
 
-    /** 添加证件
+    /** 添加个人信息
      * @return string
      */
     public function actionAdd(){
         if(\Yii::$app->request->isAjax){
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $post = Yii::$app->request->post();
-            $model = new Credentials();
+            $model = new User();
             if($model->add($post)){
                 return [
                     'code'=>0,
@@ -91,46 +91,47 @@ class OperationController extends BaseController{
                 ];
             }
         }
-        //获取分类options
-        $cateModel = new Category();
-        $cateList = $cateModel->getTree();
-        return $this->render('add',['cateList'=>$cateList]);
+        return $this->render('add');
     }
 
-
+    /** 修改个人信息
+     * @return string
+     */
     public function actionEdit(){
         if(\Yii::$app->request->isAjax){
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             $post = Yii::$app->request->post();
-            $model = new Credentials();
+            $model = new User();
             if($model->edit($post)){
                 return [
                     'code'=>0,
-                    'msg'=>'添加成功',
+                    'msg'=>'修改成功',
                     'data'=>[]
                 ];
             }else{
                 $error = array_values($model->getFirstErrors())[0];
                 return [
                     'code'=>0,
-                    'msg'=>'添加失败',
+                    'msg'=>'修改失败',
                     'error'=>$error,
                     'data'=>[]
                 ];
             }
         }
-        $cred_id = Yii::$app->request->get('id');
+        $userid = Yii::$app->request->get('id');
         if(!isset($cred_id)){
             echo '参数错误';
             exit;
         }
-        //获取分类options
-        $cateModel = new Category();
-        $cateList = $cateModel->getTree();
-        $credModel = new Credentials();
-        $cred = $credModel->getOneById(['cred_id'=>$cred_id]);
+        //用户信息
+        $User = new User();
+        $userdata = $User->getOneById(['user_id'=>$userid]);
 
-        return $this->render('edit',['cateList'=>$cateList,'cred'=>$cred]);
+        return $this->render('edit',['userdata'=>$userdata]);
+    }
+
+    public function actionDelete(){
+
     }
 
 }
