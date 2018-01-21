@@ -23,6 +23,7 @@
         <th lay-data="{field:'pid', width:100, sort: true}">上级ID</th>
         <th lay-data="{field:'name', width:180}">角色名</th>
         <th lay-data="{field:'create_time', width:360}">创建时间</th>
+        <th lay-data="{field:'degree', width:360}">分类等级</th>
         <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#toolbar'}">操作</th>
         </tr>
     </thead>

@@ -36,7 +36,7 @@
                     <? } ?>
                     <h2 class="item-title">
                         <a class="t-text"
-                           href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $secondClassifyList['firstClassifyId'] ?>">
+                           href="/info/site/search?sName=<?php echo $firstClassifyName ?>">
                             全部<?= $firstClassifyName ?>类 </a>
                     </h2>
                     <!--二级分类-->
@@ -45,9 +45,9 @@
                     foreach ($secondClassifyList as $secondClassifyName => $thirdClassfyList) {
                         ?>
                         <div class="item-list">
-                            <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $thirdClassfyList['secondClassifyId'] ?>">
+                            <a href="/info/site/search?sName=<?php echo $secondClassifyName ?>">
                                 <h3 class="list-title">
-                                    <span class="l-title-text"><?= $secondClassifyName ?></span>
+                                    <span class="l-title-text"><?echo $secondClassifyName ?></span>
                                 </h3>
                             </a>
                             <ul class="pro-group">
@@ -55,12 +55,12 @@
                                 <?
                                 array_pop($thirdClassfyList);
                                 foreach ($thirdClassfyList as $value) { ?>
-                                    <a href="http://m.shop.myerm.cn/shop0/product/list?catid=<?php echo $value->id; ?>">
+                                    <a href="/info/site/search?sName=<?php echo $value->name; ?>">
                                         <li class="pro-item">
                                             <div class="img-box">
                                                 <img
-                                                    src="http://backend.shop.myerm.cn/userfile/upload/2017-10-09/15075284080012685400787983482120.jpg"
-                                                    alt="1段奶粉">
+                                                    src="/img/classify/tmp.jpg"
+                                                    alt="<?= $value->name ?>">
                                             </div>
                                             <div class="img-tt"><?= $value->name ?></div>
                                         </li>

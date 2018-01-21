@@ -39,8 +39,8 @@ class ClassifyController extends BaseController{
             $roles = $model->getAllByPager($page,$limit);
             if($roles){
                 //日期转换
-                foreach($roles as $item){
-                    $item['create_time'] = date("Y-m-d H:i:s", $item['create_time']);
+                foreach($roles as $key => $item){
+                    $roles[$key]['create_time'] = date("Y-m-d H:i:s", $item['create_time']);
                 }
                 return [
                     'code'=>0,
@@ -84,7 +84,7 @@ class ClassifyController extends BaseController{
             }
         }
         $cate = new Category();
-        $cates = $cate->getTree();
+        $cates = $cate->getParents();
         return $this->render('add',['cates'=>$cates]);
     }
 

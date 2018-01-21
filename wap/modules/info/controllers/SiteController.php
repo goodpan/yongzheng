@@ -72,7 +72,7 @@ class SiteController extends BaseController
     {
         /** @var Category $category */
         $category = new Category();
-        $firstClassifyList = $category->getClassifyListByDegree(10, 0);
+        $firstClassifyList = $category->getClassifyListByDegree(10, 1);
         $dataClassifyList = [];//组装数据
         $e = 0;
         $checkFirstKey = '';//判断第一个分类，供页面首次加载判断样式用
